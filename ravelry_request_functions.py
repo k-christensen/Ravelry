@@ -24,19 +24,36 @@ def get_favs_list(username):
     flat_list = [item for sublist in fav_list for item in sublist]
     return flat_list
 
+
 def pattern_list_to_tf_idf_df(pattern_list):
-#     create url to request from api
-    patterns_url = 'https://api.ravelry.com/patterns.json?ids={}'.format('+'.join(id_list))
-#     make the request to the api
-    patterns = requests.get(patterns_url,auth=
-                            (personal_keys.username(),
-                             personal_keys.password()))
-#     create a dictionary for the attributes for each pattern where each attribute = 1
-    attr_list = []
-    for key in patterns.json()['patterns'].keys():
-        attr_list.append({attr['permalink']:1 
-                          for attr in patterns.json()
-                          ['patterns'][key]['pattern_attributes']})
+#     turn ints into strings for the request url
+    pattern_list = [str(item) for item in pattern_list]
+#     if the pattern list is less than 50, just one request is needed, otherwise, multiple requests are needed
+    if len(pattern_list) < 50:
+    #     create url to request from api
+        patterns_url = 'https://api.ravelry.com/patterns.json?ids={}'.format('+'.join(pattern_list))
+    #     make the request to the api
+        patterns = requests.get(patterns_url, 
+                            auth = (personal_keys.username(),personal_keys.password()))
+    #     create a dictionary for the attributes for each pattern where each attribute = 1
+        attr_list = []
+        for key in patterns.json()['patterns'].keys():
+            attr_list.append({attr['permalink']:1 for attr in patterns.json()['patterns'][key]['pattern_attributes']})
+    else:
+#         create nested list that contains lists of either 50 patterns or the remainder of length of list/50
+        l_of_l_patterns = [pattern_list[i:i + 5] for i in range(0, len(pattern_list), 5)]
+        batch_num = 0
+        attr_list = []
+        while batch_num < len(l_of_l_patterns):
+        #     create url to request from api
+            patterns_url = 'https://api.ravelry.com/patterns.json?ids={}'.format('+'.join(l_of_l_patterns[batch_num]))
+        #     make the request to the api
+            patterns = requests.get(patterns_url, 
+                                auth = (personal_keys.username(),personal_keys.password()))
+#             create a dictionary for the attributes for each pattern where each attribute = 1
+            for key in patterns.json()['patterns'].keys():
+                    attr_list.append({attr['permalink']:1 for attr in patterns.json()['patterns'][key]['pattern_attributes']})
+            batch_num += 1       
 #     in case pattern list is list of strings, make it into list of integers
     p_l = [int(item) for item in pattern_list]
 #     turn list of dictionaries into a dataframe, turn all the NaN values into zero so the dataframe is ones and zeroes
@@ -56,4 +73,3 @@ def pattern_list_to_tf_idf_df(pattern_list):
 #     set pattern id column as index of tf/idf dataframe
     df_tf = df_tf.set_index('pattern_id')
     return df_tf
-
