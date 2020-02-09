@@ -24,6 +24,17 @@ def get_favs_list(username):
     flat_list = [item for sublist in fav_list for item in sublist]
     return flat_list
 
+def get_project_list(username):
+    proj_list = []
+    projects_url = 'https://api.ravelry.com/projects/{}/list.json'.format(username)
+#     following request returns json with all project info
+    projects = requests.get(projects_url, 
+                        auth = (personal_keys.username(),personal_keys.password()))
+#     the following will add a list of all the pattern ids for the patterns and turns them into a list
+    proj_list.append([projects.json()['projects'][item]['id'] for item in range(0,len(projects.json()['projects']))])
+    return [item for sublist in proj_list for item in sublist]
+
+
 # below function takes a pattern list and returns a pattern list where all the pattern codes do not return errors 
 def problem_children(pattern_list):
     del_list = []
