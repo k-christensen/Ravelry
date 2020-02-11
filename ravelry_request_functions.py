@@ -31,7 +31,7 @@ def get_project_list(username):
     projects = requests.get(projects_url, 
                         auth = (personal_keys.username(),personal_keys.password()))
 #     the following will add a list of all the pattern ids for the patterns and turns them into a list
-    proj_list.append([projects.json()['projects'][item]['id'] for item in range(0,len(projects.json()['projects']))])
+    proj_list.append([projects.json()['projects'][item]['pattern_id'] for item in range(0,len(projects.json()['projects']))])
     return [item for sublist in proj_list for item in sublist]
 
 
