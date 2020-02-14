@@ -76,6 +76,13 @@ def problem_children(pattern_list):
                 del_list.append(item)
     return [item for item in pattern_list_str if item not in del_list]
 
+# simple function to return easy list of a user's friends' usernames
+def friend_username_list(username):
+    user_url = 'https://api.ravelry.com/people/{}/friends/list.json'.format(username)
+    user = requests.get(user_url, 
+                        auth = (personal_keys.username(),personal_keys.password()))
+
+    return [user.json()['friendships'][item]['friend_username'] for item in range(0,len(user.json()['friendships']))]
 
 def pattern_list_to_tf_idf_df(pattern_list):
 #     turn ints into strings for the request url
