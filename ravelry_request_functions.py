@@ -162,7 +162,35 @@ def pattern_attr(pattern_list):
             for key in patterns.json()['patterns'].keys():
                     attr_list.append({attr['permalink']:1 for attr in patterns.json()['patterns'][key]['pattern_attributes']})
             batch_num += 1
-    return attr_list  
+    return attr_list
+
+def fav_pattern_attr_to_count_df(pattern_list, attr_list):
+#     in case pattern list is list of strings, make it into list of integers
+    p_l = [int(item) for item in pattern_list]
+#     turn list of dictionaries into a dataframe, turn all the NaN values into zero so the dataframe is ones and zeroes
+    df_attr = pd.DataFrame(attr_list).fillna(0)
+    df_attr['pattern_id'] = p_l
+    df_attr = df_attr.set_index('pattern_id')
+    return df_attr
+    
+def proj_pattern_attr_to_count_df(pattern_list, attr_list):
+#     in case pattern list is list of strings, make it into list of integers
+    p_l = [int(item) for item in pattern_list]
+#     turn list of dictionaries into a dataframe, turn all the NaN values into zero so the dataframe is ones and zeroes
+    df_attr = pd.DataFrame(attr_list).fillna(0)
+    df_attr = df_attr*2
+    df_attr['pattern_id'] = p_l
+    df_attr = df_attr.set_index('pattern_id')
+#     in order to weight the attributes in patterns higher than favs, 
+#     instead of each attr being one, like in the favs function, they're counted twice
+    return df_attr
+
+def proj_and_fav_count_df(project_list, proj_attr, fav_list, fav_attr):
+    proj_df = proj_pattern_attr_to_count_df(project_list, proj_attr)
+    modified_fav_list = [pattern for pattern in fav_list if pattern not in project_list]
+    fav_df = fav_pattern_attr_to_count_df(modified_fav_list, fav_attr)
+    proj_and_fav = pd.concat([proj_df, fav_df])
+    return proj_and_fav
     
 def pattern_attr_to_tf_idf_df(pattern_list, attr_list):
 #     in case pattern list is list of strings, make it into list of integers
