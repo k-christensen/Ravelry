@@ -162,7 +162,7 @@ def pattern_attr(pattern_list):
             for key in patterns.json()['patterns'].keys():
                     attr_list.append({attr['permalink']:1 for attr in patterns.json()['patterns'][key]['pattern_attributes']})
             batch_num += 1
-    return attr_list
+    return dict(zip(pattern_list, attr_list))
 
 def fav_pattern_attr_to_count_df(pattern_list, attr_list):
 #     in case pattern list is list of strings, make it into list of integers
