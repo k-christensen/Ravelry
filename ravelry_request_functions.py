@@ -191,7 +191,18 @@ def proj_and_fav_count_df(project_list, proj_attr, fav_list, fav_attr):
     fav_df = fav_pattern_attr_to_count_df(modified_fav_list, fav_attr)
     proj_and_fav = pd.concat([proj_df, fav_df])
     return proj_and_fav
-    
+
+# below function combines many of above functions such that all you put in is someone's username and it spits out dataframe of favs and projects
+def get_user_favs_and_projects(username):
+    fav_list = get_favs_list(username)
+    proj_list = get_project_list(username)
+    checked_fav_list = problem_children(fav_list)
+    checked_proj_list = problem_children(proj_list)
+    favs = pattern_attr(checked_fav_list)
+    projs = pattern_attr(checked_proj_list)
+    pf_df = proj_and_fav_count_df(projs, favs)
+    return pf_df
+
 def pattern_attr_to_tf_idf_df(pattern_list, attr_list):
 #     in case pattern list is list of strings, make it into list of integers
     p_l = [int(item) for item in pattern_list]
