@@ -107,7 +107,63 @@ def friend_username_list(username):
                         auth = (personal_keys.username(),personal_keys.password()))
 
     return [user.json()['friendships'][item]['friend_username'] for item in range(0,len(user.json()['friendships']))]
-
+def problem_children_large_scale(pattern_list):
+    del_list = []
+    batch_100_prob = []
+    batch_50_prob = []
+    batch_10_prob = []
+    pattern_list_str = [str(item) for item in pattern_list]
+        #     below checks in batches of 100 if the patterns status code is not 200
+    l_of_l_patterns_100 = [pattern_list_str[i:i + 100] for i in range(0, len(pattern_list_str), 100)]
+    batch_num = 0
+    while batch_num < len(l_of_l_patterns_100):
+        #     create url to request from api
+        patterns_url = 'https://api.ravelry.com/patterns.json?ids={}'.format('+'.join(l_of_l_patterns_100[batch_num]))
+        #     make the request to the api
+        patterns = requests.get(patterns_url, 
+                                auth = (personal_keys.username(),personal_keys.password()))
+        if patterns.status_code is not 200:
+            batch_100_prob.append(l_of_l_patterns_100[batch_num])
+        batch_num += 1
+    #         if any of the batches come back with an error, then we go into figuring out which pattern codes are the issue
+    if len(batch_100_prob)>0:
+    #         below I break the list of 50 or more into batches of 10 so we're not individually testing 50+ pattern codes
+        flat_100 = [item for sublist in batch_100_prob for item in sublist]
+    #     below checks in batches of 50 if the patterns status code is not 200
+        l_of_l_patterns_50 = [pattern_list_str[i:i + 50] for i in range(0, len(flat_100), 50)]
+        batch_num = 0
+        while batch_num < len(l_of_l_patterns_50):
+        #     create url to request from api
+            patterns_url = 'https://api.ravelry.com/patterns.json?ids={}'.format('+'.join(l_of_l_patterns_50[batch_num]))
+        #     make the request to the api
+            patterns = requests.get(patterns_url, 
+                                auth = (personal_keys.username(),personal_keys.password()))
+            if patterns.status_code is not 200:
+                batch_50_prob.append(l_of_l_patterns_50[batch_num])
+            batch_num += 1
+    #         if any of the batches come back with an error, then we go into figuring out which pattern codes are the issue
+    if len(batch_50_prob)>0:
+    #         below I break the list of 50 or more into batches of 10 so we're not individually testing 50+ pattern codes
+        flat_50 = [item for sublist in batch_50_prob for item in sublist]
+        l_of_l_patterns_10 = [flat_50[i:i + 10] for i in range(0, len(flat_50), 10)]
+        new_batch_num = 0
+        while new_batch_num < len(l_of_l_patterns_10):
+        #     create url to request from api
+            patterns_url = 'https://api.ravelry.com/patterns.json?ids={}'.format('+'.join(l_of_l_patterns_10[new_batch_num]))
+        #     make the request to the api
+            patterns = requests.get(patterns_url, 
+                                auth = (personal_keys.username(),personal_keys.password()))
+            if patterns.status_code is not 200:
+                batch_10_prob.append(l_of_l_patterns_10[new_batch_num])
+            new_batch_num += 1
+        flat_10 = [item for sublist in batch_10_prob for item in sublist]
+        for item in flat_10:
+            patterns_url = 'https://api.ravelry.com/patterns.json?ids={}'.format('+'.join(item))
+            patterns = requests.get(patterns_url, auth = (personal_keys.username(),personal_keys.password()))
+            if patterns.status_code is not 200:
+                del_list.append(item)
+    return [item for item in pattern_list_str if item not in del_list]
+    
 def pattern_list_to_tf_idf_df(pattern_list):
 #     turn ints into strings for the request url
     pattern_list = [str(item) for item in pattern_list]
