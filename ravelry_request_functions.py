@@ -1,3 +1,13 @@
+import requests
+import time
+import pandas as pd
+import numpy as np
+import re
+import json
+import pdb
+from bs4 import BeautifulSoup
+import personal_keys
+
 def get_favs_list(username):
     fav_list = []
     favs_url = 'https://api.ravelry.com/people/{}/favorites/list.json'.format(username)
@@ -7,9 +17,12 @@ def get_favs_list(username):
     favs = requests.get(favs_url, auth = (personal_keys.username(),personal_keys.password()),
                         params={'page_size':100, 'page':1})
 #     the following will add a list of all the pattern ids for the favorited patterns and turns them into a list, which is then appended to the fav_list defined at the beginning of the function
-    fav_list.append([favs.json()['favorites'][item]['favorited']['id'] 
-                     for item in range(0,len(favs.json()['favorites'])) 
-                     if favs.json()['favorites'][item]['favorited'] is not None])
+    for item in range(0,len(favs.json()['favorites'])):
+        if 'pattern_id' in favs.json()['favorites'][item]['favorited'].keys():
+            fav_list.append(favs.json()['favorites'][item]['favorited']['pattern_id'])
+        elif 'id' in favs.json()['favorites'][item]['favorited'].keys():
+            fav_list.append(favs.json()['favorites'][item]['favorited']['id'])
+
 #     in the event the user has more than 100 favorites, 
 # this loop will essentially go in and make a new request for the next page of likes, 
 # this loop finishes when the page number (which starts at 2 because we've already requested page one above) 
@@ -22,22 +35,15 @@ def get_favs_list(username):
             new_request_favs = requests.get(favs_url, auth = (personal_keys.username(),personal_keys.password()),
                         params={'page_size':100, 'page':page_number})
 #             append the new list of favorites to the old list containing the first 100 favorites
-            fav_list.append([new_request_favs.json()['favorites'][item]['favorited']['id'] 
-                             for item in range(0,len(new_request_favs.json()['favorites'])) 
-                             if new_request_favs.json()['favorites'][item]['favorited'] is not None])
+            for item in range(0,len(new_request_favs.json()['favorites'])):
+                if 'pattern_id' in new_request_favs.json()['favorites'][item]['favorited'].keys():
+                    fav_list.append(new_request_favs.json()['favorites'][item]['favorited']['pattern_id'])
+                elif 'id' in new_request_favs.json()['favorites'][item]['favorited'].keys():
+                    fav_list.append(new_request_favs.json()['favorites'][item]['favorited']['id'])
 #             add one to the page number so it will request the page following page 2, this will be done for as long as there are more pages to be requested
             page_number += 1
 #     since the fav_list is currently a list of lists, the following function flattens the fav_list into one long list of ids
-    flat_list = [item for sublist in fav_list for item in sublist]
-    return flat_list
-
-def get_friend_favs(username):    
-    friend_list = friend_username_list(username)
-    all_friend_favs = []
-    for user in friend_list:
-        all_friend_favs.append(get_favs_list(user))        
-    flat_list = [item for sublist in all_friend_favs for item in sublist]
-    return flat_list
+    return fav_list
 
 def get_project_list(username):
     proj_list = []
