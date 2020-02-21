@@ -47,6 +47,15 @@ def get_favs_list(username):
 #     since the fav_list is currently a list of lists, the following function flattens the fav_list into one long list of ids
     return fav_list
 
+def get_friend_favs(username):    
+    friend_list = friend_username_list(username)
+    all_friend_projs = []
+    for user in friend_list:
+        all_friend_projs.append(get_favs_list(user))   
+    flat_list = [item for sublist in all_friend_projs for item in sublist]
+    edited_flat_list = [item for item in flat_list if item is not None]
+    return edited_flat_list
+
 def get_project_list(username):
     proj_list = []
     projects_url = 'https://api.ravelry.com/projects/{}/list.json'.format(username)
@@ -237,7 +246,7 @@ def pattern_attr(pattern_list):
             attr_list.append({attr['permalink']:1 for attr in patterns.json()['patterns'][key]['pattern_attributes']})
     else:
 #         create nested list that contains lists of either 50 patterns or the remainder of length of list/50
-        l_of_l_patterns = [pattern_list[i:i + 25] for i in range(0, len(pattern_list), 25)]
+        l_of_l_patterns = [pattern_list[i:i + 50] for i in range(0, len(pattern_list), 50)]
         batch_num = 0
         attr_list = []
         while batch_num < len(l_of_l_patterns):
