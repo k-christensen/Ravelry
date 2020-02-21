@@ -18,10 +18,11 @@ def get_favs_list(username):
                         params={'page_size':100, 'page':1})
 #     the following will add a list of all the pattern ids for the favorited patterns and turns them into a list, which is then appended to the fav_list defined at the beginning of the function
     for item in range(0,len(favs.json()['favorites'])):
-        if 'pattern_id' in favs.json()['favorites'][item]['favorited'].keys():
-            fav_list.append(favs.json()['favorites'][item]['favorited']['pattern_id'])
-        elif 'id' in favs.json()['favorites'][item]['favorited'].keys():
-            fav_list.append(favs.json()['favorites'][item]['favorited']['id'])
+        if favs.json()['favorites'][item]['favorited'] is not None:
+            if 'pattern_id' in favs.json()['favorites'][item]['favorited'].keys():
+                fav_list.append(favs.json()['favorites'][item]['favorited']['pattern_id'])
+            elif 'id' in favs.json()['favorites'][item]['favorited'].keys():
+                fav_list.append(favs.json()['favorites'][item]['favorited']['id'])
 
 #     in the event the user has more than 100 favorites, 
 # this loop will essentially go in and make a new request for the next page of likes, 
@@ -36,10 +37,11 @@ def get_favs_list(username):
                         params={'page_size':100, 'page':page_number})
 #             append the new list of favorites to the old list containing the first 100 favorites
             for item in range(0,len(new_request_favs.json()['favorites'])):
-                if 'pattern_id' in new_request_favs.json()['favorites'][item]['favorited'].keys():
-                    fav_list.append(new_request_favs.json()['favorites'][item]['favorited']['pattern_id'])
-                elif 'id' in new_request_favs.json()['favorites'][item]['favorited'].keys():
-                    fav_list.append(new_request_favs.json()['favorites'][item]['favorited']['id'])
+                if new_request_favs.json()['favorites'][item]['favorited'] is not None:
+                    if 'pattern_id' in new_request_favs.json()['favorites'][item]['favorited'].keys():
+                        fav_list.append(new_request_favs.json()['favorites'][item]['favorited']['pattern_id'])
+                    elif 'id' in new_request_favs.json()['favorites'][item]['favorited'].keys():
+                        fav_list.append(new_request_favs.json()['favorites'][item]['favorited']['id'])
 #             add one to the page number so it will request the page following page 2, this will be done for as long as there are more pages to be requested
             page_number += 1
 #     since the fav_list is currently a list of lists, the following function flattens the fav_list into one long list of ids
