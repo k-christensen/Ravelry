@@ -242,8 +242,9 @@ def pattern_attr(pattern_list):
                             auth = (personal_keys.username(),personal_keys.password()))
     #     create a dictionary for the attributes for each pattern where each attribute = 1
         attr_list = []
-        for key in patterns.json()['patterns'].keys():
-            attr_list.append({attr['permalink']:1 for attr in patterns.json()['patterns'][key]['pattern_attributes']})
+        if patterns.status_code is 200:
+            for key in patterns.json()['patterns'].keys():
+                attr_list.append({attr['permalink']:1 for attr in patterns.json()['patterns'][key]['pattern_attributes']})
     else:
 #         create nested list that contains lists of either 50 patterns or the remainder of length of list/50
         l_of_l_patterns = [pattern_list[i:i + 50] for i in range(0, len(pattern_list), 50)]
@@ -256,8 +257,9 @@ def pattern_attr(pattern_list):
             patterns = requests.get(patterns_url, 
                                 auth = (personal_keys.username(),personal_keys.password()))
 #             create a dictionary for the attributes for each pattern where each attribute = 1
-            for key in patterns.json()['patterns'].keys():
-                    attr_list.append({attr['permalink']:1 for attr in patterns.json()['patterns'][key]['pattern_attributes']})
+            if patterns.status_code is 200:
+                for key in patterns.json()['patterns'].keys():
+                        attr_list.append({attr['permalink']:1 for attr in patterns.json()['patterns'][key]['pattern_attributes']})
             batch_num += 1
     return dict(zip(pattern_list, attr_list))
 
