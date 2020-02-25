@@ -32,7 +32,11 @@ def get_favs_list(username):
 #         page_number is 2 because first page is already in fav_list
         page_number = 2
 #         loop to do successive requests for new pages of favorited pattern ids
-        while page_number <= favs.json()['paginator']['last_page']:
+        if favs.json()['paginator']['last_page'] > 5:
+            last_page = 5
+        else:
+            last_page = favs.json()['paginator']['last_page']
+        while page_number <= last_page:
             new_request_favs = requests.get(favs_url, auth = (personal_keys.username(),personal_keys.password()),
                         params={'page_size':100, 'page':page_number})
 #             append the new list of favorites to the old list containing the first 100 favorites
