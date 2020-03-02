@@ -41,6 +41,13 @@ def get_favs_list(username):
             page_number += 1
     return fav_list
 
+# input: username, output: list of user's friends
+def friend_username_list(username):
+    user_url = 'https://api.ravelry.com/people/{}/friends/list.json'.format(username)
+    user = requests.get(user_url, 
+                        auth = (personal_keys.username(),personal_keys.password()))
+
+# input: username, output: user's friends' favs 
 def get_friend_favs(username):    
     friend_list = friend_username_list(username)
     all_friend_projs = []
@@ -110,12 +117,6 @@ def problem_children(pattern_list):
             if patterns.status_code is not 200:
                 del_list.append(item)
     return [item for item in pattern_list_str if item not in del_list]
-
-# simple function to return easy list of a user's friends' usernames
-def friend_username_list(username):
-    user_url = 'https://api.ravelry.com/people/{}/friends/list.json'.format(username)
-    user = requests.get(user_url, 
-                        auth = (personal_keys.username(),personal_keys.password()))
 
     return [user.json()['friendships'][item]['friend_username'] for item in range(0,len(user.json()['friendships']))]
 def problem_children_large_scale(pattern_list):
