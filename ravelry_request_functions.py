@@ -79,7 +79,8 @@ def get_friend_projs(username):
     edited_flat_list = [item for item in flat_list if item is not None]
     return edited_flat_list
 
-
+# input: list of pattern id's, 
+# output: dictionary where keys are pattern id's and values are a dict of attributes
 def pattern_attr(pattern_list):
 #     turn ints into strings for the request url
     pattern_list = [str(item) for item in pattern_list]
@@ -113,6 +114,8 @@ def pattern_attr(pattern_list):
             batch_num += 1
     return dict(zip(pattern_list, attr_list))
 
+# input: list of pattern id's and attribute list, which is a list of dictionaries
+# if using pattern attr function, it would be the dictionary keys and values
 def fav_pattern_attr_to_count_df(pattern_list, attr_list):
 #     in case pattern list is list of strings, make it into list of integers
     p_l = [int(item) for item in pattern_list]
