@@ -29,8 +29,10 @@ def create_fav_list(fav_request):
     return fav_list
 
 
-
-def get_favs_list_edited(username):
+# get favs list: input is username, output is list of pattern ids in a person's favorites
+# if the user has over 500 favorites, then only returns the first 500
+# this is done so other functions don't take forever
+def get_favs_list(username):
     favs = fav_request(username, 100, 1)
     fav_list = create_fav_list(favs)
     if favs['paginator']['page_count']>1:
@@ -45,37 +47,6 @@ def get_favs_list_edited(username):
             page_number += 1
     return fav_list
 
-# get favs list: input is username, output is list of pattern ids in a person's favorites
-# if the user has over 500 favorites, then only returns the first 500
-# this is done so other functions don't take forever
-def get_favs_list(username):
-    fav_list = []
-    favs_url = 'https://api.ravelry.com/people/{}/favorites/list.json'.format(username)
-    favs = requests.get(favs_url, auth = (personal_keys.username(),personal_keys.password()),
-                        params={'page_size':100, 'page':1})
-    for item in range(0,len(favs.json()['favorites'])):
-        if favs.json()['favorites'][item]['favorited'] is not None:
-            if 'pattern_id' in favs.json()['favorites'][item]['favorited'].keys():
-                fav_list.append(favs.json()['favorites'][item]['favorited']['pattern_id'])
-            elif 'id' in favs.json()['favorites'][item]['favorited'].keys():
-                fav_list.append(favs.json()['favorites'][item]['favorited']['id'])
-    if favs.json()['paginator']['page_count']>1:
-        page_number = 2
-        if favs.json()['paginator']['last_page'] > 5:
-            last_page = 5
-        else:
-            last_page = favs.json()['paginator']['last_page']
-        while page_number <= last_page:
-            new_request_favs = requests.get(favs_url, auth = (personal_keys.username(),personal_keys.password()),
-                        params={'page_size':100, 'page':page_number})
-            for item in range(0,len(new_request_favs.json()['favorites'])):
-                if new_request_favs.json()['favorites'][item]['favorited'] is not None:
-                    if 'pattern_id' in new_request_favs.json()['favorites'][item]['favorited'].keys():
-                        fav_list.append(new_request_favs.json()['favorites'][item]['favorited']['pattern_id'])
-                    elif 'id' in new_request_favs.json()['favorites'][item]['favorited'].keys():
-                        fav_list.append(new_request_favs.json()['favorites'][item]['favorited']['id'])
-            page_number += 1
-    return fav_list
 
 # input: username, output: list of user's friends
 def friend_username_list(username):
@@ -115,19 +86,54 @@ def get_friend_projs(username):
     edited_flat_list = [item for item in flat_list if item is not None]
     return edited_flat_list
 
+# multiple pattern request-
+# input: list of patterns, output: json file with patterns
+def multiple_pattern_request(pattern_list):
+    patterns_url = 'https://api.ravelry.com/patterns.json?ids={}'.format('+'.join(pattern_list))
+    patterns = requests.get(patterns_url, 
+                            auth = (personal_keys.username(),personal_keys.password()))
+    if patterns.status_code is 200:
+        return patterns.json()
+    else:
+        return 404
+
+# input: pattern json from the multiple pattern request function
+def attr_list(patterns_json):
+    attr_list = []
+    for key in patterns_json['patterns'].keys():
+        attr_list.append({attr['permalink']:1 for attr in 
+        patterns_json['patterns'][key]['pattern_attributes']})
+    return attr_list
+      
+
+# input: list of pattern id's, 
+# output: dictionary where keys are pattern id's and values are a dict of attributes
+def pattern_attr_edited(pattern_list):
+    pattern_list = [str(item) for item in pattern_list]
+    if len(pattern_list) < 50:
+        patterns = multiple_pattern_request(pattern_list)
+        if patterns != 404:
+            attr_list = attr_list(patterns)
+    else:
+#         create nested list that contains lists of either 50 patterns or the remainder of length of list/50
+        l_of_l_patterns = [pattern_list[i:i + 50] for i in range(0, len(pattern_list), 50)]
+        batch_num = 0
+        attr_list = []
+        while batch_num < len(l_of_l_patterns):
+            patterns = multiple_pattern_request(l_of_l_patterns[batch_num])
+            if patterns != 404:
+                attr_list.append(attr_list(patterns))
+            batch_num += 1
+    return dict(zip(pattern_list, attr_list))
+
 # input: list of pattern id's, 
 # output: dictionary where keys are pattern id's and values are a dict of attributes
 def pattern_attr(pattern_list):
-#     turn ints into strings for the request url
     pattern_list = [str(item) for item in pattern_list]
-#     if the pattern list is less than 50, just one request is needed, otherwise, multiple requests are needed
     if len(pattern_list) < 50:
-    #     create url to request from api
         patterns_url = 'https://api.ravelry.com/patterns.json?ids={}'.format('+'.join(pattern_list))
-    #     make the request to the api
         patterns = requests.get(patterns_url, 
                             auth = (personal_keys.username(),personal_keys.password()))
-    #     create a dictionary for the attributes for each pattern where each attribute = 1
         attr_list = []
         if patterns.status_code is 200:
             for key in patterns.json()['patterns'].keys():
