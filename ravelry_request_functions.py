@@ -15,14 +15,16 @@ def fav_request(username, page_size, page):
                         params={'page_size':page_size, 'page':page})
     return favs.json()
 
+# create_fav_list: 
+# input fav json, output list of fav pattern codes 
 def create_fav_list(fav_request):
     fav_list = []
     favorites = fav_request['favorites']
     for item in range(0,len(favorites)):
         if favorites[item]['favorited'] is not None:
-            if 'pattern_id' in favs_favorites[item]['favorited'].keys():
+            if 'pattern_id' in favorites[item]['favorited'].keys():
                 fav_list.append(favorites[item]['favorited']['pattern_id'])
-            elif 'id' in favs.json()['favorites'][item]['favorited'].keys():
+            elif 'id' in favorites[item]['favorited'].keys():
                 fav_list.append(favorites[item]['favorited']['id'])
     return fav_list
 
