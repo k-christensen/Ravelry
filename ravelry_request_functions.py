@@ -98,34 +98,31 @@ def multiple_pattern_request(pattern_list):
         return 404
 
 # input: pattern json from the multiple pattern request function
-def create_attr_list(patterns_json):
+def create_attr_list(pattern_list):
     attr_list = []
-    for key in patterns_json['patterns'].keys():
-        attr_list.append({attr['permalink']:1 for attr in 
-        patterns_json['patterns'][key]['pattern_attributes']})
+    patterns = multiple_pattern_request(pattern_list)
+    if patterns != 404:
+        for key in patterns['patterns'].keys():
+            attr_list.append({attr['permalink']:1 for attr in 
+            patterns['patterns'][key]['pattern_attributes']})
     return attr_list
-      
 
 # input: list of pattern id's, 
 # output: dictionary where keys are pattern id's and values are a dict of attributes
 def pattern_attr(pattern_list):
     pattern_list = [str(item) for item in pattern_list]
     if len(pattern_list) < 50:
-        patterns = multiple_pattern_request(pattern_list)
-        if patterns != 404:
-            attr_list = create_attr_list(patterns)
+        attr_list = create_attr_list(pattern_list)
     else:
 #         create nested list that contains lists of either 50 patterns or the remainder of length of list/50
         l_of_l_patterns = [pattern_list[i:i + 50] for i in range(0, len(pattern_list), 50)]
         batch_num = 0
         attr_list = []
         while batch_num < len(l_of_l_patterns):
-            patterns = multiple_pattern_request(l_of_l_patterns[batch_num])
-            if patterns != 404:
-                attr_list.extend(create_attr_list(patterns))
+            batch_attr_list = create_attr_list(l_of_l_patterns[batch_num])
+            attr_list.extend(batch_attr_list)
             batch_num += 1
-    return dict(zip(pattern_list, attr_list))
-
+    return dict(zip(pattern_list, attr_list))      
 
 # input: list of pattern id's and attribute list, which is a list of dictionaries
 # if using pattern attr function, it would be the dictionary keys and values
