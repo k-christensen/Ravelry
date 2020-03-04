@@ -98,7 +98,7 @@ def multiple_pattern_request(pattern_list):
         return 404
 
 # input: pattern json from the multiple pattern request function
-def attr_list(patterns_json):
+def create_attr_list(patterns_json):
     attr_list = []
     for key in patterns_json['patterns'].keys():
         attr_list.append({attr['permalink']:1 for attr in 
@@ -108,12 +108,12 @@ def attr_list(patterns_json):
 
 # input: list of pattern id's, 
 # output: dictionary where keys are pattern id's and values are a dict of attributes
-def pattern_attr_edited(pattern_list):
+def pattern_attr(pattern_list):
     pattern_list = [str(item) for item in pattern_list]
     if len(pattern_list) < 50:
         patterns = multiple_pattern_request(pattern_list)
         if patterns != 404:
-            attr_list = attr_list(patterns)
+            attr_list = create_attr_list(patterns)
     else:
 #         create nested list that contains lists of either 50 patterns or the remainder of length of list/50
         l_of_l_patterns = [pattern_list[i:i + 50] for i in range(0, len(pattern_list), 50)]
@@ -122,39 +122,10 @@ def pattern_attr_edited(pattern_list):
         while batch_num < len(l_of_l_patterns):
             patterns = multiple_pattern_request(l_of_l_patterns[batch_num])
             if patterns != 404:
-                attr_list.append(attr_list(patterns))
+                attr_list.extend(create_attr_list(patterns))
             batch_num += 1
     return dict(zip(pattern_list, attr_list))
 
-# input: list of pattern id's, 
-# output: dictionary where keys are pattern id's and values are a dict of attributes
-def pattern_attr(pattern_list):
-    pattern_list = [str(item) for item in pattern_list]
-    if len(pattern_list) < 50:
-        patterns_url = 'https://api.ravelry.com/patterns.json?ids={}'.format('+'.join(pattern_list))
-        patterns = requests.get(patterns_url, 
-                            auth = (personal_keys.username(),personal_keys.password()))
-        attr_list = []
-        if patterns.status_code is 200:
-            for key in patterns.json()['patterns'].keys():
-                attr_list.append({attr['permalink']:1 for attr in patterns.json()['patterns'][key]['pattern_attributes']})
-    else:
-#         create nested list that contains lists of either 50 patterns or the remainder of length of list/50
-        l_of_l_patterns = [pattern_list[i:i + 50] for i in range(0, len(pattern_list), 50)]
-        batch_num = 0
-        attr_list = []
-        while batch_num < len(l_of_l_patterns):
-        #     create url to request from api
-            patterns_url = 'https://api.ravelry.com/patterns.json?ids={}'.format('+'.join(l_of_l_patterns[batch_num]))
-        #     make the request to the api
-            patterns = requests.get(patterns_url, 
-                                auth = (personal_keys.username(),personal_keys.password()))
-#             create a dictionary for the attributes for each pattern where each attribute = 1
-            if patterns.status_code is 200:
-                for key in patterns.json()['patterns'].keys():
-                        attr_list.append({attr['permalink']:1 for attr in patterns.json()['patterns'][key]['pattern_attributes']})
-            batch_num += 1
-    return dict(zip(pattern_list, attr_list))
 
 # input: list of pattern id's and attribute list, which is a list of dictionaries
 # if using pattern attr function, it would be the dictionary keys and values
