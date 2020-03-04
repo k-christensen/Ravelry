@@ -26,7 +26,7 @@ def create_fav_list(fav_request):
                 fav_list.append(favorites[item]['favorited']['pattern_id'])
             elif 'id' in favorites[item]['favorited'].keys():
                 fav_list.append(favorites[item]['favorited']['id'])
-    return fav_list
+    return [code for code in fav_list if code is not None]
 
 
 # get favs list: input is username, output is list of pattern ids in a person's favorites
@@ -43,7 +43,7 @@ def get_favs_list(username):
             last_page = favs['paginator']['last_page']
         while page_number <= last_page:
             new_request_favs = fav_request(username,100, page_number)
-            fav_list.append(create_fav_list(new_request_favs))
+            fav_list.extend(create_fav_list(new_request_favs))
             page_number += 1
     return fav_list
 
