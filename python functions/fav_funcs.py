@@ -28,9 +28,23 @@ def create_fav_list(fav_request):
                 fav_list.append(favorites[item]['favorited']['id'])
     return [code for code in fav_list if code is not None]
 
-def fav_req_to_list(username, page_size, page):
-    fav_request = fav_request(username, page_size, page)
-    return create_fav_list(fav_request)
+# get favs list: input is username, output is list of pattern ids in a person's favorites
+# if the user has over 500 favorites, then only returns the first 500
+# this is done so other functions don't take forever
+def get_favs_list(username):
+    favs = fav_request(username, 100, 1)
+    fav_list = create_fav_list(favs)
+    if favs['paginator']['page_count']>1:
+        page_number = 2
+        if favs['paginator']['last_page'] > 5:
+            last_page = 5
+        else:
+            last_page = favs['paginator']['last_page']
+        while page_number <= last_page:
+            new_request_favs = fav_request(username,100, page_number)
+            fav_list.extend(create_fav_list(new_request_favs))
+            page_number += 1
+    return fav_list
 
 # input: username, output: list of user's friends
 def friend_username_list(username):

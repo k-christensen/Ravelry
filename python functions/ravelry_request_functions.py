@@ -84,19 +84,18 @@ def get_project_list(username):
     projects_url = 'https://api.ravelry.com/projects/{}/list.json'.format(username)
     projects = requests.get(projects_url, 
                         auth = (personal_keys.username(),personal_keys.password()))
-    proj_list.append([projects.json()['projects'][item]['pattern_id'] 
+    proj_list.extend([projects.json()['projects'][item]['pattern_id'] 
                     for item in range(0,len(projects.json()['projects']))])
-    return [item for sublist in proj_list for item in sublist]
+    return proj_list
 
 # output: list of user's friends' projects 
 def get_friend_projs(username):    
     friend_list = friend_username_list(username)
     all_friend_projs = []
     for user in friend_list:
-        all_friend_projs.append(get_project_list(user))        
-    flat_list = [item for sublist in all_friend_projs for item in sublist]
-    edited_flat_list = [item for item in flat_list if item is not None]
-    return edited_flat_list
+        all_friend_projs.extend(get_project_list(user))        
+    edited_proj_list = [item for item in all_friend_projs if item is not None]
+    return edited_proj_list
 
 # multiple pattern request-
 # input: list of patterns, output: json file with patterns
