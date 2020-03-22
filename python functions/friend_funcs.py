@@ -8,6 +8,7 @@ import pdb
 from bs4 import BeautifulSoup
 import personal_keys
 from fav_funcs import *
+from proj_funcs import *
 
 # input: username, output: list of user's friends
 def friend_username_list(username):
@@ -26,3 +27,12 @@ def get_friend_favs(username):
     flat_list = [item for sublist in all_friend_projs for item in sublist]
     edited_flat_list = [item for item in flat_list if item is not None]
     return edited_flat_list
+
+# output: list of user's friends' projects 
+def get_friend_projs(username):    
+    friend_list = friend_username_list(username)
+    all_friend_projs = []
+    for user in friend_list:
+        all_friend_projs.extend(get_project_list(user))        
+    edited_proj_list = [item for item in all_friend_projs if item is not None]
+    return edited_proj_list
