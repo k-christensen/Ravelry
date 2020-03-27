@@ -22,12 +22,15 @@ def pattern_attr_to_count_df(pattern_list, attr_list):
     df_attr = df_attr.set_index('pattern_id')
     return df_attr
 
-
 # below function combines many of above functions such that all you put in is someone's username and it spits out dataframe of favs and projects
-def get_user_favs_and_projects(username):
+def create_fav_df(username):
     fav_list = get_favs_list(username)
-    proj_list = get_project_list(username)
     favs = pattern_attr(fav_list)
+    fav_df = pattern_attr_to_count_df(fav_list, favs)
+    return fav_df
+
+def create_proj_df(username):
+    proj_list = get_project_list(username)
     projs = pattern_attr(proj_list)
-    pf_df = pattern_attr_to_count_df(projs, favs)
-    return pf_df
+    proj_df = pattern_attr_to_count_df(proj_list, projs)
+    return proj_df
