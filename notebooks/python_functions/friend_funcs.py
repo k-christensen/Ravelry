@@ -7,8 +7,8 @@ import json
 import pdb
 from bs4 import BeautifulSoup
 import personal_keys
-from fav_funcs import *
-from proj_funcs import *
+from python_functions.fav_funcs import *
+from python_functions.proj_funcs import *
 
 # input: username, output: list of user's friends
 def friend_username_list(username):

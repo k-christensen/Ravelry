@@ -6,7 +6,7 @@ import re
 import json
 import pdb
 from bs4 import BeautifulSoup
-import personal_keys
+import python_functions.personal_keys
 
 # fav_request: makes request to API, returns json file of user
 def fav_request(username, page_size, page):

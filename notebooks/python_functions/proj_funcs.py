@@ -6,7 +6,7 @@ import re
 import json
 import pdb
 from bs4 import BeautifulSoup
-import personal_keys
+import python_functions.personal_keys
 
 # output: list of pattern ids for user's projects
 def get_project_list(username):
