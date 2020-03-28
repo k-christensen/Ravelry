@@ -1,0 +1,1484 @@
+{
+    "pattern_categories": {
+        "id": 301,
+        "long_name": "Categories",
+        "name": "Categories",
+        "permalink": "categories",
+        "children": [
+            {
+                "id": 302,
+                "long_name": "Clothing",
+                "name": "Clothing",
+                "permalink": "clothing",
+                "children": [
+                    {
+                        "id": 305,
+                        "long_name": "Shrug / Bolero",
+                        "name": "Shrug / Bolero",
+                        "permalink": "shrug",
+                        "children": []
+                    },
+                    {
+                        "id": 310,
+                        "long_name": "Vest",
+                        "name": "Vest",
+                        "permalink": "vest",
+                        "children": []
+                    },
+                    {
+                        "id": 311,
+                        "long_name": "Coat / Jacket",
+                        "name": "Coat / Jacket",
+                        "permalink": "coat",
+                        "children": []
+                    },
+                    {
+                        "id": 313,
+                        "long_name": "Skirt",
+                        "name": "Skirt",
+                        "permalink": "skirt",
+                        "children": []
+                    },
+                    {
+                        "id": 314,
+                        "long_name": "Shorts",
+                        "name": "Shorts",
+                        "permalink": "shorts",
+                        "children": []
+                    },
+                    {
+                        "id": 316,
+                        "long_name": "Pants",
+                        "name": "Pants",
+                        "permalink": "pants",
+                        "children": []
+                    },
+                    {
+                        "id": 318,
+                        "long_name": "Leggings",
+                        "name": "Leggings",
+                        "permalink": "leggings",
+                        "children": []
+                    },
+                    {
+                        "id": 319,
+                        "long_name": "Sweater",
+                        "name": "Sweater",
+                        "permalink": "sweater",
+                        "children": [
+                            {
+                                "id": 304,
+                                "long_name": "Cardigan",
+                                "name": "Cardigan",
+                                "permalink": "cardigan",
+                                "children": []
+                            },
+                            {
+                                "id": 306,
+                                "long_name": "Pullover",
+                                "name": "Pullover",
+                                "permalink": "pullover",
+                                "children": []
+                            },
+                            {
+                                "id": 897,
+                                "long_name": "Sweater - Other",
+                                "name": "Other",
+                                "permalink": "other-sweater",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 321,
+                        "long_name": "Soakers",
+                        "name": "Soakers",
+                        "permalink": "soakers",
+                        "children": []
+                    },
+                    {
+                        "id": 322,
+                        "long_name": "Onesies",
+                        "name": "Onesies",
+                        "permalink": "onesies",
+                        "children": []
+                    },
+                    {
+                        "id": 325,
+                        "long_name": "Dress",
+                        "name": "Dress",
+                        "permalink": "dress",
+                        "children": []
+                    },
+                    {
+                        "id": 327,
+                        "long_name": "Robe",
+                        "name": "Robe",
+                        "permalink": "robe",
+                        "children": []
+                    },
+                    {
+                        "id": 328,
+                        "long_name": "Intimate Apparel",
+                        "name": "Intimate Apparel",
+                        "permalink": "intimateapparel",
+                        "children": [
+                            {
+                                "id": 329,
+                                "long_name": "Underwear",
+                                "name": "Underwear",
+                                "permalink": "underwear",
+                                "children": []
+                            },
+                            {
+                                "id": 330,
+                                "long_name": "Bra",
+                                "name": "Bra",
+                                "permalink": "bra",
+                                "children": []
+                            },
+                            {
+                                "id": 331,
+                                "long_name": "Pasties",
+                                "name": "Pasties",
+                                "permalink": "pasties",
+                                "children": []
+                            },
+                            {
+                                "id": 896,
+                                "long_name": "Intimate Apparel - Other",
+                                "name": "Other",
+                                "permalink": "other-intimateapparel",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 332,
+                        "long_name": "Sleepwear",
+                        "name": "Sleepwear",
+                        "permalink": "sleepwear",
+                        "children": []
+                    },
+                    {
+                        "id": 333,
+                        "long_name": "Swimwear",
+                        "name": "Swimwear",
+                        "permalink": "swimwear",
+                        "children": []
+                    },
+                    {
+                        "id": 898,
+                        "long_name": "Clothing - Other",
+                        "name": "Other",
+                        "permalink": "other-clothing",
+                        "children": []
+                    },
+                    {
+                        "id": 912,
+                        "long_name": "Tops",
+                        "name": "Tops",
+                        "permalink": "tops",
+                        "children": [
+                            {
+                                "id": 307,
+                                "long_name": "Tee",
+                                "name": "Tee",
+                                "permalink": "tee",
+                                "children": []
+                            },
+                            {
+                                "id": 308,
+                                "long_name": "Sleeveless Top",
+                                "name": "Sleeveless Top",
+                                "permalink": "sleeveless-top",
+                                "children": []
+                            },
+                            {
+                                "id": 309,
+                                "long_name": "Strapless Top",
+                                "name": "Strapless Top",
+                                "permalink": "strapless-top",
+                                "children": []
+                            },
+                            {
+                                "id": 913,
+                                "long_name": "Other Top",
+                                "name": "Other",
+                                "permalink": "other-top",
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 337,
+                "long_name": "Accessories",
+                "name": "Accessories",
+                "permalink": "accessories",
+                "children": [
+                    {
+                        "id": 338,
+                        "long_name": "Neck / Torso",
+                        "name": "Neck / Torso",
+                        "permalink": "neck-torso",
+                        "children": [
+                            {
+                                "id": 339,
+                                "long_name": "Scarf",
+                                "name": "Scarf",
+                                "permalink": "scarf",
+                                "children": []
+                            },
+                            {
+                                "id": 340,
+                                "long_name": "Cowl",
+                                "name": "Cowl",
+                                "permalink": "cowl",
+                                "children": []
+                            },
+                            {
+                                "id": 341,
+                                "long_name": "Collar",
+                                "name": "Collar",
+                                "permalink": "collar",
+                                "children": []
+                            },
+                            {
+                                "id": 346,
+                                "long_name": "Necktie",
+                                "name": "Necktie",
+                                "permalink": "necktie",
+                                "children": []
+                            },
+                            {
+                                "id": 347,
+                                "long_name": "Bib",
+                                "name": "Bib",
+                                "permalink": "bib",
+                                "children": []
+                            },
+                            {
+                                "id": 348,
+                                "long_name": "Cape",
+                                "name": "Cape",
+                                "permalink": "cape",
+                                "children": []
+                            },
+                            {
+                                "id": 349,
+                                "long_name": "Poncho",
+                                "name": "Poncho",
+                                "permalink": "poncho",
+                                "children": []
+                            },
+                            {
+                                "id": 350,
+                                "long_name": "Shawl / Wrap",
+                                "name": "Shawl / Wrap",
+                                "permalink": "shawl-wrap",
+                                "children": []
+                            },
+                            {
+                                "id": 894,
+                                "long_name": "Neck / Torso - Other",
+                                "name": "Other",
+                                "permalink": "other-neck-torso",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 353,
+                        "long_name": "Feet / Legs",
+                        "name": "Feet / Legs",
+                        "permalink": "feet-legs",
+                        "children": [
+                            {
+                                "id": 354,
+                                "long_name": "Socks",
+                                "name": "Socks",
+                                "permalink": "socks",
+                                "children": [
+                                    {
+                                        "id": 356,
+                                        "long_name": "Ankle Sock",
+                                        "name": "Ankle",
+                                        "permalink": "ankle-sock",
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 357,
+                                        "long_name": "Knee-highs",
+                                        "name": "Knee-highs",
+                                        "permalink": "knee-highs",
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 358,
+                                        "long_name": "Thigh-high",
+                                        "name": "Thigh-high",
+                                        "permalink": "thigh-high",
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 361,
+                                        "long_name": "Tube Sock",
+                                        "name": "Tube",
+                                        "permalink": "tube",
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 362,
+                                        "long_name": "Toeless Sock",
+                                        "name": "Toeless",
+                                        "permalink": "toeless",
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 885,
+                                        "long_name": "Mid-calf Socks",
+                                        "name": "Mid-calf",
+                                        "permalink": "mid-calf",
+                                        "children": []
+                                    },
+                                    {
+                                        "id": 889,
+                                        "long_name": "Socks - Other",
+                                        "name": "Other",
+                                        "permalink": "other-socks",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 363,
+                                "long_name": "Slippers",
+                                "name": "Slippers",
+                                "permalink": "slippers",
+                                "children": []
+                            },
+                            {
+                                "id": 364,
+                                "long_name": "Booties",
+                                "name": "Booties",
+                                "permalink": "booties",
+                                "children": []
+                            },
+                            {
+                                "id": 365,
+                                "long_name": "Legwarmers",
+                                "name": "Legwarmers",
+                                "permalink": "legwarmers",
+                                "children": []
+                            },
+                            {
+                                "id": 366,
+                                "long_name": "Spats",
+                                "name": "Spats",
+                                "permalink": "spats",
+                                "children": []
+                            },
+                            {
+                                "id": 890,
+                                "long_name": "Feet / Legs - Other",
+                                "name": "Other",
+                                "permalink": "other-feet-legs",
+                                "children": []
+                            },
+                            {
+                                "id": 916,
+                                "long_name": "Boot Cuffs / Toppers",
+                                "name": "Boot Toppers",
+                                "permalink": "boot-toppers",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 368,
+                        "long_name": "Belt",
+                        "name": "Belt",
+                        "permalink": "belt",
+                        "children": []
+                    },
+                    {
+                        "id": 372,
+                        "long_name": "Bag",
+                        "name": "Bag",
+                        "permalink": "bag",
+                        "children": [
+                            {
+                                "id": 373,
+                                "long_name": "Clutch",
+                                "name": "Clutch",
+                                "permalink": "clutch",
+                                "children": []
+                            },
+                            {
+                                "id": 374,
+                                "long_name": "Tote",
+                                "name": "Tote",
+                                "permalink": "tote",
+                                "children": []
+                            },
+                            {
+                                "id": 375,
+                                "long_name": "Purse / Handbag",
+                                "name": "Purse / Handbag",
+                                "permalink": "purse",
+                                "children": []
+                            },
+                            {
+                                "id": 376,
+                                "long_name": "Wristlet",
+                                "name": "Wristlet",
+                                "permalink": "wristlet",
+                                "children": []
+                            },
+                            {
+                                "id": 377,
+                                "long_name": "Market bag (slouchy)",
+                                "name": "Market bag (slouchy)",
+                                "permalink": "market",
+                                "children": []
+                            },
+                            {
+                                "id": 378,
+                                "long_name": "Laptop",
+                                "name": "Laptop",
+                                "permalink": "laptop",
+                                "children": []
+                            },
+                            {
+                                "id": 380,
+                                "long_name": "Messenger Bag",
+                                "name": "Messenger",
+                                "permalink": "messenger",
+                                "children": []
+                            },
+                            {
+                                "id": 382,
+                                "long_name": "Backpack",
+                                "name": "Backpack",
+                                "permalink": "backpack",
+                                "children": []
+                            },
+                            {
+                                "id": 385,
+                                "long_name": "Drawstring Bag",
+                                "name": "Drawstring",
+                                "permalink": "drawstring",
+                                "children": []
+                            },
+                            {
+                                "id": 386,
+                                "long_name": "Duffle Bag",
+                                "name": "Duffle",
+                                "permalink": "duffle",
+                                "children": []
+                            },
+                            {
+                                "id": 387,
+                                "long_name": "Money Purse",
+                                "name": "Money",
+                                "permalink": "money",
+                                "children": []
+                            },
+                            {
+                                "id": 888,
+                                "long_name": "Bag - Other",
+                                "name": "Other",
+                                "permalink": "other-bag",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 390,
+                        "long_name": "Hands",
+                        "name": "Hands",
+                        "permalink": "hands",
+                        "children": [
+                            {
+                                "id": 391,
+                                "long_name": "Mittens",
+                                "name": "Mittens",
+                                "permalink": "mittens",
+                                "children": []
+                            },
+                            {
+                                "id": 394,
+                                "long_name": "Gloves",
+                                "name": "Gloves",
+                                "permalink": "gloves",
+                                "children": []
+                            },
+                            {
+                                "id": 395,
+                                "long_name": "Fingerless Gloves",
+                                "name": "Fingerless Gloves/Mitts",
+                                "permalink": "fingerless",
+                                "children": []
+                            },
+                            {
+                                "id": 398,
+                                "long_name": "Convertible Gloves",
+                                "name": "Convertible",
+                                "permalink": "convertible",
+                                "children": []
+                            },
+                            {
+                                "id": 399,
+                                "long_name": "Cuffs",
+                                "name": "Cuffs",
+                                "permalink": "cuffs",
+                                "children": []
+                            },
+                            {
+                                "id": 400,
+                                "long_name": "Muff",
+                                "name": "Muff",
+                                "permalink": "muff",
+                                "children": []
+                            },
+                            {
+                                "id": 891,
+                                "long_name": "Hands - Other",
+                                "name": "Other",
+                                "permalink": "other-hands",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 401,
+                        "long_name": "Headwear",
+                        "name": "Other Headwear",
+                        "permalink": "headwear",
+                        "children": [
+                            {
+                                "id": 402,
+                                "long_name": "Hair accessories",
+                                "name": "Hair accessories",
+                                "permalink": "hairaccessories",
+                                "children": []
+                            },
+                            {
+                                "id": 403,
+                                "long_name": "Headband",
+                                "name": "Headband",
+                                "permalink": "headband",
+                                "children": []
+                            },
+                            {
+                                "id": 405,
+                                "long_name": "Snood",
+                                "name": "Snood",
+                                "permalink": "snood",
+                                "children": []
+                            },
+                            {
+                                "id": 408,
+                                "long_name": "Headwrap",
+                                "name": "Headwrap",
+                                "permalink": "headwrap",
+                                "children": []
+                            },
+                            {
+                                "id": 409,
+                                "long_name": "Earwarmers",
+                                "name": "Earwarmers",
+                                "permalink": "earwarmers",
+                                "children": []
+                            },
+                            {
+                                "id": 410,
+                                "long_name": "Eye mask",
+                                "name": "Eye mask",
+                                "permalink": "eyemask",
+                                "children": []
+                            },
+                            {
+                                "id": 887,
+                                "long_name": "Kerchief",
+                                "name": "Kerchief",
+                                "permalink": "kerchief",
+                                "children": []
+                            },
+                            {
+                                "id": 892,
+                                "long_name": "Headwear - Other",
+                                "name": "Other",
+                                "permalink": "other-headwear",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 411,
+                        "long_name": "Hat",
+                        "name": "Hat",
+                        "permalink": "hat",
+                        "children": [
+                            {
+                                "id": 412,
+                                "long_name": "Beret, Tam",
+                                "name": "Beret, Tam",
+                                "permalink": "beret-tam",
+                                "children": []
+                            },
+                            {
+                                "id": 413,
+                                "long_name": "Beanie, Toque",
+                                "name": "Beanie, Toque",
+                                "permalink": "beanie-toque",
+                                "children": []
+                            },
+                            {
+                                "id": 414,
+                                "long_name": "Bonnet",
+                                "name": "Bonnet",
+                                "permalink": "bonnet",
+                                "children": []
+                            },
+                            {
+                                "id": 415,
+                                "long_name": "Brimmed Hat",
+                                "name": "Brimmed",
+                                "permalink": "brimmed",
+                                "children": []
+                            },
+                            {
+                                "id": 416,
+                                "long_name": "Billed Hat",
+                                "name": "Billed",
+                                "permalink": "billed",
+                                "children": []
+                            },
+                            {
+                                "id": 417,
+                                "long_name": "Cloche Hat",
+                                "name": "Cloche",
+                                "permalink": "cloche",
+                                "children": []
+                            },
+                            {
+                                "id": 418,
+                                "long_name": "Balaclava",
+                                "name": "Balaclava",
+                                "permalink": "balaclava",
+                                "children": []
+                            },
+                            {
+                                "id": 419,
+                                "long_name": "Earflap Hat",
+                                "name": "Earflap",
+                                "permalink": "earflap",
+                                "children": []
+                            },
+                            {
+                                "id": 420,
+                                "long_name": "Pixie Hat",
+                                "name": "Pixie",
+                                "permalink": "pixie",
+                                "children": []
+                            },
+                            {
+                                "id": 422,
+                                "long_name": "Stocking",
+                                "name": "Stocking",
+                                "permalink": "stocking",
+                                "children": []
+                            },
+                            {
+                                "id": 423,
+                                "long_name": "Yarmulke",
+                                "name": "Yarmulke",
+                                "permalink": "yarmulke",
+                                "children": []
+                            },
+                            {
+                                "id": 915,
+                                "long_name": "Hats - Other",
+                                "name": "Other",
+                                "permalink": "other-hat",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 427,
+                        "long_name": "Jewelry",
+                        "name": "Jewelry",
+                        "permalink": "jewelry",
+                        "children": [
+                            {
+                                "id": 428,
+                                "long_name": "Earrings",
+                                "name": "Earrings",
+                                "permalink": "earrings",
+                                "children": []
+                            },
+                            {
+                                "id": 429,
+                                "long_name": "Necklace",
+                                "name": "Necklace",
+                                "permalink": "necklace",
+                                "children": []
+                            },
+                            {
+                                "id": 430,
+                                "long_name": "Bracelet",
+                                "name": "Bracelet",
+                                "permalink": "bracelet",
+                                "children": []
+                            },
+                            {
+                                "id": 431,
+                                "long_name": "Brooch",
+                                "name": "Brooch",
+                                "permalink": "brooch",
+                                "children": []
+                            },
+                            {
+                                "id": 432,
+                                "long_name": "Ring",
+                                "name": "Ring",
+                                "permalink": "ring",
+                                "children": []
+                            },
+                            {
+                                "id": 433,
+                                "long_name": "Anklet",
+                                "name": "Ankle",
+                                "permalink": "ankle",
+                                "children": []
+                            },
+                            {
+                                "id": 893,
+                                "long_name": "Jewelry - Other",
+                                "name": "Other",
+                                "permalink": "other-jewelry",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 895,
+                        "long_name": "Accessories - Other",
+                        "name": "Other",
+                        "permalink": "other-accessories",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "id": 440,
+                "long_name": "Medical",
+                "name": "Medical",
+                "permalink": "medical",
+                "children": []
+            },
+            {
+                "id": 449,
+                "long_name": "Home",
+                "name": "Home",
+                "permalink": "home",
+                "children": [
+                    {
+                        "id": 450,
+                        "long_name": "Blanket",
+                        "name": "Blanket",
+                        "permalink": "blanket",
+                        "children": [
+                            {
+                                "id": 451,
+                                "long_name": "Throw",
+                                "name": "Throw",
+                                "permalink": "throw",
+                                "children": []
+                            },
+                            {
+                                "id": 452,
+                                "long_name": "Bedspread",
+                                "name": "Bedspread",
+                                "permalink": "bedspread",
+                                "children": []
+                            },
+                            {
+                                "id": 886,
+                                "long_name": "Baby Blanket",
+                                "name": "Baby Blanket",
+                                "permalink": "babyblanket",
+                                "children": []
+                            },
+                            {
+                                "id": 899,
+                                "long_name": "Blanket - Other",
+                                "name": "Other",
+                                "permalink": "other-blanket",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 453,
+                        "long_name": "Pillow / Cushion",
+                        "name": "Pillow",
+                        "permalink": "pillow",
+                        "children": []
+                    },
+                    {
+                        "id": 455,
+                        "long_name": "Table Setting",
+                        "name": "Table Setting",
+                        "permalink": "tablesetting",
+                        "children": [
+                            {
+                                "id": 456,
+                                "long_name": "Table Runner",
+                                "name": "Table Runner",
+                                "permalink": "tablerunner",
+                                "children": []
+                            },
+                            {
+                                "id": 457,
+                                "long_name": "Tablecloth",
+                                "name": "Tablecloth",
+                                "permalink": "tablecloth",
+                                "children": []
+                            },
+                            {
+                                "id": 458,
+                                "long_name": "Napkin",
+                                "name": "Napkin",
+                                "permalink": "napkin",
+                                "children": []
+                            },
+                            {
+                                "id": 460,
+                                "long_name": "Placemat",
+                                "name": "Placemat",
+                                "permalink": "placemat",
+                                "children": []
+                            },
+                            {
+                                "id": 903,
+                                "long_name": "Table Setting - Other",
+                                "name": "Other",
+                                "permalink": "other-tablesetting",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 461,
+                        "long_name": "Curtain",
+                        "name": "Curtain",
+                        "permalink": "curtain",
+                        "children": []
+                    },
+                    {
+                        "id": 468,
+                        "long_name": "Coaster",
+                        "name": "Coaster",
+                        "permalink": "coaster",
+                        "children": []
+                    },
+                    {
+                        "id": 470,
+                        "long_name": "Containers",
+                        "name": "Containers",
+                        "permalink": "containers",
+                        "children": []
+                    },
+                    {
+                        "id": 474,
+                        "long_name": "Sachet",
+                        "name": "Sachet",
+                        "permalink": "sachet",
+                        "children": []
+                    },
+                    {
+                        "id": 475,
+                        "long_name": "Potholder",
+                        "name": "Potholder",
+                        "permalink": "potholder",
+                        "children": []
+                    },
+                    {
+                        "id": 476,
+                        "long_name": "Rug",
+                        "name": "Rug",
+                        "permalink": "rug",
+                        "children": []
+                    },
+                    {
+                        "id": 480,
+                        "long_name": "Lampshade",
+                        "name": "Lampshade",
+                        "permalink": "lampshade",
+                        "children": []
+                    },
+                    {
+                        "id": 481,
+                        "long_name": "Cleaning",
+                        "name": "Cleaning",
+                        "permalink": "cleaning",
+                        "children": [
+                            {
+                                "id": 482,
+                                "long_name": "Washcloth / Dishcloth",
+                                "name": "Washcloth / Dishcloth",
+                                "permalink": "washcloth",
+                                "children": []
+                            },
+                            {
+                                "id": 484,
+                                "long_name": "Scrubber",
+                                "name": "Scrubber",
+                                "permalink": "scrubber",
+                                "children": []
+                            },
+                            {
+                                "id": 486,
+                                "long_name": "Towel",
+                                "name": "Towel",
+                                "permalink": "towel",
+                                "children": []
+                            },
+                            {
+                                "id": 488,
+                                "long_name": "Bath Mitt",
+                                "name": "Bath Mitt",
+                                "permalink": "bathmitt",
+                                "children": []
+                            },
+                            {
+                                "id": 900,
+                                "long_name": "Cleaning - Other",
+                                "name": "Other",
+                                "permalink": "other-cleaning",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 492,
+                        "long_name": "Cozy",
+                        "name": "Cozy",
+                        "permalink": "cozy",
+                        "children": [
+                            {
+                                "id": 493,
+                                "long_name": "Cup / Mug",
+                                "name": "Cup / Mug",
+                                "permalink": "cup-mug",
+                                "children": []
+                            },
+                            {
+                                "id": 497,
+                                "long_name": "Hot Water Bottle",
+                                "name": "Hot Water Bottle",
+                                "permalink": "hotwaterbottle",
+                                "children": []
+                            },
+                            {
+                                "id": 498,
+                                "long_name": "Lip Balm Cozy",
+                                "name": "Lip Balm",
+                                "permalink": "lipbalm",
+                                "children": []
+                            },
+                            {
+                                "id": 500,
+                                "long_name": "Electronics Cozy",
+                                "name": "Electronics",
+                                "permalink": "electronics",
+                                "children": []
+                            },
+                            {
+                                "id": 501,
+                                "long_name": "Food Cozy",
+                                "name": "Food Cozy",
+                                "permalink": "foodcozy",
+                                "children": []
+                            },
+                            {
+                                "id": 502,
+                                "long_name": "Book Cover",
+                                "name": "Book Cover",
+                                "permalink": "bookcover",
+                                "children": []
+                            },
+                            {
+                                "id": 503,
+                                "long_name": "Tissue Box Cover",
+                                "name": "Tissue Box Cover",
+                                "permalink": "tissueboxcover",
+                                "children": []
+                            },
+                            {
+                                "id": 504,
+                                "long_name": "Automobile",
+                                "name": "Automobile",
+                                "permalink": "automobile",
+                                "children": []
+                            },
+                            {
+                                "id": 506,
+                                "long_name": "Glasses Case",
+                                "name": "Glasses Case",
+                                "permalink": "glassescase",
+                                "children": []
+                            },
+                            {
+                                "id": 507,
+                                "long_name": "Hanger Cover",
+                                "name": "Hanger Cover",
+                                "permalink": "hangercover",
+                                "children": []
+                            },
+                            {
+                                "id": 508,
+                                "long_name": "Bathroom",
+                                "name": "Bathroom",
+                                "permalink": "bathroom",
+                                "children": []
+                            },
+                            {
+                                "id": 512,
+                                "long_name": "Mature Content Toys",
+                                "name": "Mature Content Toys",
+                                "permalink": "maturecontenttoys",
+                                "children": []
+                            },
+                            {
+                                "id": 513,
+                                "long_name": "Sports Equipment",
+                                "name": "Sports Equipment",
+                                "permalink": "sportsequipment",
+                                "children": []
+                            },
+                            {
+                                "id": 884,
+                                "long_name": "Coffee / Tea Pot",
+                                "name": "Coffee / Tea Pot",
+                                "permalink": "coffee-teapot",
+                                "children": []
+                            },
+                            {
+                                "id": 901,
+                                "long_name": "Cozy - Other",
+                                "name": "Other",
+                                "permalink": "other-cozy",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 514,
+                        "long_name": "Bookmark",
+                        "name": "Bookmark",
+                        "permalink": "bookmark",
+                        "children": []
+                    },
+                    {
+                        "id": 516,
+                        "long_name": "Decorative Ornament",
+                        "name": "Decorative",
+                        "permalink": "decorative",
+                        "children": [
+                            {
+                                "id": 515,
+                                "long_name": "Doily",
+                                "name": "Doily",
+                                "permalink": "doily",
+                                "children": []
+                            },
+                            {
+                                "id": 517,
+                                "long_name": "Ornamental Flower",
+                                "name": "Ornamental Flower",
+                                "permalink": "ornamentalflower",
+                                "children": []
+                            },
+                            {
+                                "id": 518,
+                                "long_name": "Hanging Ornament",
+                                "name": "Hanging Ornament",
+                                "permalink": "hangingornament",
+                                "children": []
+                            },
+                            {
+                                "id": 521,
+                                "long_name": "Wall Hanging",
+                                "name": "Wall Hanging",
+                                "permalink": "wallhanging",
+                                "children": []
+                            },
+                            {
+                                "id": 522,
+                                "long_name": "Wreath",
+                                "name": "Wreath",
+                                "permalink": "wreath",
+                                "children": []
+                            },
+                            {
+                                "id": 523,
+                                "long_name": "Christmas Stocking",
+                                "name": "Christmas Stocking",
+                                "permalink": "christmasstocking",
+                                "children": []
+                            },
+                            {
+                                "id": 525,
+                                "long_name": "Picture Frame",
+                                "name": "Picture Frame",
+                                "permalink": "pictureframe",
+                                "children": []
+                            },
+                            {
+                                "id": 902,
+                                "long_name": "Decorative - Other",
+                                "name": "Other",
+                                "permalink": "other-decorative",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 904,
+                        "long_name": "Home - Other",
+                        "name": "Other",
+                        "permalink": "other-home",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "id": 526,
+                "long_name": "Toys and Hobbies",
+                "name": "Toys and Hobbies",
+                "permalink": "toysandhobbies",
+                "children": [
+                    {
+                        "id": 520,
+                        "long_name": "Softies",
+                        "name": "Softies",
+                        "permalink": "softies",
+                        "children": [
+                            {
+                                "id": 527,
+                                "long_name": "Doll",
+                                "name": "Doll",
+                                "permalink": "doll",
+                                "children": []
+                            },
+                            {
+                                "id": 530,
+                                "long_name": "Animal Toy",
+                                "name": "Animal",
+                                "permalink": "animal",
+                                "children": []
+                            },
+                            {
+                                "id": 531,
+                                "long_name": "Toy Plant",
+                                "name": "Plant",
+                                "permalink": "plant",
+                                "children": []
+                            },
+                            {
+                                "id": 539,
+                                "long_name": "Toy Vehicle",
+                                "name": "Vehicle",
+                                "permalink": "vehicle",
+                                "children": []
+                            },
+                            {
+                                "id": 908,
+                                "long_name": "Softies - Other",
+                                "name": "Other",
+                                "permalink": "other-softies",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 528,
+                        "long_name": "Doll Clothes",
+                        "name": "Doll Clothes",
+                        "permalink": "dollclothes",
+                        "children": [
+                            {
+                                "id": 917,
+                                "long_name": "Fashion Doll (Barbie, etc)",
+                                "name": "Fashion doll",
+                                "permalink": "fashion-doll",
+                                "children": []
+                            },
+                            {
+                                "id": 918,
+                                "long_name": "Child Doll (American Girl, Sasha, etc)",
+                                "name": "Child Doll",
+                                "permalink": "child-doll",
+                                "children": []
+                            },
+                            {
+                                "id": 919,
+                                "long_name": "Baby Doll",
+                                "name": "Baby Doll",
+                                "permalink": "baby-doll",
+                                "children": []
+                            },
+                            {
+                                "id": 920,
+                                "long_name": "Doll Clothes - Other",
+                                "name": "Other",
+                                "permalink": "other-dollclothes",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 532,
+                        "long_name": "Toy Food",
+                        "name": "Food",
+                        "permalink": "food",
+                        "children": []
+                    },
+                    {
+                        "id": 533,
+                        "long_name": "Puppet",
+                        "name": "Puppet",
+                        "permalink": "puppet",
+                        "children": []
+                    },
+                    {
+                        "id": 534,
+                        "long_name": "Toy Mobile",
+                        "name": "Mobile",
+                        "permalink": "mobile",
+                        "children": []
+                    },
+                    {
+                        "id": 535,
+                        "long_name": "Toy Game",
+                        "name": "Game",
+                        "permalink": "game",
+                        "children": []
+                    },
+                    {
+                        "id": 537,
+                        "long_name": "Ball",
+                        "name": "Ball",
+                        "permalink": "ball",
+                        "children": []
+                    },
+                    {
+                        "id": 541,
+                        "long_name": "Blocks",
+                        "name": "Blocks",
+                        "permalink": "blocks",
+                        "children": []
+                    },
+                    {
+                        "id": 543,
+                        "long_name": "Costume",
+                        "name": "Costume",
+                        "permalink": "costume",
+                        "children": []
+                    },
+                    {
+                        "id": 553,
+                        "long_name": "Mature Content",
+                        "name": "Mature Content",
+                        "permalink": "maturecontent",
+                        "children": []
+                    },
+                    {
+                        "id": 554,
+                        "long_name": "Craft",
+                        "name": "Craft",
+                        "permalink": "craft",
+                        "children": [
+                            {
+                                "id": 555,
+                                "long_name": "Needle Holder",
+                                "name": "Needle Holder",
+                                "permalink": "needleholder",
+                                "children": []
+                            },
+                            {
+                                "id": 556,
+                                "long_name": "Crochet Hook Holder",
+                                "name": "Crochet Hook Holder",
+                                "permalink": "crochethookholder",
+                                "children": []
+                            },
+                            {
+                                "id": 557,
+                                "long_name": "Pin Cushion",
+                                "name": "Pin Cushion",
+                                "permalink": "pincushion",
+                                "children": []
+                            },
+                            {
+                                "id": 560,
+                                "long_name": "Tape Measure Cover",
+                                "name": "Tape Measure Cover",
+                                "permalink": "tapemeasurecover",
+                                "children": []
+                            },
+                            {
+                                "id": 907,
+                                "long_name": "Craft - Other",
+                                "name": "Other",
+                                "permalink": "other-craft",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 909,
+                        "long_name": "Toys and Hobbies - Other",
+                        "name": "Other",
+                        "permalink": "other-toysandhobbies",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "id": 565,
+                "long_name": "Pet",
+                "name": "Pet",
+                "permalink": "pet",
+                "children": [
+                    {
+                        "id": 566,
+                        "long_name": "Pet Clothing",
+                        "name": "Clothing",
+                        "permalink": "pet-clothing",
+                        "children": []
+                    },
+                    {
+                        "id": 567,
+                        "long_name": "Bedding",
+                        "name": "Bedding",
+                        "permalink": "bedding",
+                        "children": []
+                    },
+                    {
+                        "id": 568,
+                        "long_name": "Accessory",
+                        "name": "Accessory",
+                        "permalink": "accessory",
+                        "children": []
+                    },
+                    {
+                        "id": 569,
+                        "long_name": "Pet Toys",
+                        "name": "Toys",
+                        "permalink": "toys",
+                        "children": []
+                    },
+                    {
+                        "id": 906,
+                        "long_name": "Pet - Other",
+                        "name": "Other",
+                        "permalink": "other-pet",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "id": 570,
+                "long_name": "Component (stitch, edge)",
+                "name": "Components",
+                "permalink": "pattern-component",
+                "children": [
+                    {
+                        "id": 571,
+                        "long_name": "Tutorial",
+                        "name": "Tutorial",
+                        "permalink": "tutorial",
+                        "children": []
+                    },
+                    {
+                        "id": 572,
+                        "long_name": "Edging",
+                        "name": "Edging",
+                        "permalink": "edging",
+                        "children": []
+                    },
+                    {
+                        "id": 573,
+                        "long_name": "Insertion",
+                        "name": "Insertion",
+                        "permalink": "insertion",
+                        "children": []
+                    },
+                    {
+                        "id": 574,
+                        "long_name": "Button",
+                        "name": "Button",
+                        "permalink": "button",
+                        "children": []
+                    },
+                    {
+                        "id": 575,
+                        "long_name": "Frog",
+                        "name": "Frog",
+                        "permalink": "frog",
+                        "children": []
+                    },
+                    {
+                        "id": 577,
+                        "long_name": "Afghan block",
+                        "name": "Afghan block",
+                        "permalink": "afghanblock",
+                        "children": []
+                    },
+                    {
+                        "id": 579,
+                        "long_name": "Floral block",
+                        "name": "Floral block",
+                        "permalink": "floralblock",
+                        "children": []
+                    },
+                    {
+                        "id": 580,
+                        "long_name": "Stitch pattern",
+                        "name": "Stitch pattern",
+                        "permalink": "stitchpattern",
+                        "children": []
+                    },
+                    {
+                        "id": 581,
+                        "long_name": "Chart",
+                        "name": "Chart",
+                        "permalink": "chart",
+                        "children": []
+                    },
+                    {
+                        "id": 905,
+                        "long_name": "Component (stitch, edge) - Other",
+                        "name": "Other",
+                        "permalink": "other-x-notapattern",
+                        "children": []
+                    },
+                    {
+                        "id": 911,
+                        "long_name": "Applique / Embellishment",
+                        "name": "Applique / Embellishment",
+                        "permalink": "applique",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    }
+}

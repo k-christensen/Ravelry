@@ -1,0 +1,1667 @@
+{
+    "attribute_groups": [
+        {
+            "id": 27,
+            "name": "Accessibility",
+            "permalink": "accessibility",
+            "children": [],
+            "pattern_attributes": [
+                {
+                    "description": "Design has features to support disability or medical needs",
+                    "id": 322,
+                    "name": "adaptive design",
+                    "sort_order": 1
+                },
+                {
+                    "description": "Design provides for access to/from a medical device",
+                    "id": 323,
+                    "name": "medical device access",
+                    "sort_order": 1
+                },
+                {
+                    "description": "Design is an accessory for a medical device",
+                    "id": 324,
+                    "name": "medical device support",
+                    "sort_order": 1
+                },
+                {
+                    "description": "Design is an accessory for a mobility aid",
+                    "id": 325,
+                    "name": "mobility aid support",
+                    "sort_order": 1
+                },
+                {
+                    "description": "",
+                    "id": 327,
+                    "name": "other",
+                    "sort_order": 100
+                },
+                {
+                    "description": "Therapy aids and toys",
+                    "id": 326,
+                    "name": "therapy aid/toy",
+                    "sort_order": 1
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Age / Size / Fit",
+            "permalink": "fit",
+            "children": [
+                {
+                    "id": 24,
+                    "name": "Age or Size",
+                    "permalink": "size",
+                    "children": [],
+                    "pattern_attributes": [
+                        {
+                            "description": "18 years or over",
+                            "id": 10,
+                            "name": "adult",
+                            "sort_order": 7
+                        },
+                        {
+                            "description": "birth to 12  months",
+                            "id": 4,
+                            "name": "baby",
+                            "sort_order": 3
+                        },
+                        {
+                            "description": "4 to 12 years",
+                            "id": 8,
+                            "name": "child (4-12)",
+                            "sort_order": 5
+                        },
+                        {
+                            "description": "scaled for a toy figure",
+                            "id": 20,
+                            "name": "doll",
+                            "sort_order": 0
+                        },
+                        {
+                            "description": "to fit a newborn baby",
+                            "id": 5,
+                            "name": "newborn",
+                            "sort_order": 2
+                        },
+                        {
+                            "description": "to fit a premature baby",
+                            "id": 6,
+                            "name": "preemie",
+                            "sort_order": 1
+                        },
+                        {
+                            "description": "13 to 17 years",
+                            "id": 9,
+                            "name": "teen (13-17)",
+                            "sort_order": 6
+                        },
+                        {
+                            "description": "1 to 3 years",
+                            "id": 7,
+                            "name": "toddler (1-3)",
+                            "sort_order": 4
+                        }
+                    ]
+                },
+                {
+                    "id": 18,
+                    "name": "Ease",
+                    "permalink": "ease",
+                    "children": [],
+                    "pattern_attributes": [
+                        {
+                            "description": "measurements of garment are  smaller than the corresponding body measurements, creating a snugger  fit",
+                            "id": 12,
+                            "name": "negative ease",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "measurements of  the garment are the same as corresponding body measurments",
+                            "id": 17,
+                            "name": "no ease",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "measurements of the garment are  larger than corresponding body measurements",
+                            "id": 257,
+                            "name": "positive ease",
+                            "sort_order": null
+                        }
+                    ]
+                },
+                {
+                    "id": 20,
+                    "name": "Fit",
+                    "permalink": "fit",
+                    "children": [],
+                    "pattern_attributes": [
+                        {
+                            "description": "fits close to the body",
+                            "id": 18,
+                            "name": "fitted",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "extra length and extra width/room is added to the waist to  accomodate a pregnant woman's stomach",
+                            "id": 16,
+                            "name": "maternity fit",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "designed to fit small-scale items",
+                            "id": 19,
+                            "name": "miniature",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "large amount of positive ease used as a design element.",
+                            "id": 11,
+                            "name": "oversized fit",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "contains instructions for size XS and smaller",
+                            "id": 13,
+                            "name": "petite fit",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "contains instructions for size XL and larger",
+                            "id": 14,
+                            "name": "plus fit",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "contains instructions for taller individuals",
+                            "id": 21,
+                            "name": "tall fit",
+                            "sort_order": null
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "name": "Gender",
+                    "permalink": "gender",
+                    "children": [],
+                    "pattern_attributes": [
+                        {
+                            "description": "Usually used or worn by females",
+                            "id": 2,
+                            "name": "female",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "Usually used or worn by males",
+                            "id": 1,
+                            "name": "male",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "Used or worn by anyone",
+                            "id": 3,
+                            "name": "unisex",
+                            "sort_order": null
+                        }
+                    ]
+                }
+            ],
+            "pattern_attributes": [
+                {
+                    "description": "",
+                    "id": 307,
+                    "name": "placeholder",
+                    "sort_order": null
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Colorwork",
+            "permalink": "colorwork",
+            "children": [],
+            "pattern_attributes": [
+                {
+                    "description": "a two-color ribbing in which the knits are worked in one color and the purls in a second color.",
+                    "id": 309,
+                    "name": "corrugated ribbing",
+                    "sort_order": null
+                },
+                {
+                    "description": "a knitting and crochet technique that produces an hidden image that is only viewable from an angle.",
+                    "id": 183,
+                    "name": "illusion/shadow",
+                    "sort_order": null
+                },
+                {
+                    "description": "colorwork technique used to create separate blocks of color and in which each area of color has its own separate length of yarn.",
+                    "id": 184,
+                    "name": "Intarsia",
+                    "sort_order": null
+                },
+                {
+                    "description": "colorwork technique in which the color pattern is made by slipping stitches, with only one color is worked on each row.",
+                    "id": 186,
+                    "name": "mosaic",
+                    "sort_order": null
+                },
+                {
+                    "description": "",
+                    "id": 306,
+                    "name": "other",
+                    "sort_order": null
+                },
+                {
+                    "description": "multi-color knitting with all yarn used in the row/round carried across the back of the work.",
+                    "id": 181,
+                    "name": "stranded",
+                    "sort_order": null
+                },
+                {
+                    "description": "Alternating sections of two or more colors",
+                    "id": 311,
+                    "name": "stripes / colorwork",
+                    "sort_order": null
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Construction",
+            "permalink": "construction",
+            "children": [],
+            "pattern_attributes": [
+                {
+                    "description": "worked on the diagonal.",
+                    "id": 189,
+                    "name": "bias",
+                    "sort_order": null
+                },
+                {
+                    "description": "worked from the bottom of the garment/accessory toward the top.",
+                    "id": 212,
+                    "name": "bottom up",
+                    "sort_order": null
+                },
+                {
+                    "description": "a small hole or slit in a garment or piece of fabric used for fastening a button.",
+                    "id": 190,
+                    "name": "buttonholes",
+                    "sort_order": null
+                },
+                {
+                    "description": "a knitting technique in which one works with two yarns simultaneously to create two separate pieces of fabric that may be joined at the sides and bottom or remain unconnected.",
+                    "id": 164,
+                    "name": "double knitting",
+                    "sort_order": null
+                },
+                {
+                    "description": "a knitting and crochet technique used to create a textured diamond or basketwork pattern.",
+                    "id": 166,
+                    "name": "entrelac",
+                    "sort_order": null
+                },
+                {
+                    "description": "a finishing process in which the animal fiber fabric is subjected to moisture, heat, and friction so that the fibers cling together, thus shrinking considerably to make a denser and thicker fabric.",
+                    "id": 196,
+                    "name": "felted/fulled",
+                    "sort_order": null
+                },
+                {
+                    "description": "crochet or knitting worked in seemingly random shapes, colors, and techniques.",
+                    "id": 197,
+                    "name": "freeform",
+                    "sort_order": null
+                },
+                {
+                    "description": "an insertion of an extra shape of fabric separate from the main body of knitting, typically in the shape of a triangle or diamond, used to increase strength or aid in movement.",
+                    "id": 300,
+                    "name": "gusset",
+                    "sort_order": null
+                },
+                {
+                    "description": "a narrow tube of knitting worked in the round that is often used for the handles of a bag, cords to tie on a hat, to edge a garment, or for a decorative effect.",
+                    "id": 193,
+                    "name": "icord",
+                    "sort_order": null
+                },
+                {
+                    "description": "a method of connecting the live stitches of two pieces of knitting by following loops of knit or purl stitches, resulting in a seamless look.",
+                    "id": 200,
+                    "name": "kitchener/grafting",
+                    "sort_order": null
+                },
+                {
+                    "description": "a technique in which small pieces of fabric are joined together as they are worked to make a larger item.",
+                    "id": 173,
+                    "name": "modular / join as you go",
+                    "sort_order": null
+                },
+                {
+                    "description": "A twisted shape with only one side worked by using a moebius cast-on with a circular needle or twisted cast-on in crochet and working outward, or by joining the ends of a flat piece with a 1/2 twist.",
+                    "id": 174,
+                    "name": "moebius",
+                    "sort_order": null
+                },
+                {
+                    "description": "components or elements that are worked separately and either joined as they are worked or seamed together after completion. Does not apply to colorwork design motifs.",
+                    "id": 314,
+                    "name": "motifs",
+                    "sort_order": null
+                },
+                {
+                    "description": "worked in one piece, either seamlessly or with seams.",
+                    "id": 204,
+                    "name": "one-piece ",
+                    "sort_order": null
+                },
+                {
+                    "description": "A cast-on worked with waste yarn that is later removed so the cast-on stitches can be picked up and knit in the opposite direction.",
+                    "id": 301,
+                    "name": "provisional cast-on",
+                    "sort_order": null
+                },
+                {
+                    "description": "worked as individual pieces, joined together with a seam.",
+                    "id": 86,
+                    "name": "seamed",
+                    "sort_order": null
+                },
+                {
+                    "description": "not joined by or having seams",
+                    "id": 205,
+                    "name": "seamless",
+                    "sort_order": null
+                },
+                {
+                    "description": "edge stitches, usually only one or two stitches distinct from the body of the garment (such as a slipped stitch or a single garter stitch at the end/beginning of each row).",
+                    "id": 201,
+                    "name": "selvedge",
+                    "sort_order": null
+                },
+                {
+                    "description": "A technique where partial rows are worked back and forth, adding a curve, bulge, or shaping to an otherwise flat piece.",
+                    "id": 206,
+                    "name": "short rows",
+                    "sort_order": null
+                },
+                {
+                    "description": "Worked from side to side rather than top down or bottom up.",
+                    "id": 207,
+                    "name": "sideways",
+                    "sort_order": null
+                },
+                {
+                    "description": "A vertical column of knitted stitches intended to be cut apart  during the finishing of the item.",
+                    "id": 210,
+                    "name": "steeks",
+                    "sort_order": null
+                },
+                {
+                    "description": "A method of joining two pieces together in knitting in which the live stitches from two pieces are knit together and cast off with a third needle.",
+                    "id": 299,
+                    "name": "three needle bind off",
+                    "sort_order": null
+                },
+                {
+                    "description": "Short pieces of roving or other thick material used to add thickness and insulation. Ususally creates a decorative V-shaped pattern on the public side of the piece.",
+                    "id": 213,
+                    "name": "thrums",
+                    "sort_order": null
+                },
+                {
+                    "description": "worked from the top of the garment/accessory toward the bottom.",
+                    "id": 211,
+                    "name": "top down",
+                    "sort_order": null
+                },
+                {
+                    "description": "A technique, originating in Sweden, that uses two strands of yarn (usually two ends of the same ball of yarn) which are twined between stitches.  Also called two-end knitting, or Tv\u00e5\u00e4ndsstickning",
+                    "id": 287,
+                    "name": "twined knitting",
+                    "sort_order": null
+                },
+                {
+                    "description": "worked back-and-forth in rows.",
+                    "id": 285,
+                    "name": "worked flat",
+                    "sort_order": null
+                },
+                {
+                    "description": "Worked in a continuous around and around fashion. Can be flat (like a circular shawl started from the center) or tubular (like a sock or sleeve).",
+                    "id": 286,
+                    "name": "worked in the round",
+                    "sort_order": null
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Crochet Techniques",
+            "permalink": "crochet",
+            "children": [],
+            "pattern_attributes": [
+                {
+                    "description": "a technique that utilizes a large dowel, broomstick, or knitting needle to create large loops that are incorporated into a lacy fabric.",
+                    "id": 158,
+                    "name": "broomstick crochet",
+                    "sort_order": null
+                },
+                {
+                    "description": "a technique imitating bobbin-made braid/tape laces.",
+                    "id": 159,
+                    "name": "bruges crochet",
+                    "sort_order": null
+                },
+                {
+                    "description": "a technique that creates a wrapped look or \"bullion\" around the stitch.",
+                    "id": 160,
+                    "name": "bullion / roll stitch",
+                    "sort_order": null
+                },
+                {
+                    "description": "a small knot made by making a chain, alternately wrapping the thread around the hook and chain, then drawing a loop through all loops on hook. A slip stitch is worked over the base of knot to close.",
+                    "id": 161,
+                    "name": "clones knot",
+                    "sort_order": null
+                },
+                {
+                    "description": "a variation of tunisian crochet that uses a double ended hook to create a double sided fabric.",
+                    "id": 163,
+                    "name": "cro-hook / croknit",
+                    "sort_order": null
+                },
+                {
+                    "description": "a cross between needle tatting and crochet, made with straight hooks like those used in bullion crochet.",
+                    "id": 162,
+                    "name": "cro-tatting / crochet",
+                    "sort_order": null
+                },
+                {
+                    "description": "a grid-like type of crocheted lace fabric which uses only two crochet stitches: the chain stitch and the double crochet stitch (or treble).",
+                    "id": 167,
+                    "name": "filet crochet",
+                    "sort_order": null
+                },
+                {
+                    "description": "a stitch which is worked around the \"post\" of the stitch in the previous row, instead of into the top of the stitch like in a \"normal\" crochet stitch.",
+                    "id": 168,
+                    "name": "front/back post stitch",
+                    "sort_order": null
+                },
+                {
+                    "description": "crochet square motifs (many possible variations).",
+                    "id": 273,
+                    "name": "granny square",
+                    "sort_order": null
+                },
+                {
+                    "description": "a textile-making technique in which a lacy fabric is made by forming open, looped stitches with a crochet hook and a hairpin lace loom, a small handheld tool having two parallel metal prongs around which the loops are formed.",
+                    "id": 169,
+                    "name": "hairpin crochet",
+                    "sort_order": null
+                },
+                {
+                    "description": "a technique characterized by separately crocheted motifs later assembled into a mesh background, which usually employs several sizes of thread. Padded crochet, multiple thicknesses of thread (the thickest is used for the padding cord), and joining-while-b",
+                    "id": 170,
+                    "name": "Irish crochet",
+                    "sort_order": null
+                },
+                {
+                    "description": "a crochet technique in which a single crochet is worked into an elongated loop. Creates a mesh-like, open fabric.",
+                    "id": 171,
+                    "name": "lover's knot/Solomon's knot/knot stitch",
+                    "sort_order": null
+                },
+                {
+                    "description": "a common traditional lacy motif resembling a pineapple in shape which can be worked alone or joined, or used as a design element in a crocheted lace item.",
+                    "id": 313,
+                    "name": "pineapple crochet",
+                    "sort_order": null
+                },
+                {
+                    "description": "A technique using only slip stitches to create fabric. Usually thinner and stretchier than other crochet fabric, sometimes has the appearance of knitted fabric. Also referred to as pjoning, Bosnian crochet and shepherd\u2019s knitting.",
+                    "id": 315,
+                    "name": "slip stitch crochet",
+                    "sort_order": null
+                },
+                {
+                    "description": "a method in which embellishments or designs are added by crocheting them onto/into the finished fabric.",
+                    "id": 296,
+                    "name": "surface crochet",
+                    "sort_order": null
+                },
+                {
+                    "description": "a technique using multiple yarns, usually in different colors, that are carried across to create a motif; also referred to as mosaic, jacquard, intarsa, colorwork, fair-isle, or hard crochet.",
+                    "id": 274,
+                    "name": "tapestry crochet",
+                    "sort_order": null
+                },
+                {
+                    "description": "typically worked on a long hook with a stopper on the end; creates a fabric that looks almost woven instead of either knitted or crocheted. Also referred to as Afghan Crochet or Afghan Stitch.",
+                    "id": 178,
+                    "name": "Tunisian / afghan crochet",
+                    "sort_order": null
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Design Elements",
+            "permalink": "design",
+            "children": [
+                {
+                    "id": 17,
+                    "name": "Collar",
+                    "permalink": "collar",
+                    "children": [],
+                    "pattern_attributes": [
+                        {
+                            "description": "An extra length of fabric that is attached to the neck opening of a garment.",
+                            "id": 93,
+                            "name": "collared",
+                            "sort_order": 1
+                        },
+                        {
+                            "description": "A short standing collar that is separated by a gap at the front and/or back.  Also called a Nehru collar.",
+                            "id": 256,
+                            "name": "mandarin",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a small flat collar that is rounded at the front.",
+                            "id": 94,
+                            "name": "peter pan",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a collar or edge treatment to for a neck that is closely rolled and and very short.",
+                            "id": 255,
+                            "name": "rolled",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a wide, turned-over collar of a garment that combines with lapels forming an unbroken curving line.",
+                            "id": 96,
+                            "name": "shawl collar",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "short folded collar that opens in the middle and has pointed ends. Sometimes fastens with buttons.",
+                            "id": 99,
+                            "name": "shirt",
+                            "sort_order": null
+                        }
+                    ]
+                },
+                {
+                    "id": 19,
+                    "name": "Edging",
+                    "permalink": "edging",
+                    "children": [],
+                    "pattern_attributes": [
+                        {
+                            "description": "an edge that is added to a piece using a crochet hook.",
+                            "id": 292,
+                            "name": "crocheted edging",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "An edge to that is added to fabric (applied either during the construction or after, during finishing) made of a narrow tube worked in stockinette.",
+                            "id": 293,
+                            "name": "icord edging",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "an edge of an item that includes open work in knitted or crocheted lace",
+                            "id": 294,
+                            "name": "lace edging",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "",
+                            "id": 295,
+                            "name": "other edging",
+                            "sort_order": null
+                        }
+                    ]
+                },
+                {
+                    "id": 22,
+                    "name": "Neck",
+                    "permalink": "neck",
+                    "children": [],
+                    "pattern_attributes": [
+                        {
+                            "description": "a high, wide scoop neck.",
+                            "id": 92,
+                            "name": "ballet neck",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a neckline created when two rectangles are sewn together (sometimes overlapping) leaving an unshaped opening in the middle.",
+                            "id": 91,
+                            "name": "boat neck",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a loose-fitting, draped, turned-over neckline.",
+                            "id": 98,
+                            "name": "cowl neck",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a round neckline that is close to the neck.",
+                            "id": 97,
+                            "name": "crew neck",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a neckline/collar that is worked as an extension of the body and usually extends a short distance.",
+                            "id": 281,
+                            "name": "funnel neck",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a neckline with straps, bands, or ties that wrap around and connect at the nape of the neck.",
+                            "id": 252,
+                            "name": "halter",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a neckline treatment with a placket (usually buttoned) and round neck, with a band or no collar.",
+                            "id": 100,
+                            "name": "henley",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a neckline with a rounded opening which closes at the top.",
+                            "id": 102,
+                            "name": "keyhole neck",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a tube neck, shorter than a turtleneck, generally with no foldover.",
+                            "id": 253,
+                            "name": "mock turtle",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a low rounded neckline. aan be almost as short as a crew neck or very deep.",
+                            "id": 103,
+                            "name": "scoop neck",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a neckline that has distinct corners in the front, with parallel side edges.",
+                            "id": 104,
+                            "name": "square neck",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a cross over necklin which can be constructed as a wrap front garment or as a single front with one layer of the neckline under the other.",
+                            "id": 108,
+                            "name": "surplice",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a rounded v-neck which creates a shape like a heart.",
+                            "id": 105,
+                            "name": "sweetheart neck",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a tall rolled or folded collar, which is called turtleneck in the US, polo neck in the UK.",
+                            "id": 106,
+                            "name": "turtle neck",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a neckline with straight sides that meet at a pointed bottom.",
+                            "id": 107,
+                            "name": "v neck",
+                            "sort_order": null
+                        }
+                    ]
+                },
+                {
+                    "id": 23,
+                    "name": "Pocket",
+                    "permalink": "pocket",
+                    "children": [],
+                    "pattern_attributes": [
+                        {
+                            "description": "a pocket added after the garment is completed",
+                            "id": 83,
+                            "name": "afterthought pocket",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "has another type of pocket incorporated into the design not included in the list",
+                            "id": 78,
+                            "name": "any pockets",
+                            "sort_order": 1
+                        },
+                        {
+                            "description": "a pocket in the garment seam that isn't readily visible",
+                            "id": 254,
+                            "name": "hidden / inseam",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a pocket made from a separate piece that's sewn on",
+                            "id": 79,
+                            "name": "patch",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a pocket whose opening is knitted into the body of a garment",
+                            "id": 123,
+                            "name": "set-in",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "",
+                            "id": 82,
+                            "name": "tubular",
+                            "sort_order": null
+                        }
+                    ]
+                },
+                {
+                    "id": 25,
+                    "name": "Sleeve",
+                    "permalink": "sleeve",
+                    "children": [],
+                    "pattern_attributes": [
+                        {
+                            "description": "a sleeve that ends halfway between the wrist bone and the elbow.",
+                            "id": 116,
+                            "name": "3/4 length",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "not sleeveless.",
+                            "id": 114,
+                            "name": "any sleeves",
+                            "sort_order": 1
+                        },
+                        {
+                            "description": "sleeve ends slightly above the wrist bone.",
+                            "id": 279,
+                            "name": "bracelet length",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a very short sleeve style which covers the top of shoulder and usually has little or no length at the underarm.",
+                            "id": 120,
+                            "name": "cap",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a technique where the shoulder seams and sleeve caps of a garment are worked from the top down.",
+                            "id": 319,
+                            "name": "contiguous",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "sleeve has a cuff, fold, or band that serves as the trim or finish to the bottom.",
+                            "id": 280,
+                            "name": "cuffed",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a sleeve usually formed integrally with the front and back with a deep armhole starting low on the body; often shaped like a large triangle tapering at the wrist.",
+                            "id": 125,
+                            "name": "dolman",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a shoulder seam that extends beyond the natural shoulder edge and usually creates a wider fitting sleeve.",
+                            "id": 271,
+                            "name": "drop",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "sleeve ends at the elbow",
+                            "id": 118,
+                            "name": "elbow",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a short, loose sleeve that falls in folds over the upper arm.",
+                            "id": 124,
+                            "name": "flutter",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "sleeve ends at the wrist bone or later",
+                            "id": 117,
+                            "name": "long",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a drop sleeve with minimal shaping at the armpit to reduce fabric bulk.",
+                            "id": 275,
+                            "name": "modified drop",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "diagonal armhole shaping running from the underarm to the middle of the sleeve. Reverse shaping to Raglan.",
+                            "id": 128,
+                            "name": "Nalgar (EZ notation)",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "sleeves with extra fullness at the shoulder, generally gathered or pleated at the top of the armhole seam and again in a band at the sleeve bottom.",
+                            "id": 278,
+                            "name": "puffed",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "diagonal armhole shaping, running from the underarm to the neckline.",
+                            "id": 127,
+                            "name": "raglan",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a sleeve with a narrow strip that extends to the neckline which creates two shoulder seams rather than one.",
+                            "id": 130,
+                            "name": "saddle shoulder",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "armhole shaping like that on a 'traditional' dress or buttondown shirt.  A scooped shape at the underarm extending in a straight line up to the shoulder.",
+                            "id": 129,
+                            "name": "set in",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a sleeve that ends above the elbow.",
+                            "id": 119,
+                            "name": "short",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a garment that is without any sort of sleeve",
+                            "id": 121,
+                            "name": "sleeveless",
+                            "sort_order": 1
+                        },
+                        {
+                            "description": "a sleeve, usually short or cap, consisting of two layers that overlap at the outside of the arm like the shape of petals of a tulip.",
+                            "id": 277,
+                            "name": "tulip",
+                            "sort_order": null
+                        }
+                    ]
+                }
+            ],
+            "pattern_attributes": [
+                {
+                    "description": "a garment that is fitted around one point, most commonly the shoulders or the waist, and gradually widens out toward the hem giving the impression of a capital letter A.",
+                    "id": 152,
+                    "name": "A line",
+                    "sort_order": null
+                },
+                {
+                    "description": "fabric has a smaller ornament or embellishment applied to its surface for decoration.",
+                    "id": 312,
+                    "name": "appliqued / embellished",
+                    "sort_order": null
+                },
+                {
+                    "description": "designed to be unbalanced on ppposite sides of the finished object.",
+                    "id": 141,
+                    "name": "asymmetric",
+                    "sort_order": null
+                },
+                {
+                    "description": "utilizes some type of closure at the back of a garment or piece.",
+                    "id": 139,
+                    "name": "back fastening",
+                    "sort_order": null
+                },
+                {
+                    "description": "embellished with beads or pailettes.",
+                    "id": 55,
+                    "name": "beads / pailettes",
+                    "sort_order": null
+                },
+                {
+                    "description": "a style of please that is actually two pleats facing opposite directions to make a flat surface between pleats; can be reversible.",
+                    "id": 154,
+                    "name": "box pleats",
+                    "sort_order": null
+                },
+                {
+                    "description": "",
+                    "id": 308,
+                    "name": "braids / plaiting",
+                    "sort_order": null
+                },
+                {
+                    "description": "embellished or fastened with buttons or something button-like.",
+                    "id": 136,
+                    "name": "buttoned",
+                    "sort_order": null
+                },
+                {
+                    "description": "a yoke with a rounded look which integrates shoulder and neck, with shaping spread evenly around circumference.",
+                    "id": 88,
+                    "name": "circular yoke",
+                    "sort_order": null
+                },
+                {
+                    "description": "designed to be changed from one style to another.",
+                    "id": 89,
+                    "name": "convertible",
+                    "sort_order": null
+                },
+                {
+                    "description": "shortened or clipped in length.",
+                    "id": 283,
+                    "name": "cropped",
+                    "sort_order": null
+                },
+                {
+                    "description": "a decrease/increase along a line which creates shaping.",
+                    "id": 109,
+                    "name": "darts",
+                    "sort_order": null
+                },
+                {
+                    "description": "fastened by overlapping one edge of the front over the other, usually with a double row of buttons.",
+                    "id": 142,
+                    "name": "double breasted",
+                    "sort_order": null
+                },
+                {
+                    "description": "embellishment technique using a second yarn (often of a contrasting color) and tapestry needle to create a design on a piece of fabric by working over existing stitches.",
+                    "id": 290,
+                    "name": "duplicate stitch",
+                    "sort_order": null
+                },
+                {
+                    "description": "surface embellishment worked on the finished piece using a thread/string/yarn and tapestry needle.",
+                    "id": 291,
+                    "name": "embroidery",
+                    "sort_order": null
+                },
+                {
+                    "description": "waist shaping (seamed or not) that falls just under the bustline.",
+                    "id": 153,
+                    "name": "empire waist",
+                    "sort_order": null
+                },
+                {
+                    "description": "pieces of material that are folded back & inside, usually at the edges of a garment but sometimes over a seam.",
+                    "id": 157,
+                    "name": "facings",
+                    "sort_order": null
+                },
+                {
+                    "description": "Decorative edging consisting of lengths of yarn or fabric attached at one end to the work.",
+                    "id": 60,
+                    "name": "fringe",
+                    "sort_order": null
+                },
+                {
+                    "description": "utilizes some type of closure at the front of a garment or piece.",
+                    "id": 137,
+                    "name": "front fastening",
+                    "sort_order": null
+                },
+                {
+                    "description": "small fold or pucker made by gathering fabric together.",
+                    "id": 131,
+                    "name": "gathers",
+                    "sort_order": null
+                },
+                {
+                    "description": "An edge finish that consists of a folded back edge that is then fastened down.",
+                    "id": 132,
+                    "name": "hems",
+                    "sort_order": null
+                },
+                {
+                    "description": "A covering for the head and neck.",
+                    "id": 85,
+                    "name": "hood",
+                    "sort_order": null
+                },
+                {
+                    "description": "has a material or fabric that covers all or part of the inner surface of the garment or item.",
+                    "id": 144,
+                    "name": "lined",
+                    "sort_order": null
+                },
+                {
+                    "description": "has a v-shaped cut or indentation.",
+                    "id": 95,
+                    "name": "notched",
+                    "sort_order": null
+                },
+                {
+                    "description": "a short flared, ruffled, or gathered, strip attached to the waistline of a garment to create a frill or flounce.",
+                    "id": 156,
+                    "name": "peplum",
+                    "sort_order": null
+                },
+                {
+                    "description": "a series of small, ornamental looped shapes which form a decorate edge or embellishment to fabric.",
+                    "id": 68,
+                    "name": "picots",
+                    "sort_order": null
+                },
+                {
+                    "description": "",
+                    "id": 145,
+                    "name": "pleated",
+                    "sort_order": null
+                },
+                {
+                    "description": "a back treatment for sleeveless garments which is formed by extra deep armholes or straps that meet at a narrow back.",
+                    "id": 289,
+                    "name": "racer back",
+                    "sort_order": null
+                },
+                {
+                    "description": "fabric that is significantly wider at one edge than the opposite edge, resulting in a frilled or flounced appearance.",
+                    "id": 133,
+                    "name": "ruffles",
+                    "sort_order": null
+                },
+                {
+                    "description": "having fastenings on the shoulders.",
+                    "id": 138,
+                    "name": "shoulder fastening",
+                    "sort_order": null
+                },
+                {
+                    "description": "coat, jacket, cardigan or vest with a single row of buttons.  Front pieces usually only overlap for the width of the button band.",
+                    "id": 143,
+                    "name": "single breasted",
+                    "sort_order": null
+                },
+                {
+                    "description": "enclosures or fasteners for a garment that are made up of two pieces that fit into one another and snap together to secure the two pieces of the garment.",
+                    "id": 140,
+                    "name": "snaps",
+                    "sort_order": null
+                },
+                {
+                    "description": "without shaping",
+                    "id": 150,
+                    "name": "straight",
+                    "sort_order": null
+                },
+                {
+                    "description": "Alternating sections of two or more colors or textures.",
+                    "id": 66,
+                    "name": "stripes",
+                    "sort_order": null
+                },
+                {
+                    "description": "an exagerrated, loosely flared shape, usually on a coat or jacket.",
+                    "id": 148,
+                    "name": "swing",
+                    "sort_order": null
+                },
+                {
+                    "description": "a dangling decorative trim or adornment consisting of a bunch of cords fastened at one end.",
+                    "id": 73,
+                    "name": "tassel / pompom",
+                    "sort_order": null
+                },
+                {
+                    "description": "fastened with tied cords/strings.",
+                    "id": 134,
+                    "name": "tied",
+                    "sort_order": null
+                },
+                {
+                    "description": "shaping in the waist area in order to give the garment a  defined waist.",
+                    "id": 111,
+                    "name": "waist shaping",
+                    "sort_order": null
+                },
+                {
+                    "description": "garment that folds around the body.",
+                    "id": 146,
+                    "name": "wrap",
+                    "sort_order": null
+                },
+                {
+                    "description": "item is fastened or embellished with a zipper.",
+                    "id": 113,
+                    "name": "zipper",
+                    "sort_order": null
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Fabric Characteristics",
+            "permalink": "fabric",
+            "children": [],
+            "pattern_attributes": [
+                {
+                    "description": "a set of stitches forming a raised bump",
+                    "id": 53,
+                    "name": "bobble / popcorn / nupp",
+                    "sort_order": null
+                },
+                {
+                    "description": "Fabric with tucked stitches (yarn overs that are knitted together with a slipped stitch from the previous row). Such stitches may also be made by knitting into the row below and dropping the stitch above.",
+                    "id": 320,
+                    "name": "brioche / tuck stitch",
+                    "sort_order": null
+                },
+                {
+                    "description": "crossing one set of stitches over another",
+                    "id": 56,
+                    "name": "cables",
+                    "sort_order": null
+                },
+                {
+                    "description": "A  stitch pattern that causes the fabric to make zigzags.",
+                    "id": 57,
+                    "name": "chevron / flame stitch ",
+                    "sort_order": null
+                },
+                {
+                    "description": "knit stitches that are dropped and allowed to unravel producing open, vertical stripes in the fabric",
+                    "id": 165,
+                    "name": "dropped stitches",
+                    "sort_order": null
+                },
+                {
+                    "description": "fabric that easily returns to its original shape after being stretched",
+                    "id": 67,
+                    "name": "elastic",
+                    "sort_order": null
+                },
+                {
+                    "description": "a fabric that incorporates yarn overs to create a hole used for  either aesthetic or funtional purposes",
+                    "id": 61,
+                    "name": "eyelets",
+                    "sort_order": null
+                },
+                {
+                    "description": "a pattern of stable holes that are arranged to create a decorative fabric",
+                    "id": 62,
+                    "name": "lace",
+                    "sort_order": null
+                },
+                {
+                    "description": "a simple, open fabric resembling netting",
+                    "id": 75,
+                    "name": "mesh",
+                    "sort_order": null
+                },
+                {
+                    "description": "Both sides of  the fabric are attractive enough to be considered the \"right\" side",
+                    "id": 63,
+                    "name": "reversible",
+                    "sort_order": null
+                },
+                {
+                    "description": "fabric creating a verticallyl ridged pattern",
+                    "id": 64,
+                    "name": "ribbed / ribbing",
+                    "sort_order": null
+                },
+                {
+                    "description": "a horizontal undulating wave pattern.",
+                    "id": 69,
+                    "name": "ripple",
+                    "sort_order": null
+                },
+                {
+                    "description": "in knitting, stitches moved from one needle to  the other without being worked; in crochet, stitiches used when a crochet stitch doesn't need added height",
+                    "id": 298,
+                    "name": "slipped stitches",
+                    "sort_order": null
+                },
+                {
+                    "description": "fabric gathered at certain locations to bring in, or reduce width or height",
+                    "id": 284,
+                    "name": "smocked",
+                    "sort_order": null
+                },
+                {
+                    "description": "A mix of stitches providing surface interest",
+                    "id": 70,
+                    "name": "textured",
+                    "sort_order": null
+                },
+                {
+                    "description": "Stitches worked so the legs are  crossed",
+                    "id": 297,
+                    "name": "twisted stitches",
+                    "sort_order": null
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "name": "Mature Content",
+            "permalink": "special",
+            "children": [],
+            "pattern_attributes": [
+                {
+                    "description": "pattern or pattern images are not appropriate for all ages",
+                    "id": 272,
+                    "name": "Mature Content",
+                    "sort_order": null
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "name": "Pattern Instructions",
+            "permalink": "instructions",
+            "children": [],
+            "pattern_attributes": [
+                {
+                    "description": "uses a visual  made of symbols and/or shapes to convey directions",
+                    "id": 265,
+                    "name": "chart",
+                    "sort_order": null
+                },
+                {
+                    "description": "Instructions for machine knitting are provided in the pattern",
+                    "id": 316,
+                    "name": "has machine instructions",
+                    "sort_order": null
+                },
+                {
+                    "description": "includes a drawing, probably with measurements",
+                    "id": 318,
+                    "name": "has schematic",
+                    "sort_order": null
+                },
+                {
+                    "description": "pattern instructions are available in a format that is designed for low vision readers",
+                    "id": 321,
+                    "name": "low vision",
+                    "sort_order": null
+                },
+                {
+                    "description": "uses photographs or drawings to show  the neccesary steps",
+                    "id": 266,
+                    "name": "photo tutorial",
+                    "sort_order": null
+                },
+                {
+                    "description": " not a precise, step-by-step pattern",
+                    "id": 310,
+                    "name": "recipe - percentage / calculated",
+                    "sort_order": null
+                },
+                {
+                    "description": "uses a video to show methods/steps used in creation",
+                    "id": 268,
+                    "name": "video tutorial",
+                    "sort_order": null
+                },
+                {
+                    "description": "uses words to describe the techniques involved",
+                    "id": 267,
+                    "name": "written pattern",
+                    "sort_order": null
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "name": "Regional/Ethnic Styles",
+            "permalink": "regional",
+            "children": [],
+            "pattern_attributes": [
+                {
+                    "description": "stuffed animals and anthropomorphic creatures made in a style of crochet and knitting originating in Japan.",
+                    "id": 217,
+                    "name": "amigurumi",
+                    "sort_order": null
+                },
+                {
+                    "description": "using construction techniques and/or colorwork motifs derived from Peru and/or the Andean mountains of South America.",
+                    "id": 216,
+                    "name": "Andean / Peruvian",
+                    "sort_order": null
+                },
+                {
+                    "description": "a style of work that includes intricate designs using cables, bobbles and other decorative elements that originated in the Aran Islands of Ireland.",
+                    "id": 218,
+                    "name": "Aran",
+                    "sort_order": null
+                },
+                {
+                    "description": "A style of textured knitting employing twisted stitches, traveling stitches, and narrow cables.",
+                    "id": 219,
+                    "name": "Bavarian",
+                    "sort_order": null
+                },
+                {
+                    "description": "colorwork sweaters, usually featuring distinctive shawl collars and made with bulky yarns and in geometric and bird/animal motifs traditionally done by the Canadian Cowichan First Nations people.",
+                    "id": 221,
+                    "name": "Cowichan (Salish)",
+                    "sort_order": null
+                },
+                {
+                    "description": "regional knitting style from Denmark - textured patterning worked in knits and purls.",
+                    "id": 222,
+                    "name": "Danish",
+                    "sort_order": null
+                },
+                {
+                    "description": "regional style of stranded colorwork or detailed, textured lace from Estonia.",
+                    "id": 223,
+                    "name": "Estonian",
+                    "sort_order": null
+                },
+                {
+                    "description": "stranded colorwork specific to the Fair Isle and Shetland regions of Scotland using no more than two colors per row, limited color runs, and featuring distictive color banding.",
+                    "id": 269,
+                    "name": "Fair Isle",
+                    "sort_order": null
+                },
+                {
+                    "description": "created with traditional techniques from the Faroe Islands, most often lace shawls with special shaping in the shoulders and a back gusset.",
+                    "id": 224,
+                    "name": "Faroese",
+                    "sort_order": null
+                },
+                {
+                    "description": "traditional colorwork and lace designs created with techniques and motifs originating in Finland.",
+                    "id": 225,
+                    "name": "Finnish / Suomi ",
+                    "sort_order": null
+                },
+                {
+                    "description": "traditional knitting, often of seamans' sweaters, developed on the Channel Island of Guernsey. Sweaters often feature a raised shoulder seam, underam gussets and a split at the hem.",
+                    "id": 226,
+                    "name": "Guernsey / Gansey",
+                    "sort_order": null
+                },
+                {
+                    "description": "stranded colorwork or lace patterns (often circular-yoke Lopi sweaters or lace shawls which can be multi-colored) created with traditional Icelandic techniques and motifs.",
+                    "id": 227,
+                    "name": "Icelandic",
+                    "sort_order": null
+                },
+                {
+                    "description": "knitting or crochet created with techniques traditionally from Ireland. Often includes richly cabled garments (knitting) or floral/lace motifs (crochet).",
+                    "id": 228,
+                    "name": "Irish",
+                    "sort_order": null
+                },
+                {
+                    "description": "techniques derived from the various regions of the Baltic state of Latvia, often used in mittens",
+                    "id": 229,
+                    "name": "Latvian",
+                    "sort_order": null
+                },
+                {
+                    "description": "a variety of stranded colorwork, often two colors but sometimes three or more in a single row",
+                    "id": 230,
+                    "name": "Norwegian",
+                    "sort_order": null
+                },
+                {
+                    "description": "very fine geometric lace originating in Orenburg, Russia",
+                    "id": 231,
+                    "name": "Orenburg",
+                    "sort_order": null
+                },
+                {
+                    "description": "created with techniques from the indigenous S\\u00e1mi people of Scandinavia and European Russia",
+                    "id": 232,
+                    "name": "Sami",
+                    "sort_order": null
+                },
+                {
+                    "description": "very fine, traditional geometric lace or Fair Isle colorwork originating in the Shetland Islands.",
+                    "id": 233,
+                    "name": "Shetland",
+                    "sort_order": null
+                },
+                {
+                    "description": "distinct styles of garment shaping and patterning originating in Sweden, including Bohus styes and Tv\u00e5\u00e4ndsstickning, or twined knitting.",
+                    "id": 234,
+                    "name": "Swedish",
+                    "sort_order": null
+                },
+                {
+                    "description": "created with techniques traditionally from Turkey, often a form of colorwork featuring diagonal lines & geometric patterns",
+                    "id": 235,
+                    "name": "Turkish",
+                    "sort_order": null
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Shapes ",
+            "permalink": "shapes",
+            "children": [],
+            "pattern_attributes": [
+                {
+                    "description": "an object that has height, width and depth",
+                    "id": 247,
+                    "name": "3 dimensional",
+                    "sort_order": null
+                },
+                {
+                    "description": "a shape where all the edges are the same distance from a central point",
+                    "id": 238,
+                    "name": "circle",
+                    "sort_order": null
+                },
+                {
+                    "description": "the shape produced when a circle has a segment of another circle removed from its edge",
+                    "id": 317,
+                    "name": "crescent",
+                    "sort_order": null
+                },
+                {
+                    "description": "three dimensional figure made of six squares",
+                    "id": 249,
+                    "name": "cube",
+                    "sort_order": null
+                },
+                {
+                    "description": "half of a circle as divided by diameter",
+                    "id": 304,
+                    "name": "half-circle",
+                    "sort_order": null
+                },
+                {
+                    "description": "six-sided shape",
+                    "id": 239,
+                    "name": "hexagon",
+                    "sort_order": null
+                },
+                {
+                    "description": "eight-sided shape",
+                    "id": 240,
+                    "name": "octagon",
+                    "sort_order": null
+                },
+                {
+                    "description": "egg shaped",
+                    "id": 241,
+                    "name": "oval",
+                    "sort_order": null
+                },
+                {
+                    "description": "five-sided shape",
+                    "id": 245,
+                    "name": "pentagon",
+                    "sort_order": null
+                },
+                {
+                    "description": "three dimensional figure made of four triangles",
+                    "id": 250,
+                    "name": "pyramid",
+                    "sort_order": null
+                },
+                {
+                    "description": "four-sided with opposite sides of equal length, adjacent sides are at 90 degree  angles to each other",
+                    "id": 242,
+                    "name": "rectangle",
+                    "sort_order": null
+                },
+                {
+                    "description": "three dimensional figure all points of which are equidistant from a fixed point",
+                    "id": 248,
+                    "name": "sphere",
+                    "sort_order": null
+                },
+                {
+                    "description": "four-sided with all sides of equal length, adjacent sides are at 90 degree angles to  each other",
+                    "id": 243,
+                    "name": "square",
+                    "sort_order": null
+                },
+                {
+                    "description": "shaped like a star",
+                    "id": 251,
+                    "name": "star",
+                    "sort_order": null
+                },
+                {
+                    "description": "three-sided shape",
+                    "id": 244,
+                    "name": "triangle",
+                    "sort_order": null
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Sock Techniques",
+            "permalink": "sock",
+            "children": [
+                {
+                    "id": 21,
+                    "name": "Heel",
+                    "permalink": "heel",
+                    "children": [],
+                    "pattern_attributes": [
+                        {
+                            "description": "a heel added to the sock after the rest of the sock is created",
+                            "id": 261,
+                            "name": "afterthought heel",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a square flap pulled together under the heel by a series of short rows.",
+                            "id": 260,
+                            "name": "Dutch heel",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "heel created by working a flap flat and then turning the heel",
+                            "id": 26,
+                            "name": "heel flap",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "",
+                            "id": 25,
+                            "name": "other heel",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "A heel worked flat using short-rows to taper to the tip",
+                            "id": 259,
+                            "name": "short row heel",
+                            "sort_order": null
+                        }
+                    ]
+                },
+                {
+                    "id": 26,
+                    "name": "Toe",
+                    "permalink": "toe",
+                    "children": [],
+                    "pattern_attributes": [
+                        {
+                            "description": "",
+                            "id": 302,
+                            "name": "other",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a toe worked flat using short-rows to taper to the tip",
+                            "id": 264,
+                            "name": "short row toe",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a toe resulting in a star-like wavy \"X\" when complete.",
+                            "id": 263,
+                            "name": "star",
+                            "sort_order": null
+                        },
+                        {
+                            "description": "a toe with more stitches between the decreases, making a wider side section",
+                            "id": 262,
+                            "name": "wide",
+                            "sort_order": null
+                        }
+                    ]
+                }
+            ],
+            "pattern_attributes": [
+                {
+                    "description": "sock leg is worked straight, with no increases/decreases",
+                    "id": 29,
+                    "name": "no shaping",
+                    "sort_order": null
+                },
+                {
+                    "description": "worked flat and then seamed",
+                    "id": 30,
+                    "name": "seamed sock",
+                    "sort_order": null
+                },
+                {
+                    "description": "increased width towards the heel to add an arch to the foot of a sock",
+                    "id": 303,
+                    "name": "shaped arches",
+                    "sort_order": null
+                },
+                {
+                    "description": "worked from the middle to each end",
+                    "id": 24,
+                    "name": "starting in middle  ",
+                    "sort_order": null
+                },
+                {
+                    "description": "A method of making socks that uses the toe as a starting point",
+                    "id": 22,
+                    "name": "toe up ",
+                    "sort_order": null
+                },
+                {
+                    "description": "a method of making socks that uses the top of the sock cuff as a starting point",
+                    "id": 23,
+                    "name": "top/cuff down ",
+                    "sort_order": null
+                },
+                {
+                    "description": "instructions given for creating both socks simultaneously",
+                    "id": 258,
+                    "name": "two at a time",
+                    "sort_order": null
+                }
+            ]
+        }
+    ]
+}
