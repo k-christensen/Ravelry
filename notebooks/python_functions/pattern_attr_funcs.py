@@ -6,7 +6,7 @@ import re
 import json
 import pdb
 from bs4 import BeautifulSoup
-import personal_keys
+import python_functions.personal_keys as personal_keys
 
 # multiple pattern request-
 # input: list of patterns, output: json file with patterns
