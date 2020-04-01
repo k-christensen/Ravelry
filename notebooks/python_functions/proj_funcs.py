@@ -6,14 +6,36 @@ import re
 import json
 import pdb
 from bs4 import BeautifulSoup
-import python_functions.personal_keys as personal_keys
+import personal_keys as personal_keys
 
-# output: list of pattern ids for user's projects
-def get_project_list(username):
-    proj_list = []
+# returns json file with all the info about user patterns
+def proj_json(username):
     projects_url = 'https://api.ravelry.com/projects/{}/list.json'.format(username)
     projects = requests.get(projects_url, 
                         auth = (personal_keys.username(),personal_keys.password()))
-    proj_list.extend([projects.json()['projects'][item]['pattern_id'] 
-                    for item in range(0,len(projects.json()['projects']))])
+    return projects.json()
+
+# output: list of pattern ids for user's projects
+def project_list(p_json):
+    proj_list = []
+    proj_list.extend([p_json['projects'][item]['pattern_id'] 
+                    for item in range(0,len(p_json['projects']))])
     return proj_list
+
+# puts together first two functions
+def get_project_list_from_username(username):
+    p_json = proj_json(username)
+    return project_list(p_json)
+
+# returns dictionary of project codes and user ratings, 
+# default rating is 3 if none is given, 
+# otherwise it's on a scale from 1-5 (hence the +1)
+
+def project_rating(username):
+    code_list = get_project_list_from_username(username)
+    rating_list = [3 if proj_json(username)['projects'][i]['rating'] == None 
+                    else proj_json(username)['projects'][i]['rating']+1 
+                    for i in range(0,len(proj_json("katec125")['projects']))]
+    return dict(zip(code_list, rating_list))
+
+
