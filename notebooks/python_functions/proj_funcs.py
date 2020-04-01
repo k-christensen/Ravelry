@@ -7,6 +7,7 @@ import json
 import pdb
 from bs4 import BeautifulSoup
 import personal_keys as personal_keys
+from fav_funcs import *
 
 # returns json file with all the info about user patterns
 def proj_json(username):
@@ -37,5 +38,10 @@ def project_rating(username):
                     else proj_json(username)['projects'][i]['rating']+1 
                     for i in range(0,len(proj_json("katec125")['projects']))]
     return dict(zip(code_list, rating_list))
+
+def user_data(username):
+    user_data = fav_dict(username)
+    user_data.update(project_rating(username))
+    return user_data
 
 
