@@ -6,7 +6,7 @@ import re
 import json
 import pdb
 from bs4 import BeautifulSoup
-import python_functions.personal_keys
+import personal_keys
 
 # fav_request: makes request to API, returns json file of user
 def fav_request(username, page_size, page):
@@ -45,3 +45,10 @@ def get_favs_list(username):
             fav_list.extend(create_fav_list(new_request_favs))
             page_number += 1
     return fav_list
+
+# returns a dict that is just pattern code and 1 for every value
+# done so we can then do the proj rating func to create user data col
+
+def fav_dict (username):
+    fav_list = get_favs_list(username)
+    return {code:1 for code in fav_list}
