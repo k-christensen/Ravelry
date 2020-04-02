@@ -6,11 +6,12 @@ import re
 import json
 import pdb
 from bs4 import BeautifulSoup
-import python_functions.personal_keys as personal_keys
+import personal_keys as personal_keys
 
 # multiple pattern request-
 # input: list of patterns, output: json file with patterns
 def multiple_pattern_request(pattern_list):
+    pattern_list = [str(code) for code in pattern_list]
     patterns_url = 'https://api.ravelry.com/patterns.json?ids={}'.format('+'.join(pattern_list))
     patterns = requests.get(patterns_url, 
                             auth = (personal_keys.username(),personal_keys.password()))
@@ -45,3 +46,22 @@ def pattern_attr(pattern_list):
             attr_list.extend(batch_attr_list)
             batch_num += 1
     return dict(zip(pattern_list, attr_list))
+
+#testing area
+
+from proj_funcs import *
+import math
+
+example_list = get_project_list_from_username("katec125")
+
+ex_pattern_request = multiple_pattern_request(example_list)
+
+len(ex_pattern_request['patterns']['91776']['pattern_attributes'])
+
+ex_attr_list = []
+for key in ex_pattern_request['patterns'].keys():
+    ex_attr_list.append({attr['permalink']:(1/math.sqrt(len(ex_pattern_request['patterns'][key]['pattern_attributes']))) 
+                        for attr in ex_pattern_request['patterns'][key]['pattern_attributes']})
+
+ex_attr_list
+
