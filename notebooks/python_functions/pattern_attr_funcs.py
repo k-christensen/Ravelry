@@ -39,7 +39,8 @@ def attr_dict(pattern_list):
     patterns = pattern_req(pattern_list)
     attr_dict = {}
     for key in patterns.keys():
-        attr_dict.update(({key:{attr['permalink']:1 for attr in patterns[key]['pattern_attributes']}}))
+        attr_dict.update(({key:{attr['permalink']:1 
+        for attr in patterns[key]['pattern_attributes']}}))
     return attr_dict
 
 def yarn_dict(pattern_list):
@@ -47,7 +48,8 @@ def yarn_dict(pattern_list):
     yarn_dict = {}
     for key in patterns.keys():
         if 'yarn_weight' in patterns[key]:    
-            yarn_dict.update({key:{"yarn_id_{}".format(patterns[key]['yarn_weight']['id']):1}})
+            yarn_dict.update({key:
+            {"yarn_id_{}".format(patterns[key]['yarn_weight']['id']):1}})
         else:
             yarn_dict.update({key:{"yarn_id_None":1}})
     return yarn_dict
@@ -60,7 +62,8 @@ def categ_dict(pattern_list):
         df = pd.io.json.json_normalize(data)
         df = df.filter(regex = 'permalink$', axis = 1)
         atrib_dict = df.to_dict(orient='records')[0]
-        filtered_attrib_dict = {k:v for k,v in atrib_dict.items() if v != 'categories'}
+        filtered_attrib_dict = {k:v for k,v in 
+                                atrib_dict.items() if v != 'categories'}
         cat_dict = {v:1 for v in filtered_attrib_dict.values()}
         categ_dict.update({key:cat_dict})
     return categ_dict
@@ -69,10 +72,11 @@ def all_attr_dict(pattern_list):
     attr_dict = attr_dict(pattern_list)
     yarn_dict = yarn_dict(pattern_list)
     categ_dict = categ_dict(pattern_list)
-    finaldict = {key:[attr[key], yarn_dict[key], categ_dict[key]] for key in yarn_dict.keys()}
+    finaldict = {key:[attr_dict[key], yarn_dict[key], categ_dict[key]] 
+                for key in yarn_dict.keys()}
     for key in finaldict:
         while len(finaldict[key])>1:
-            finaldict[key][0].update(finaldict[other_key][1])
+            finaldict[key][0].update(finaldict[key][1])
             finaldict[key].pop(1)
     return finaldict
 
