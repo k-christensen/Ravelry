@@ -30,6 +30,54 @@ def create_attr_list(pattern_list):
             patterns['patterns'][key]['pattern_attributes']})
     return attr_list
 
+def pattern_req(pattern_list):
+    pattern_req = multiple_pattern_request(pattern_list)
+    patterns = pattern_req['patterns']
+    return patterns
+
+def attr_dict(pattern_list):
+    patterns = pattern_req(pattern_list)
+    attr_dict = {}
+    for key in patterns.keys():
+        attr_dict.update(({key:{attr['permalink']:1 for attr in patterns[key]['pattern_attributes']}}))
+    return attr_dict
+
+def yarn_dict(pattern_list):
+    patterns = pattern_req(pattern_list)
+    yarn_dict = {}
+    for key in patterns.keys():
+        if 'yarn_weight' in patterns[key]:    
+            yarn_dict.update({key:{"yarn_id_{}".format(patterns[key]['yarn_weight']['id']):1}})
+        else:
+            yarn_dict.update({key:{"yarn_id_None":1}})
+    return yarn_dict
+
+def categ_dict(pattern_list):
+    patterns = pattern_req(pattern_list)
+    categ_dict = {}
+    for key in patterns.keys():
+        data = patterns[key]['pattern_categories'][0]    
+        df = pd.io.json.json_normalize(data)
+        df = df.filter(regex = 'permalink$', axis = 1)
+        atrib_dict = df.to_dict(orient='records')[0]
+        filtered_attrib_dict = {k:v for k,v in atrib_dict.items() if v != 'categories'}
+        cat_dict = {v:1 for v in filtered_attrib_dict.values()}
+        categ_dict.update({key:cat_dict})
+    return categ_dict
+
+def all_attr_dict(pattern_list):
+    attr_dict = attr_dict(pattern_list)
+    yarn_dict = yarn_dict(pattern_list)
+    categ_dict = categ_dict(pattern_list)
+    finaldict = {key:[attr[key], yarn_dict[key], categ_dict[key]] for key in yarn_dict.keys()}
+    for key in finaldict:
+        while len(finaldict[key])>1:
+            finaldict[key][0].update(finaldict[other_key][1])
+            finaldict[key].pop(1)
+    return finaldict
+
+
+
 # output is a dict where the key is the pattern code and value is 
 def create_all_attrib_dict(pattern_list):
     patterns = multiple_pattern_request(pattern_list)
@@ -88,6 +136,7 @@ from fav_funcs import *
 over_50_ex = get_favs_list("katec125")
 
 pattern_attr(over_50_ex)
+
 
 fav_pattern_req = multiple_pattern_request(over_50_ex)
 
