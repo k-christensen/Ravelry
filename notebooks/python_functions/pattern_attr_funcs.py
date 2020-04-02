@@ -39,8 +39,6 @@ def create_all_attrib_dict(pattern_list):
 
     for key in patterns['patterns'].keys():
         ones_ex_attr_dict.update(({key:{attr['permalink']:1 for attr in patterns['patterns'][key]['pattern_attributes']}}))
-        # FIGURE OUT ISSUE WITH YARN WEIGHT
-        yarn_dict.update({key:{"yarn_id_{}".format(patterns['patterns'][key]['yarn_weight']['id']):1}})
         data = patterns['patterns'][key]['pattern_categories'][0]    
         df = pd.io.json.json_normalize(data)
         df = df.filter(regex = 'permalink$', axis = 1)
@@ -49,11 +47,14 @@ def create_all_attrib_dict(pattern_list):
         cat_dict = {v:1 for v in filtered_attrib_dict.values()}
         categ_dict.update({key:cat_dict})
 
-    finaldict = {key:[ones_ex_attr_dict[key], yarn_dict[key], categ_dict[key]] for key in ones_ex_attr_dict}
-    for key in finaldict:
-        while len(finaldict[key])>1:
-            finaldict[key][0].update(finaldict[key][1])
-            finaldict[key].pop(1)
+        if 'yarn_weight' in patterns['patterns'][key]:    
+            yarn_dict.update({key:{"yarn_id_{}".format(patterns['patterns'][key]['yarn_weight']['id']):1}})
+
+    finaldict = {key:[ones_ex_attr_dict[key], yarn_dict[key], categ_dict[key]] for key in yarn_dict.keys()}
+    for other_key in finaldict:
+        while len(finaldict[other_key])>1:
+            finaldict[other_key][0].update(finaldict[other_key][1])
+            finaldict[other_key].pop(1)
     return finaldict
 
 
@@ -85,6 +86,10 @@ from fav_funcs import *
 over_50_ex = get_favs_list("katec125")
 
 pattern_attr(over_50_ex)
+
+fav_pattern_req = multiple_pattern_request(over_50_ex)
+
+fav_pattern_req['patterns']['522775']['yarn_weight']
 
 example_list = get_project_list_from_username("katec125")
 
