@@ -49,6 +49,8 @@ def create_all_attrib_dict(pattern_list):
 
         if 'yarn_weight' in patterns['patterns'][key]:    
             yarn_dict.update({key:{"yarn_id_{}".format(patterns['patterns'][key]['yarn_weight']['id']):1}})
+        else:
+            yarn_dict.update({key:{"yarn_id_None":1}})
 
     finaldict = {key:[ones_ex_attr_dict[key], yarn_dict[key], categ_dict[key]] for key in yarn_dict.keys()}
     for other_key in finaldict:
