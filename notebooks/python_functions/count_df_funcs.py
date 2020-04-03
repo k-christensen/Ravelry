@@ -34,3 +34,11 @@ def create_proj_df(username):
     projs = pattern_attr(proj_list)
     proj_df = pattern_attr_to_count_df(proj_list, projs)
     return proj_df
+
+
+example_list = get_project_list_from_username("katec125")
+example_dict = all_attr_dict(example_list)
+
+example_dict
+
+pd.DataFrame.from_dict(list(example_dict.values()),orient = 'index')
