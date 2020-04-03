@@ -7,9 +7,9 @@ import json
 import pdb
 from bs4 import BeautifulSoup
 import personal_keys
-from python_functions.fav_funcs import *
-from python_functions.proj_funcs import *
-from python_functions.pattern_attr_funcs import *
+from fav_funcs import *
+from proj_funcs import *
+from pattern_attr_funcs import *
 
 # input: list of pattern id's and attribute list, which is a list of dictionaries
 # if using pattern attr function, it would be the dictionary keys and values

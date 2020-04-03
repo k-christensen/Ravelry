@@ -69,16 +69,18 @@ def categ_dict(pattern_list):
     return categ_dict
 
 def all_attr_dict(pattern_list):
-    attr_dict = attr_dict(pattern_list)
-    yarn_dict = yarn_dict(pattern_list)
-    categ_dict = categ_dict(pattern_list)
-    finaldict = {key:[attr_dict[key], yarn_dict[key], categ_dict[key]] 
-                for key in yarn_dict.keys()}
+    attrib_dict = attr_dict(pattern_list)
+    y_dict = yarn_dict(pattern_list)
+    ca_dict = categ_dict(pattern_list)
+    finaldict = {key:[attrib_dict[key], y_dict[key], ca_dict[key]] 
+                for key in y_dict.keys()}
     for key in finaldict:
         while len(finaldict[key])>1:
             finaldict[key][0].update(finaldict[key][1])
             finaldict[key].pop(1)
     return finaldict
+    
+all_attr_dict(example_list)
 
 
 
