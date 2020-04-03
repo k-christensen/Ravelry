@@ -5,8 +5,11 @@ import numpy as np
 import re
 import json
 import pdb
+import math
 from bs4 import BeautifulSoup
 import personal_keys as personal_keys
+from fav_funcs import *
+from proj_funcs import *
 
 # input: list of patterns, output: json file with patterns
 def multiple_pattern_request(pattern_list):
@@ -76,7 +79,8 @@ def all_attr_dict(pattern_list):
             finaldict[key][0].update(finaldict[key][1])
             finaldict[key].pop(1)
         finaldict[key] = finaldict[key][0]
-    return finaldict
+    normed_fd = {key:{k:1/math.sqrt(len(d)) for k in d} for key,d in finaldict.items()}
+    return normed_fd
 
 #funcs no longer used~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
