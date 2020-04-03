@@ -11,34 +11,29 @@ from fav_funcs import *
 from proj_funcs import *
 from pattern_attr_funcs import *
 
-# input: list of pattern id's and attribute list, which is a list of dictionaries
-# if using pattern attr function, it would be the dictionary keys and values
-def pattern_attr_to_count_df(pattern_list, attr_list):
-#     in case pattern list is list of strings, make it into list of integers
-    p_l = [int(item) for item in pattern_list]
-#     turn list of dictionaries into a dataframe, turn all the NaN values into zero so the dataframe is ones and zeroes
-    df_attr = pd.DataFrame(attr_list).fillna(0)
-    df_attr['pattern_id'] = p_l
-    df_attr = df_attr.set_index('pattern_id')
+
+# input: dictionary created in all_attr_dict
+# creates dataframe, index is pattern code, 
+# cols are attrs, categories, and yarn weights
+def pattern_attr_to_count_df(pattern_dict):
+    df_attr = pd.DataFrame(list(pattern_dict.values()), 
+            index=list(pattern_dict.keys())).fillna(0)
+    return df_attr
+
+# combo of previous func and all_attr_dict
+def pattern_list_to_count_df(pattern_list):
+    pattern_dict = all_attr_dict(pattern_list)
+    df_attr = pattern_attr_to_count_df(pattern_dict)
     return df_attr
 
 # below function combines many of above functions such that all you put in is someone's username and it spits out dataframe of favs and projects
 def create_fav_df(username):
     fav_list = get_favs_list(username)
-    favs = pattern_attr(fav_list)
-    fav_df = pattern_attr_to_count_df(fav_list, favs)
+    fav_df = pattern_list_to_count_df(fav_list)
     return fav_df
 
 def create_proj_df(username):
     proj_list = get_project_list(username)
-    projs = pattern_attr(proj_list)
-    proj_df = pattern_attr_to_count_df(proj_list, projs)
+    proj_df = pattern_attr_to_count_df(proj_list)
     return proj_df
 
-
-example_list = get_project_list_from_username("katec125")
-example_dict = all_attr_dict(example_list)
-
-example_dict
-
-pd.DataFrame.from_dict(list(example_dict.values()),orient = 'index')
