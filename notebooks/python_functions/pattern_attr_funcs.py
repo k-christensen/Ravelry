@@ -8,7 +8,6 @@ import pdb
 from bs4 import BeautifulSoup
 import personal_keys as personal_keys
 
-# multiple pattern request-
 # input: list of patterns, output: json file with patterns
 def multiple_pattern_request(pattern_list):
     pattern_list = [str(code) for code in pattern_list]
@@ -20,21 +19,13 @@ def multiple_pattern_request(pattern_list):
     else:
         return 404
 
-# input: pattern json from the multiple pattern request function
-def create_attr_list(pattern_list):
-    attr_list = []
-    patterns = multiple_pattern_request(pattern_list)
-    if patterns != 404:
-        for key in patterns['patterns'].keys():
-            attr_list.append({attr['permalink']:1 for attr in 
-            patterns['patterns'][key]['pattern_attributes']})
-    return attr_list
-
+# similar to multiple pattern request except it returns just patterns section of json returned in mpr
 def pattern_req(pattern_list):
     pattern_req = multiple_pattern_request(pattern_list)
     patterns = pattern_req['patterns']
     return patterns
 
+#returns dict of pattern codes and attributes associated with those patterns 
 def attr_dict(pattern_list):
     patterns = pattern_req(pattern_list)
     attr_dict = {}
@@ -43,6 +34,9 @@ def attr_dict(pattern_list):
         for attr in patterns[key]['pattern_attributes']}}))
     return attr_dict
 
+# returns dict of pattern codes and the yarn weight associated
+# in the event there is not a yarn weight listed because the pattern writer was an idiot, 
+# pattern is assigned the yarn weight "yarn_id_None" as a placeholder
 def yarn_dict(pattern_list):
     patterns = pattern_req(pattern_list)
     yarn_dict = {}
@@ -54,6 +48,7 @@ def yarn_dict(pattern_list):
             yarn_dict.update({key:{"yarn_id_None":1}})
     return yarn_dict
 
+# returns a dict of the pattern code and the different categories that the given pattern is in
 def categ_dict(pattern_list):
     patterns = pattern_req(pattern_list)
     categ_dict = {}
@@ -68,6 +63,8 @@ def categ_dict(pattern_list):
         categ_dict.update({key:cat_dict})
     return categ_dict
 
+# creates dictionary of the pattern and the pattern attributes, categories, and yarn weight all in one dict
+# essentially combines three previous functions plus compressing all three dictionaries into one
 def all_attr_dict(pattern_list):
     attrib_dict = attr_dict(pattern_list)
     y_dict = yarn_dict(pattern_list)
@@ -79,10 +76,18 @@ def all_attr_dict(pattern_list):
             finaldict[key][0].update(finaldict[key][1])
             finaldict[key].pop(1)
     return finaldict
-    
-all_attr_dict(example_list)
 
+#funcs no longer used~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+# creates list of attributes from pattern list
+def create_attr_list(pattern_list):
+    attr_list = []
+    patterns = multiple_pattern_request(pattern_list)
+    if patterns != 404:
+        for key in patterns['patterns'].keys():
+            attr_list.append({attr['permalink']:1 for attr in 
+            patterns['patterns'][key]['pattern_attributes']})
+    return attr_list
 
 # output is a dict where the key is the pattern code and value is 
 def create_all_attrib_dict(pattern_list):
