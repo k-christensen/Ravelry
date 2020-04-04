@@ -22,6 +22,7 @@ def multiple_pattern_request(pattern_list):
     else:
         return 404
 
+# single pattern equivalent of mpr
 def single_pattern_request(code):
     if type(code) is not str:
         code = str(code)
@@ -33,7 +34,6 @@ def single_pattern_request(code):
 # input of this is the output of single pattern request
 # output is a dictionary containing 
 # yarn weight, pattern cats, and pattern attrs
-
 def attrs_single_pattern(pattern):
     data = pattern['pattern_categories'][0]    
     df = pd.io.json.json_normalize(data)
@@ -41,7 +41,7 @@ def attrs_single_pattern(pattern):
     atrib_dict = df.to_dict(orient='records')[0]
     cat_list = [v for v in atrib_dict.values() if v != 'categories']
 
-    attr_dict = {'yarn_weight':"yarn_id_{}".format(pattern['yarn_weight']['id']),
+    attr_dict = {'yarn_weight':pattern['yarn_weight']['id'],
     'pattern_attributes': [attr['permalink'] 
     for attr in pattern['pattern_attributes']],
     'pattern_categories':cat_list}
@@ -53,7 +53,6 @@ def single_request_to_attrs(code):
     pattern = single_pattern_request(code)
     return attrs_single_pattern(pattern)
     
-
 # similar to multiple pattern request except it returns just patterns section of json returned in mpr
 def pattern_req(pattern_list):
     pattern_req = multiple_pattern_request(pattern_list)
@@ -261,19 +260,5 @@ def all_attr_dict(pattern_list):
 # cat_list
 
 # finaldict = {key:(dict1[key], dict2[key]) for key in dict1}
-
-single_example = single_pattern_request('504052')
-
-single_example['pattern_categories']
-
-['yarn_weight', 'pattern_attributes', 'pattern_categories']
-
-get_favs_list("katec125")
-
-data = single_example['pattern_categories'][0]    
-df = pd.io.json.json_normalize(data)
-df = df.filter(regex = 'permalink$', axis = 1)
-atrib_dict = df.to_dict(orient='records')[0]
-cat_list = [v for v in atrib_dict.values() if v != 'categories']
 
 single_request_to_attrs(504052)
