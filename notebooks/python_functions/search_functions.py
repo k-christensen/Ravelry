@@ -23,3 +23,15 @@ def search_pattern_list(s_json):
 def search_to_list(term):
     s_json = search(term)
     return search_pattern_list(s_json)
+
+# testing work~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+search_url = 'https://api.ravelry.com/patterns/search.json?pc=pullover&sort=recently-popular&view=captioned_thumbs'
+search = requests.get(search_url, auth = (personal_keys.username(),personal_keys.password()))
+search
+s_json = search.json()
+s_json
+s_json['patterns'][5]['name']
+
+
+search_example = search("#pc=pullover&sort=recently-popular&view=captioned_thumbs")
+search_example['patterns'][0]['name']
