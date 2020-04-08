@@ -24,16 +24,25 @@ def pattern_attr_to_df(pattern_dict):
 # combo of previous func and all_attr_dict
 def pattern_list_to_df(pattern_list):
     pattern_dict = all_attr_dict(pattern_list)
-    df_attr = pattern_attr_to_count_df(pattern_dict)
+    df_attr = pattern_attr_to_df(pattern_dict)
     return df_attr
 
+# input is a username, 
+# output is a df of all the user's 
+# favs and projects in one dataframe
+# dataframe columns include 
+# pattern categories, pattern attributes, and yarn weight
+# also includes a final column that is user data
+# each code either gets a 1 if it's in favs
+# a 3 or user's rating if it's in their projects
 def user_profile_df(username):
     fav_list = get_favs_list(username)
     proj_list = get_project_list_from_username(username)
     full_list = list(set(fav_list+proj_list))
     df = pattern_list_to_df(full_list)
+    user_data_dict = user_data(username)
+    df['user_data'] = pd.Series(user_data_dict)
     return df 
-
 
 # below function combines many of above functions such that all you put in is someone's username and it spits out dataframe of favs and projects
 def create_fav_df(username):

@@ -39,9 +39,14 @@ def project_rating(username):
                     for i in range(0,len(proj_json("katec125")['projects']))]
     return dict(zip(code_list, rating_list))
 
+# creates dictionary where the keys are 
+# all user's favorites and projects
+# all favorites get a 1 assigned
+# projects get either their rating or 3 assigned
+# the final dict is turned into a string so it 
+# can combine with the existing user profile df
 def user_data(username):
     user_data = fav_dict(username)
     user_data.update(project_rating(username))
-    return user_data
-
-
+    str_user_data_dict = {str(k):v for k,v in user_data.items()}
+    return str_user_data_dict
