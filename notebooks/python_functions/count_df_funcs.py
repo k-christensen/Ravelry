@@ -57,6 +57,8 @@ def create_proj_df(username):
     proj_df = pattern_attr_to_df(proj_list)
     return proj_df
 
+# work~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 user_profile = user_profile_df("katec125")
 list(user_profile.columns)
 
