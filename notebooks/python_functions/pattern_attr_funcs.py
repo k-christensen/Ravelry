@@ -41,7 +41,7 @@ def attrs_single_pattern(pattern):
     atrib_dict = df.to_dict(orient='records')[0]
     cat_list = [v for v in atrib_dict.values() if v != 'categories']
 
-    attr_dict = {'yarn_weight':pattern['yarn_weight']['id'],
+    attr_dict = {'yarn_weight':'-'.join(pattern['yarn_weight']['name'].split(' ')),
     'pattern_attributes': [attr['permalink'] 
     for attr in pattern['pattern_attributes']],
     'pattern_categories':cat_list}
@@ -64,12 +64,17 @@ def attr_dict(pattern_list):
     patterns = pattern_req(pattern_list)
     attr_dict = {}
     for key in patterns.keys():
-        attr_dict.update(({key:{attr['permalink']:1 
+        attr_dict.update(({key:{"pa_{}".format(attr['permalink']):1 
         for attr in patterns[key]['pattern_attributes']}}))
     return attr_dict
 
 # returns dict of pattern codes and the yarn weight associated
-# in the event there is not a yarn weight listed because the pattern writer was an idiot, 
+# yarn weight is given as "yarn_id_[what you would put in for url]"
+# note: since the name contains spaces 
+# the name is split and put back together with dash where the space was
+
+# in the event there is not a yarn weight listed 
+# because the pattern writer was an idiot, 
 # pattern is assigned the yarn weight "yarn_id_None" as a placeholder
 def yarn_dict(pattern_list):
     patterns = pattern_req(pattern_list)
@@ -77,7 +82,7 @@ def yarn_dict(pattern_list):
     for key in patterns.keys():
         if 'yarn_weight' in patterns[key]:    
             yarn_dict.update({key:
-            {"yarn_id_{}".format(patterns[key]['yarn_weight']['id']):1}})
+            {"yarn_id_{}".format('-'.join(patterns[key]['yarn_weight']['name'].split(' '))):1}})
         else:
             yarn_dict.update({key:{"yarn_id_None":1}})
     return yarn_dict
@@ -91,7 +96,7 @@ def categ_dict(pattern_list):
         df = pd.io.json.json_normalize(data)
         df = df.filter(regex = 'permalink$', axis = 1)
         atrib_dict = df.to_dict(orient='records')[0]
-        cat_dict = {v:1 for v in atrib_dict.values() if v != 'categories'}
+        cat_dict = {"pc_{}".format(v):1 for v in atrib_dict.values() if v != 'categories'}
         categ_dict.update({key:cat_dict})
     return categ_dict
 

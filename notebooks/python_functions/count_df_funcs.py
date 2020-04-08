@@ -31,7 +31,9 @@ def pattern_list_to_df(pattern_list):
 # output is a df of all the user's 
 # favs and projects in one dataframe
 # dataframe columns include 
-# pattern categories, pattern attributes, and yarn weight
+# pattern categories (prefaced with "pc_"), 
+# pattern attributes (prefaced with "pa_"), 
+# and yarn weight (prefaced with "yarn_id_")
 # also includes a final column that is user data
 # each code either gets a 1 if it's in favs
 # a 3 or user's rating if it's in their projects
@@ -55,3 +57,20 @@ def create_proj_df(username):
     proj_df = pattern_attr_to_df(proj_list)
     return proj_df
 
+user_profile = user_profile_df("katec125")
+list(user_profile.columns)
+
+user_profile.iloc[0]
+
+example_dict = dict(zip(list(user_profile.columns), user_profile.iloc[0]))
+
+[key for key in example_dict if example_dict[key] != 0]
+
+user_profile.loc['36436']
+
+single_pattern_request('36436')['yarn_weight']['name']
+
+
+' ' in 'asdfas dfas'
+
+'-'.join(string.split(' '))
