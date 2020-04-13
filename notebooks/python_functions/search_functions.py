@@ -39,3 +39,5 @@ search_example['patterns'][0]['name']
 
 # example of url with weight, pattern category, and pattern attrs
 # weight=dk%7Cworsted%7Caran&pc=pullover&pa=stripes-colorwork%7CIntarsia
+#  url would be something like 
+# 'https://api.ravelry.com/patterns/search.json?weight={}&pc={}&pa={}&sort=recently-popular&view=captioned_thumbs'.format(weight_list, pattern_cat_list, pattern_attr_list)
