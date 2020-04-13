@@ -34,5 +34,8 @@ s_json['patterns'][5]['name']
 search_example = search("#pc=pullover&sort=recently-popular&view=captioned_thumbs")
 search_example['patterns'][0]['name']
 
+# would want to do some kind of loop like "%7C" with the different attributes, 
+# weight=[weight-1{}weight{}weight+1]&pc=[pattern_cat]&pa = [pattern_attr{}pattern_attr]
+
 # example of url with weight, pattern category, and pattern attrs
 # weight=dk%7Cworsted%7Caran&pc=pullover&pa=stripes-colorwork%7CIntarsia
