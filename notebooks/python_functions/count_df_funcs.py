@@ -64,7 +64,7 @@ list(user_profile.columns)
 
 user_profile.iloc[0]
 
-example_dict = dict(zip(list(user_profile.columns), user_profile.iloc[0]))
+example_dict = dict(zip(list(user_profile.columns), user_profile.loc['36436']))
 
 [key for key in example_dict if example_dict[key] != 0]
 
