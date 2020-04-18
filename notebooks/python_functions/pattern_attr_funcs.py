@@ -45,7 +45,6 @@ def attrs_single_pattern(pattern):
     'pattern_attributes': [attr['permalink'] 
     for attr in pattern['pattern_attributes']],
     'pattern_categories':cat_list}
-
     return attr_dict
 
 # combo of above two funcs
@@ -266,4 +265,4 @@ def all_attr_dict(pattern_list):
 
 # finaldict = {key:(dict1[key], dict2[key]) for key in dict1}
 
-single_request_to_attrs(504052)
+# single_request_to_attrs(504052)
