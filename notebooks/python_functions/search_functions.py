@@ -53,6 +53,13 @@ search = requests.get(search_url, auth = (personal_keys.username(),personal_keys
 s_json = search.json()
 search
 
+# note: some of the attributes actually go into 'fit' when you create the url, 
+# I'm so fucking tired and I need to make a physical list because the world is a nightmare
+# why couldn't this actually make sense
+# why did I have to create my own yarn ids and now this
+# why do I care so much
+# I'm so tired
+
 create_search_url(attr_dict)
 
 search_example = search("#pc=pullover&sort=recently-popular&view=captioned_thumbs")
