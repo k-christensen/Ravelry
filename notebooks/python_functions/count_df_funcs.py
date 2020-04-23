@@ -44,7 +44,16 @@ def user_profile_df(username):
     df = pattern_list_to_df(full_list)
     user_data_dict = user_data(username)
     df['user_data'] = pd.Series(user_data_dict)
-    return df 
+    return df
+
+# input: previous df, output dictionary with scores of how much a user likes a given attr
+def user_profile_dict(user_data):
+     return {col:np.dot(user_profile[col],user_profile.user_data) for col in list(user_profile.columns)[:-1]}
+
+# put together previous two funcs, input username, output dict of attrs and user scores
+def user_profile(username):
+    user_data = user_profile_df(username)
+    return user_profile_dict(user_data)
 
 # below function combines many of above functions such that all you put in is someone's username and it spits out dataframe of favs and projects
 def create_fav_df(username):
@@ -61,6 +70,9 @@ def create_proj_df(username):
 
 user_profile = user_profile_df("katec125")
 list(user_profile.columns)
+user_profile.user_data
+user_profile.pc_sweater
+np.dot(user_profile.user_data, user_profile.pc_sweater)
 
 user_profile.iloc[0]
 
@@ -76,3 +88,5 @@ single_pattern_request('36436')['yarn_weight']['name']
 ' ' in 'asdfas dfas'
 
 '-'.join(string.split(' '))
+
+{col:np.dot(user_profile[col],user_profile.user_data) for col in list(user_profile.columns)[:-1]}
