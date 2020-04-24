@@ -28,12 +28,36 @@ def search_to_list(term):
 def or_string(attr_list):
     return '%7C'.join(attr_list)
 
+# some of the attributes are actually listed under 'fit' for search, 
+# so the pattern attributes need to be split into two lists 
+# the first list is the list of attributes that would be searched under 'fit'
+# and the other list is the attributes that would actually be listed under pa
+def fit_and_attr_split(attr_list):
+    fit_name_list = ['adult','baby','child','doll-size',
+ 'newborn-size','preemie','teen','toddler',
+ 'negative-ease','no-ease','positive-ease',
+ 'maternity','fitted','miniature','oversized',
+ 'petite','plus','tall','female','male','unisex']
+    attribute_list = []
+    fit_list = []
+    for item in attr_list:
+        if item in fit_name_list:
+            fit_list.append(item)
+        else:
+            attribute_list.append(item)
+    return [fit_list, attribute_list]
+
 # creates the unique part of the search url
 def unique_search_url_section(attr_dict):
-    yarn_str = or_string(create_yarn_list(attr_dict['yarn_weight']))
-    attr_str = or_string(attr_dict['pattern_attributes'])
+    yarn_list = create_yarn_list(attr_dict['yarn_weight'])
+    attr_and_fit_list = fit_and_attr_split(attr_dict['pattern_attributes'])
+    attr_list = attr_and_fit_list[1]
+    fit_list = attr_and_fit_list[0]
+    yarn_str = or_string(yarn_list)
+    attr_str = or_string(attr_list)
     cat_str = or_string(attr_dict['pattern_categories'][1:])
-    return 'weight={}&pa={}&pc={}'.format(yarn_str,attr_str,cat_str)
+    fit_str = or_string(fit_list)
+    return 'weight={}&pa={}&pc={}&fit={}'.format(yarn_str,attr_str,cat_str, fit_str)
 
 # creates full search url
 def full_search_url(url_sect):
@@ -51,7 +75,7 @@ def create_search_url(attr_dict):
 search_url = create_search_url(attr_dict)
 search = requests.get(search_url, auth = (personal_keys.username(),personal_keys.password()))
 s_json = search.json()
-search
+s_json
 
 # note: some of the attributes actually go into 'fit' when you create the url, 
 # I'm so fucking tired and I need to make a physical list because the world is a nightmare
@@ -85,6 +109,20 @@ attr_str = or_string(attr_dict['pattern_attributes'])
 cat_str = or_string(attr_dict['pattern_categories'][1:])
 'weight={}&pc={}&pa={}'.format(yarn_str,attr_str,cat_str)
 
+
+"adult%7Cbaby%7Cchild%7Cdoll-size%7Cnewborn-size%7Cpreemie%7Cteen%7Ctoddler%7Cnegative-ease%7Cno-ease%7Cpositive-ease%7Cmaternity%7Cfitted%7Cminiature%7Coversized%7Cpetite%7Cplus%7Ctall%7Cfemale%7Cmale%7Cunisex".split('%7C')
+
+fit_list = ['adult','baby','child','doll-size',
+ 'newborn-size','preemie','teen','toddler',
+ 'negative-ease','no-ease','positive-ease',
+ 'maternity','fitted','miniature','oversized',
+ 'petite','plus','tall','female','male','unisex']
+
+
+
+fit_and_attr_split(attr_dict['pattern_attributes'])
+
+    
 
 # would want to do some kind of loop like "%7C" with the different attributes, 
 # weight=[weight-1{}weight{}weight+1]&pc=[pattern_cat]&pa = [pattern_attr{}pattern_attr]
