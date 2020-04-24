@@ -31,6 +31,18 @@ def single_pattern_request(code):
                             auth = (personal_keys.username(),personal_keys.password()))
     return pattern.json()['pattern']
 
+# returns the last part of a given pattern url
+# this last part can be used to look up the pattern
+def url_to_code(url):
+    split_list = url.split('https://www.ravelry.com/patterns/library/')
+    return split_list[-1]
+
+# combo of above two, put in url, output is a json of the pattern
+def url_to_request(url):
+    code = url_to_code(url)
+    return single_pattern_request(code)
+
+
 # input of this is the output of single pattern request
 # output is a dictionary containing 
 # yarn weight, pattern cats, and pattern attrs
