@@ -120,7 +120,12 @@ def pattern_url_to_website_search_url(url):
     attrs = url_to_attrs(url)
     return create_website_search_url(attrs)
 
-pattern_url_to_website_search_url('https://www.ravelry.com/patterns/library/nightshift')
+print("Enter a pattern URL")
+url = input()
+pattern_url_to_website_search_url(str(url))
+
 
 # example website url (not for api request)
 # https://www.ravelry.com/patterns/search#weight=dk%7Cworsted%7Caran&sort=best&view=captioned_thumbs
+# example pattern url
+# https://www.ravelry.com/patterns/library/nightshift
