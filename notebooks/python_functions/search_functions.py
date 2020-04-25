@@ -104,6 +104,8 @@ attr_dict
 attr_dict['pattern_categories'][1:]
 
 
+attr_dict['pattern_attributes']
+
 yarn_str = or_string(create_yarn_list(attr_dict['yarn_weight']))
 attr_str = or_string(attr_dict['pattern_attributes'])
 cat_str = or_string(attr_dict['pattern_categories'][1:])
