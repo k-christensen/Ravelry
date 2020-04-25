@@ -12,6 +12,7 @@ id_dict = dict(zip(id_list, yarn_weight_list))
 pickle.dump( id_dict, open( "yarn_id_dict.p", "wb" ) )
 
 def create_yarn_list(input_weight):
+    id_dict = pickle.load( open( "yarn_id_dict.p", "rb" ) )
     input_weight = input_weight.lower()
     yarn_list = [input_weight]
     for num,name in id_dict.items():
