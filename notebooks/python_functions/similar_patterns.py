@@ -122,7 +122,7 @@ def pattern_url_to_website_search_url(url):
 
 print("Enter a pattern URL")
 url = input()
-pattern_url_to_website_search_url(str(url))
+print(pattern_url_to_website_search_url(str(url)))
 
 
 # example website url (not for api request)
