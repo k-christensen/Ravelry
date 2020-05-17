@@ -7,6 +7,8 @@ import json
 import pdb
 from bs4 import BeautifulSoup
 import personal_keys
+from pattern_attr_funcs import *
+from yarn_weights import create_yarn_list
 
 # search term goes in, search json comes out
 def search(term):
@@ -83,3 +85,21 @@ def full_search_url(url_sect):
 def create_search_url(attr_dict):
     url_sect = unique_search_url_section(attr_dict)
     return full_search_url(url_sect)
+
+def pattern_to_search(url):
+    attr_dict = url_to_attrs(url)
+    search_url = create_search_url(attr_dict)
+    return search_url
+
+def search_using_url(search_url):
+    search = requests.get(search_url, auth = (personal_keys.username(),personal_keys.password()))
+    s_json = search.json()
+    return s_json
+
+def similar_patterns(url):
+    search_url = pattern_to_search(url)
+    return search_using_url(search_url)
+
+
+
+

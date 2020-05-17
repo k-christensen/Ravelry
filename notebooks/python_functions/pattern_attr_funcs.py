@@ -42,10 +42,6 @@ def url_to_request(url):
     code = url_to_code(url)
     return single_pattern_request(code)
 
-def url_to_attrs(url):
-    code = url_to_code(url)
-    return single_request_to_attrs(code)
-
 
 # input of this is the output of single pattern request
 # output is a dictionary containing 
@@ -72,6 +68,10 @@ def attrs_single_pattern(pattern):
 def single_request_to_attrs(code):
     pattern = single_pattern_request(code)
     return attrs_single_pattern(pattern)
+
+def url_to_attrs(url):
+    code = url_to_code(url)
+    return single_request_to_attrs(code)
     
 # similar to multiple pattern request except it returns just patterns section of json returned in mpr
 def pattern_req(pattern_list):
@@ -121,21 +121,6 @@ def categ_dict(pattern_list):
         full_cat_dict = {'pc_{}'.format(cat):1 for cat in cat_list}
         categ_dict.update({key:full_cat_dict})
     return categ_dict
-
-#     cat_dict = pattern['pattern_categories'][0]
-#     cat_list = [cat_dict['permalink']]
-#     new_dict = cat_dict['parent']
-#     while 'parent' in new_dict.keys():
-#         cat_list.append(new_dict['permalink'])
-#         new_dict = new_dict['parent']
-
-# data = patterns[key]['pattern_categories'][0]    
-#         df = pd.io.json.json_normalize(data)
-#         df = df.filter(regex = 'permalink$', axis = 1)
-#         atrib_dict = df.to_dict(orient='records')[0]
-#         cat_dict = {"pc_{}".format(v):1 for v in atrib_dict.values() if v != 'categories'}
-
-categ_dict(['522775', '91776'])
 
 # creates dictionary of the pattern and the pattern attributes, categories, and yarn weight all in one dict
 # essentially combines three previous functions plus compressing all three dictionaries into one
