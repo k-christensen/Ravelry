@@ -49,15 +49,31 @@ def fit_and_attr_split(attr_list):
 
 # creates the unique part of the search url
 def unique_search_url_section(attr_dict):
-    yarn_list = create_yarn_list(attr_dict['yarn_weight'])
     attr_and_fit_list = fit_and_attr_split(attr_dict['pattern_attributes'])
     attr_list = attr_and_fit_list[1]
+    url_sect = None
+    if len(attr_list) > 0:
+        attr_str = or_string(attr_list)
+        url_sect = 'pa={}&'.format(attr_str)
     fit_list = attr_and_fit_list[0]
-    yarn_str = or_string(yarn_list)
-    attr_str = or_string(attr_list)
-    cat_str = or_string(attr_dict['pattern_categories'][1:])
-    fit_str = or_string(fit_list)
-    return 'weight={}&pa={}&pc={}&fit={}'.format(yarn_str,attr_str,cat_str, fit_str)
+    if len(fit_list) > 0:
+        fit_str = or_string(fit_list)
+        fit_url_sect = 'fit={}&'.format(fit_str)
+        if url_sect is not None:
+            url_sect = url_sect + fit_url_sect
+        else:
+            url_sect = fit_url_sect
+    cat_str = or_string(attr_dict['pattern_categories'])
+    cat_url_sect = 'pc={}&'.format(cat_str)
+    url_sect = url_sect + cat_url_sect
+    if attr_dict['yarn_weight'] is not None:
+        yarn_list = create_yarn_list(attr_dict['yarn_weight'])
+        yarn_str = or_string(yarn_list)
+        yarn_url_sect = 'weight={}&'.format(yarn_str)
+        url_sect = yarn_url_sect + url_sect
+    if url_sect.endswith('&'):
+        url_sect = url_sect[:-1]
+    return url_sect
 
 # creates full search url
 def full_search_url(url_sect):
