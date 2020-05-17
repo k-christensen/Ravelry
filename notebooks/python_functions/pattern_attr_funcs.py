@@ -47,15 +47,20 @@ def url_to_request(url):
 # output is a dictionary containing 
 # yarn weight, pattern cats, and pattern attrs
 def attrs_single_pattern(pattern):
-    data = pattern['pattern_categories'][0]    
-    df = pd.io.json.json_normalize(data)
-    df = df.filter(regex = 'permalink$', axis = 1)
-    atrib_dict = df.to_dict(orient='records')[0]
-    cat_list = [v for v in atrib_dict.values() if v != 'categories']
-
-    attr_dict = {'yarn_weight':'-'.join(pattern['yarn_weight']['name'].split(' ')),
-    'pattern_attributes': [attr['permalink'] 
-    for attr in pattern['pattern_attributes']],
+    cat_dict = pattern['pattern_categories'][0]
+    cat_list = [cat_dict['permalink']]
+    new_dict = cat_dict['parent']
+    while 'parent' in new_dict.keys():
+        cat_list.append(new_dict['permalink'])
+        new_dict = new_dict['parent']
+    if len(cat_list)>1:
+        cat_list = cat_list[:2]
+    if 'yarn_weight' in pattern.keys():
+        yarn_weight = '-'.join(pattern['yarn_weight']['name'].split(' '))
+    else:
+        yarn_weight = None
+    attr_dict = {'yarn_weight':yarn_weight,
+    'pattern_attributes': [attr['permalink'] for attr in pattern['pattern_attributes']],
     'pattern_categories':cat_list}
     return attr_dict
 
