@@ -125,6 +125,3 @@ def pattern_pool_list(item):
     pattern_json = pattern_pool_json(item)
     if pattern_json is not None:
         return create_pattern_id_list(pattern_json)
-
-search_json = default_search()
-search_json['patterns'][0]['id']
