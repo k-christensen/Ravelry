@@ -100,6 +100,31 @@ def similar_patterns(url):
     search_url = pattern_to_search(url)
     return search_using_url(search_url)
 
+def default_search():
+    search_url = 'https://api.ravelry.com/patterns/search.json?sort=recently-popular&view=captioned_thumbs'
+    return search_using_url(search_url)
 
+# returns list of pattern_ids from the search json
+def create_pattern_id_list(pattern_json):
+    pattern_id_list = []
+    patterns = pattern_json['patterns']
+    for item in list(range(0,len(patterns))):
+        pattern_id_list.append(patterns[item]['id'])
+    return pattern_id_list
 
+# creating a pattern pool using either the default search or the similar patterns search
+def pattern_pool_json(item):
+    search_json = None
+    if item.startswith('https://www.ravelry.com/patterns/library'):
+        search_json = search_using_url(item)
+    elif item == 'default_search':
+        search_json = default_search()
+    return search_json
 
+def pattern_pool_list(item):
+    pattern_json = pattern_pool_json(item)
+    if pattern_json is not None:
+        return create_pattern_id_list(pattern_json)
+
+search_json = default_search()
+search_json['patterns'][0]['id']
