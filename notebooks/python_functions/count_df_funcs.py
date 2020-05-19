@@ -53,7 +53,7 @@ def user_profile_df(username):
 
 # input: previous df, output dictionary with scores of how much a user likes a given attr
 def user_profile_dict(user_data):
-     return {col:np.dot(user_profile[col],user_profile.user_data) for col in list(user_profile.columns)[:-1]}
+     return {col:np.dot(user_data[col],user_data.user_data) for col in list(user_data.columns)[:-1]}
 
 # put together previous two funcs, input username, output dict of attrs and user scores
 def user_profile(username):
@@ -73,25 +73,27 @@ def create_proj_df(username):
 
 # work~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-user_profile = user_profile_df("katec125")
-list(user_profile.columns)
-user_profile.user_data
-user_profile.pc_sweater
-np.dot(user_profile.user_data, user_profile.pc_sweater)
+# user_profile = user_profile_df("katec125")
+# list(user_profile.columns)
+# user_profile.user_data
+# user_profile.pc_sweater
+# np.dot(user_profile.user_data, user_profile.pc_sweater)
 
-user_profile.iloc[0]
+# user_profile.iloc[0]
 
-example_dict = dict(zip(list(user_profile.columns), user_profile.loc['36436']))
+# example_dict = dict(zip(list(user_profile.columns), user_profile.loc['36436']))
 
-[key for key in example_dict if example_dict[key] != 0]
+# [key for key in example_dict if example_dict[key] != 0]
 
-user_profile.loc['36436']
+# user_profile.loc['36436']
 
-single_pattern_request('36436')['yarn_weight']['name']
+# single_pattern_request('36436')['yarn_weight']['name']
 
 
-' ' in 'asdfas dfas'
+# ' ' in 'asdfas dfas'
 
-'-'.join(string.split(' '))
+# '-'.join(string.split(' '))
 
-{col:np.dot(user_profile[col],user_profile.user_data) for col in list(user_profile.columns)[:-1]}
+# {col:np.dot(user_profile[col],user_profile.user_data) for col in list(user_profile.columns)[:-1]}
+
+
