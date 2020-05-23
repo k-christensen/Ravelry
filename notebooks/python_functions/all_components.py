@@ -14,8 +14,6 @@ from pattern_attr_funcs import *
 from search_functions import *
 from yarn_weights import create_yarn_list
 from count_df_funcs import *
-from numpy.linalg import multi_dot
-
 
 username = 'katec125'
 search = 'default_search'
