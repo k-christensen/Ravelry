@@ -19,12 +19,14 @@ import pickle
 username = 'katec125'
 search = 'default_search'
 
-known_pattern_list = known_pattern_list(username)
+def search_minus_knowns(username, search):
+    known_pattern_list = known_pattern_list(username)
+    search_list = pattern_pool_list(search)
+    search_minus_knowns =   [item for item in search_list 
+                            if item not in known_pattern_list]
+    return search_minus_knowns
 
-search_list = pattern_pool_list(search)
-
-search_minus_knowns =   [item for item in search_list 
-                        if item not in known_pattern_list]
+search_minus_knowns = search_minus_knowns(username, search)
 
 pattern_pool = pattern_list_to_df(search_minus_knowns)
 
