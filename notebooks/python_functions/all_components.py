@@ -49,7 +49,7 @@ pref_sort = dict((sorted(predicted_user_prefs.items(),key= lambda x: x[1], rever
 
 final_json = multiple_pattern_request(list(pref_sort)[:20])
 
-for key in list(pref_sort):
+for key in list(pref_sort)[:20]:
     final_json['patterns'][key]['user_preference_score'] = predicted_user_prefs[key]
 
-final_json
+print(final_json)
