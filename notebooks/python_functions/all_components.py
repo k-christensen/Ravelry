@@ -50,4 +50,5 @@ final_json = multiple_pattern_request(list(pref_sort)[:20])
 for key in list(pref_sort)[:20]:
     final_json['patterns'][key]['user_preference_score'] = predicted_user_prefs[key]
 
-print(final_json)
+with open("sample.json", "w") as outfile: 
+    json.dump(final_json, outfile)
