@@ -14,6 +14,7 @@ from pattern_attr_funcs import *
 from search_functions import *
 from yarn_weights import create_yarn_list
 from count_df_funcs import *
+import pickle
 
 username = 'katec125'
 search = 'default_search'
@@ -50,5 +51,20 @@ final_json = multiple_pattern_request(list(pref_sort)[:20])
 for key in list(pref_sort)[:20]:
     final_json['patterns'][key]['user_preference_score'] = predicted_user_prefs[key]
 
+pref_sort_20 = dict([(k,v) for k,v in pref_sort.items()][:20])
+
+rank_list = ['rank_{}'.format(num) for num in list(range(1,len(list(pref_sort_20))+1))]
+
+rank_dict = dict(zip(rank_list, list(pref_sort_20)))
+
+for k,v in rank_dict.items():
+    if v in final_json['patterns'].keys():
+        final_json['patterns'][k] = final_json['patterns'][v]
+
+final_json['patterns'] = dict([(k,v) for k,v in final_json['patterns'].items()][20:])
+
+# exporting things for testing in other files
 with open("sample.json", "w") as outfile: 
     json.dump(final_json, outfile)
+
+pickle.dump( pref_sort_20, open( "pref_sort_20.p", "wb" ) )
