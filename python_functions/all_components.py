@@ -20,10 +20,10 @@ username = 'katec125'
 search = 'default_search'
 
 def search_minus_knowns(username, search):
-    known_pattern_list = known_pattern_list(username)
+    known_patterns = known_pattern_list(username)
     search_list = pattern_pool_list(search)
     search_minus_knowns =   [item for item in search_list 
-                            if item not in known_pattern_list]
+                            if item not in known_patterns]
     return search_minus_knowns
 
 search_minus_knowns = search_minus_knowns(username, search)
@@ -40,7 +40,7 @@ for key in list(user_profile):
     if key not in list(pattern_pool.columns):
         user_profile.pop(key)
 
-pool_idf = [len(pattern_pool)/np.count_nonzero(pattern_pool[col]) for col in pattern_pool.columns]
+pool_idf = [math.log(len(pattern_pool)/np.count_nonzero(pattern_pool[col])) for col in pattern_pool.columns]
 
 idf_and_profile = np.array(pool_idf)*np.array(list(user_profile.values()))
 
