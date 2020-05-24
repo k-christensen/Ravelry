@@ -26,19 +26,21 @@ def search_minus_knowns(username, search):
                             if item not in known_patterns]
     return search_minus_knowns
 
+def user_profile_edits(user_profile, pattern_pool):
+    for item in list(pattern_pool.columns):
+        if item not in user_profile.keys():
+            user_profile[item] = 0
+
+    for key in list(user_profile):
+        if key not in list(pattern_pool.columns):
+            user_profile.pop(key)
+    return user_profile
+
 search_minus_knowns = search_minus_knowns(username, search)
 
 pattern_pool = pattern_list_to_df(search_minus_knowns)
 
-user_profile = user_profile(username)
-
-for item in list(pattern_pool.columns):
-    if item not in user_profile.keys():
-        user_profile[item] = 0
-
-for key in list(user_profile):
-    if key not in list(pattern_pool.columns):
-        user_profile.pop(key)
+user_profile = user_profile_edits(user_profile(username), pattern_pool)
 
 pool_idf = [math.log(len(pattern_pool)/np.count_nonzero(pattern_pool[col])) for col in pattern_pool.columns]
 
