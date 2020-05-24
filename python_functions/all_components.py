@@ -65,6 +65,8 @@ for k,v in rank_dict.items():
 
 final_json['patterns'] = dict([(k,v) for k,v in final_json['patterns'].items()][20:])
 
+[final_json['patterns'][key]['permalink'] for key in final_json['patterns'].keys()]
+
 # exporting things for testing in other files
 with open("sample.json", "w") as outfile: 
     json.dump(final_json, outfile)
