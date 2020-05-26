@@ -10,6 +10,16 @@ rank_list = ['rank_{}'.format(num) for num in list(range(1,len(list(pref_sort_20
 
 rank_dict = dict(zip(rank_list, list(pref_sort_20)))
 
+with open("rank_dict.json", 'w') as outfile:
+    json.dump(rank_dict, outfile)
+
+with open('rank_dict.json') as dict_file:
+    opened_rank_dict = json.load(dict_file)
+
+pref_sort_20
+
+final_json['patterns']['rank_1']['user_preference_score']
+
 for k,v in rank_dict.items():
     if v in final_json['patterns'].keys():
         final_json['patterns'][k] = final_json['patterns'][v]
