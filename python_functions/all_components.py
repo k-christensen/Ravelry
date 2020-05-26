@@ -14,7 +14,6 @@ from pattern_attr_funcs import *
 from search_functions import *
 from yarn_weights import create_yarn_list
 from count_df_funcs import *
-import pickle
 
 username = 'katec125'
 search = 'default_search'
@@ -40,11 +39,13 @@ search_minus_knowns = search_minus_knowns(username, search)
 
 pattern_pool = pattern_list_to_df(search_minus_knowns)
 
-user_profile = user_profile_edits(user_profile(username), pattern_pool)
+user_profile = user_profile(username)
+
+user_profile_edited = user_profile_edits(user_profile, pattern_pool)
 
 pool_idf = [math.log(len(pattern_pool)/np.count_nonzero(pattern_pool[col])) for col in pattern_pool.columns]
 
-idf_and_profile = np.array(pool_idf)*np.array(list(user_profile.values()))
+idf_and_profile = np.array(pool_idf)*np.array(list(user_profile_edited.values()))
 
 predicted_user_prefs = {i:np.dot(idf_and_profile,pattern_pool.loc[i]) for i in pattern_pool.index}
 
@@ -73,4 +74,5 @@ final_json['patterns'] = dict([(k,v) for k,v in final_json['patterns'].items()][
 with open("sample.json", "w") as outfile: 
     json.dump(final_json, outfile)
 
-pickle.dump( pref_sort_20, open( "pref_sort_20.p", "wb" ) )
+with open("pref_sort_20.json", "w") as outfile: 
+    json.dump(pref_sort_20, outfile)

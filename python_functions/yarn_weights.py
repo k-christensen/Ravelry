@@ -1,4 +1,3 @@
-import pickle
 import json
 
 yarn_weight_list = ['thread', 'cobweb', 'lace', 
@@ -14,7 +13,8 @@ with open("yarn_id_dict.json", 'w') as outfile:
     json.dump(id_dict, outfile)
 
 def create_yarn_list(input_weight):
-    id_dict = pickle.load( open( "yarn_id_dict.p", "rb" ) )
+    id_dict = json.load( open( "yarn_id_dict.json") )
+    id_dict = {int(key):id_dict[key] for key in id_dict}
     input_weight = input_weight.lower()
     yarn_list = [input_weight]
     for num,name in id_dict.items():
@@ -27,5 +27,6 @@ def create_yarn_list(input_weight):
     else:
         yarn_list.extend((id_dict[input_id-1], id_dict[input_id+1]))
     return yarn_list
+
 
 
