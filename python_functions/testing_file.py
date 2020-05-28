@@ -4,14 +4,15 @@ import pickle
 with open('sample.json') as json_file:
     final_json = json.load(json_file)
 
+json.load(open('sample.json'))
+
 pref_sort_20 = pickle.load( open( "pref_sort_20.p", "rb" ) )
 
 rank_list = ['rank_{}'.format(num) for num in list(range(1,len(list(pref_sort_20))+1))]
 
 rank_dict = dict(zip(rank_list, list(pref_sort_20)))
 
-with open("rank_dict.json", 'w') as outfile:
-    json.dump(rank_dict, outfile)
+d
 
 with open('rank_dict.json') as dict_file:
     opened_rank_dict = json.load(dict_file)
@@ -35,3 +36,5 @@ final_json['patterns'] = dict([(k,v) for k,v in final_json['patterns'].items()][
 exp_copy_json['patterns']['rank_1']['user_preference_score']
 
 [final_json['patterns'][item]['permalink'] for item in exp_copy_json['patterns'].keys()]
+
+

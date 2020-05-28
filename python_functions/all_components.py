@@ -15,64 +15,90 @@ from search_functions import *
 from yarn_weights import create_yarn_list
 from count_df_funcs import *
 
-username = 'katec125'
-search = 'default_search'
-
-def search_minus_knowns(username, search):
+def pattern_pool_df(username, search):
     known_patterns = known_pattern_list(username)
     search_list = pattern_pool_list(search)
     search_minus_knowns =   [item for item in search_list 
                             if item not in known_patterns]
-    return search_minus_knowns
+    return pattern_list_to_df(search_minus_knowns)
 
-def user_profile_edits(user_profile, pattern_pool):
+def user_profile_edits(profile, pattern_pool):
     for item in list(pattern_pool.columns):
-        if item not in user_profile.keys():
-            user_profile[item] = 0
+        if item not in profile.keys():
+            profile[item] = 0
 
-    for key in list(user_profile):
+    for key in list(profile):
         if key not in list(pattern_pool.columns):
-            user_profile.pop(key)
-    return user_profile
+            profile.pop(key)
+    return profile
 
-search_minus_knowns = search_minus_knowns(username, search)
+def pref_scores(username, search = 'default_search', user_prof = None):
+    pattern_pool = pattern_pool_df(username, search)
+    
+    if user_prof == None:
+        u_p = user_profile(username)
+        with open("user_profile.json", "w") as outfile: 
+            json.dump(u_p, outfile)
+    else:
+        u_p = user_prof
+    
+    # edits pattern pool so that it deletes user profile attrs not in pattern pool 
+    # and adds attrs that are in the pattern pool
+    user_profile_edited = user_profile_edits(u_p, pattern_pool)
 
-pattern_pool = pattern_list_to_df(search_minus_knowns)
+    pool_idf = [math.log(len(pattern_pool)/np.count_nonzero(pattern_pool[col])) for col in pattern_pool.columns]
+    
+    # combines idf and profile into one so they can be combined with the pattern pool
+    # essentially, since you can't do a dot product of three matricies all at once
+    # this part is done first, 
+    # then the predicted user prefs are done in the next step 
+    idf_and_profile = np.array(pool_idf)*np.array(list(user_profile_edited.values()))
 
-user_profile = user_profile(username)
+    # dictionary object: key = pattern id, value is percent match 
+    predicted_user_prefs = {i:np.dot(idf_and_profile,pattern_pool.loc[i]) for i in pattern_pool.index}
 
-user_profile_edited = user_profile_edits(user_profile, pattern_pool)
+    return predicted_user_prefs
 
-pool_idf = [math.log(len(pattern_pool)/np.count_nonzero(pattern_pool[col])) for col in pattern_pool.columns]
 
-idf_and_profile = np.array(pool_idf)*np.array(list(user_profile_edited.values()))
+def final_json(predicted_user_prefs, trim_number = 20):
+    # orders the dictionary so the best matches are the highest
+    pref_sort = dict((sorted(predicted_user_prefs.items(),key= lambda x: x[1], reverse=True)))
+    
+    # trims down pref_sort to the top matches (number determined by the trim number)
+    pref_sort_trim = dict([(k,v) for k,v in pref_sort.items()][:trim_number])
 
-predicted_user_prefs = {i:np.dot(idf_and_profile,pattern_pool.loc[i]) for i in pattern_pool.index}
+    # new pattern request is made with the top matches
+    final_json = multiple_pattern_request(list(pref_sort_trim))
 
-pref_sort = dict((sorted(predicted_user_prefs.items(),key= lambda x: x[1], reverse=True)))
+    # adds a feature for every pattern entry in the json: percent match
+    for key in list(pref_sort_trim):
+        final_json['patterns'][key]['percent_match'] = predicted_user_prefs[key]
 
-final_json = multiple_pattern_request(list(pref_sort)[:20])
+    # this list is just a list of strings with rank_(insert number ranking here)
+    rank_list = ['rank_{}'.format(num) for num in list(range(1,len(list(pref_sort_trim))+1))]
 
-for key in list(pref_sort)[:20]:
-    final_json['patterns'][key]['user_preference_score'] = predicted_user_prefs[key]
+    # dict key is the pattern's rank by percent match and the value is pattern id
+    rank_dict = dict(zip(rank_list, list(pref_sort_trim)))
 
-pref_sort_20 = dict([(k,v) for k,v in pref_sort.items()][:20])
+    # creates new set of key value pairs 
+    # where the key is the rank number (as seen in the rank dict keys) 
+    # and the value is the pattern info 
+    for k,v in rank_dict.items():
+        if v in final_json['patterns'].keys():
+            final_json['patterns'][k] = final_json['patterns'][v]
 
-rank_list = ['rank_{}'.format(num) for num in list(range(1,len(list(pref_sort_20))+1))]
+    # this takes out the initial dictionary entries 
+    # where the key was the pattern id
+    # thus the key values after ['patterns'] are the ranks, 
+    # thus they'll be in order
+    final_json['patterns'] = dict([(k,v) for k,v in final_json['patterns'].items()][len(pref_sort_trim):])
+    
+    return final_json 
 
-rank_dict = dict(zip(rank_list, list(pref_sort_20)))
+def search_to_json(username, search = 'default_search', user_prof = None, trim_number = 20):
+    predicted_user_prefs = pref_scores(username, search, user_prof)
+    return final_json(predicted_user_prefs, trim_number)
 
-for k,v in rank_dict.items():
-    if v in final_json['patterns'].keys():
-        final_json['patterns'][k] = final_json['patterns'][v]
+output_json = search_to_json('katec125')
 
-final_json['patterns'] = dict([(k,v) for k,v in final_json['patterns'].items()][20:])
-
-[final_json['patterns'][key]['permalink'] for key in final_json['patterns'].keys()]
-
-# exporting things for testing in other files
-with open("sample.json", "w") as outfile: 
-    json.dump(final_json, outfile)
-
-with open("pref_sort_20.json", "w") as outfile: 
-    json.dump(pref_sort_20, outfile)
+{output_json['patterns'][rank]['permalink']:output_json['patterns'][rank]['percent_match'] for rank in output_json['patterns']}
