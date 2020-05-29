@@ -32,13 +32,15 @@ def user_profile_edits(profile, pattern_pool):
             profile.pop(key)
     return profile
 
-def pref_scores(username, search = 'default_search', user_prof = None):
+def pref_scores(username, search = 'default_search', user_prof = None, save_user_profile = 'no'):
     pattern_pool = pattern_pool_df(username, search)
     
-    if user_prof == None:
+    if save_user_profile == 'yes':
         u_p = user_profile(username)
         with open("user_profile.json", "w") as outfile: 
-            json.dump(u_p, outfile)
+            json.dump(u_p, outfile) 
+    elif user_prof == 'None':
+        u_p = user_profile(username)
     else:
         u_p = user_prof
     
@@ -95,10 +97,10 @@ def final_json(predicted_user_prefs, trim_number = 20):
     
     return final_json 
 
-def search_to_json(username, search = 'default_search', user_prof = None, trim_number = 20):
+def search_to_json(username, search = 'default_search', user_prof = None, save_user_profile = 'no', trim_number = 20):
     predicted_user_prefs = pref_scores(username, search, user_prof)
     return final_json(predicted_user_prefs, trim_number)
 
-output_json = search_to_json('katec125')
+output_json = search_to_json('katec125', user_prof=json.load(open('user_profile.json')))
 
-{output_json['patterns'][rank]['permalink']:output_json['patterns'][rank]['percent_match'] for rank in output_json['patterns']}
+{'https://www.ravelry.com/patterns/library/{}'.format(output_json['patterns'][rank]['permalink']):output_json['patterns'][rank]['percent_match'] for rank in output_json['patterns']}
