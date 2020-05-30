@@ -21,7 +21,7 @@ def create_fav_list(fav_request):
     fav_list = []
     favorites = fav_request['favorites']
     for item in range(0,len(favorites)):
-        if favorites[item]['favorited'] is not None:
+        if favorites[item]['favorited'] is not None and favorites[item]['type'] in ['pattern', 'project']:
             if 'pattern_id' in favorites[item]['favorited'].keys():
                 fav_list.append(favorites[item]['favorited']['pattern_id'])
             elif 'id' in favorites[item]['favorited'].keys():
