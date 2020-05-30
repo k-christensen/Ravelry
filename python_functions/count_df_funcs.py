@@ -49,6 +49,7 @@ def user_profile_df(username):
     df = pattern_list_to_df(full_list)
     user_data_dict = user_data(username)
     df['user_data'] = pd.Series(user_data_dict)
+    df = df.dropna()
     return df
 
 # input: previous df, output dictionary with scores of how much a user likes a given attr
