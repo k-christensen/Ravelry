@@ -21,7 +21,7 @@ def project_list(p_json):
     proj_list = []
     proj_list.extend([p_json['projects'][item]['pattern_id'] 
                     for item in range(0,len(p_json['projects']))])
-    return proj_list
+    return [item for item in proj_list if item is not None]
 
 # puts together first two functions
 def get_project_list_from_username(username):
