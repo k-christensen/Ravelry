@@ -32,7 +32,7 @@ def known_pattern_list(username):
     fav_list = get_favs_list(username)
     proj_list = get_project_list_from_username(username)
     full_list = list(set(fav_list+proj_list))
-    return full_list
+    return [item for item in full_list if item is not None]
 
 # input is a username, 
 # output is a df of all the user's 
