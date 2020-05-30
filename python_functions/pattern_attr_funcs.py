@@ -14,9 +14,26 @@ from proj_funcs import *
 # input: list of patterns, output: json file with patterns
 def multiple_pattern_request(pattern_list):
     pattern_list = [str(code) for code in pattern_list]
-    patterns_url = 'https://api.ravelry.com/patterns.json?ids={}'.format('+'.join(pattern_list))
-    patterns = requests.get(patterns_url, 
-                            auth = (personal_keys.username(),personal_keys.password()))
+    if len(pattern_list) > 500:
+        first_pattern_list = pattern_list[:500]
+        second_pattern_list = pattern_list[500:]
+        first_patterns_url = 'https://api.ravelry.com/patterns.json?ids={}'.format('+'.join(first_pattern_list))
+        first_patterns = requests.get(first_patterns_url, 
+                                auth = (personal_keys.username(),personal_keys.password()))
+        if first_patterns.status_code is not 200:
+            return "first pattern batch bad"
+        second_patterns_url = 'https://api.ravelry.com/patterns.json?ids={}'.format('+'.join(second_pattern_list))
+        second_patterns = requests.get(second_patterns_url, 
+                                auth = (personal_keys.username(),personal_keys.password()))
+        if second_patterns.status_code is not 200:
+            return "second pattern batch bad"
+        large_patterns = first_patterns.json()
+        large_patterns['patterns'].update(second_patterns.json()['patterns'])
+        return large_patterns 
+    else:
+        patterns_url = 'https://api.ravelry.com/patterns.json?ids={}'.format('+'.join(pattern_list))
+        patterns = requests.get(patterns_url, 
+                                auth = (personal_keys.username(),personal_keys.password()))
     if patterns.status_code is 200:
         return patterns.json()
     else:
