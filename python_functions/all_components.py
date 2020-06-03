@@ -32,13 +32,13 @@ def user_profile_edits(profile, pattern_pool):
             profile.pop(key)
     return profile
 
-def pref_scores(username, search = 'default_search', user_prof = None, save_user_profile = 'no'):
+def pref_scores(username, search = 'default_search', user_prof = 'None', save_user_profile = 'no'):
     pattern_pool = pattern_pool_df(username, search)
     
     if save_user_profile == 'yes':
         u_p = user_profile(username)
-        with open("user_profile.json", "w") as outfile: 
-            json.dump(u_p, outfile) 
+        with open("{}_user_profile.json".format(username), "w") as outfile: 
+            json.dump(u_p, outfile)
     elif user_prof == 'None':
         u_p = user_profile(username)
     else:
@@ -71,11 +71,11 @@ def final_json(predicted_user_prefs, trim_number = 20):
 
     # new pattern request is made with the top matches
     final_json = multiple_pattern_request(list(pref_sort_trim))
-
+    
     # adds a feature for every pattern entry in the json: percent match
     for key in list(pref_sort_trim):
         final_json['patterns'][key]['percent_match'] = predicted_user_prefs[key]
-
+    
     # this list is just a list of strings with rank_(insert number ranking here)
     rank_list = ['rank_{}'.format(num) for num in list(range(1,len(list(pref_sort_trim))+1))]
 
@@ -97,10 +97,24 @@ def final_json(predicted_user_prefs, trim_number = 20):
     
     return final_json 
 
-def search_to_json(username, search = 'default_search', user_prof = None, save_user_profile = 'no', trim_number = 20):
-    predicted_user_prefs = pref_scores(username, search, user_prof)
+def search_to_json(username, search = 'default_search', user_prof = 'None', save_user_profile = 'no', trim_number = 20):
+    predicted_user_prefs = pref_scores(username, search, user_prof, save_user_profile)
     return final_json(predicted_user_prefs, trim_number)
 
-output_json = search_to_json('katec125', user_prof=json.load(open('user_profile.json')))
+def link_and_score_json(username, output_json, save = 'no'):
+    link_and_score_dict = {"https://www.ravelry.com/patterns/library/{}".format(
+        output_json['patterns'][rank]['permalink']):
+    output_json['patterns'][rank]['percent_match'] 
+    for rank in output_json['patterns']}
+    if save == 'yes':
+        with open("{}_links_and_scores.json".format(username), "w") as outfile: 
+            json.dump(link_and_score_dict, outfile)
+    return link_and_score_dict
 
-{'https://www.ravelry.com/patterns/library/{}'.format(output_json['patterns'][rank]['permalink']):output_json['patterns'][rank]['percent_match'] for rank in output_json['patterns']}
+def serach_to_link_and_score(username, search = 'default_search', 
+                            user_prof = 'None', save_user_profile = 'no', 
+                            trim_number = 20, save = 'no'):
+    output_json = search_to_json(username, search, user_prof, save_user_profile, trim_number)
+    return link_and_score_json(username, output_json, save)
+ 
+serach_to_link_and_score(username = 'katec125', save = 'yes')
