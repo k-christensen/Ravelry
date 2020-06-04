@@ -56,10 +56,27 @@ def user_profile_df(username):
 def user_profile_dict(user_data):
      return {col:np.dot(user_data[col],user_data.user_data) for col in list(user_data.columns)[:-1]}
 
+# input: user profile df output, output is a json 
+# with each columns' user score for each column 
+# number of instances of that item 
+# and at the end the len of the profile df
+def user_profile_json(user_data):
+    user_profile = {col:{"profile_num":
+     np.dot(user_data[col],user_data.user_data),
+    "num_of_instances":
+    np.count_nonzero(user_data[col])}
+    for col in list(user_data.columns)[:-1]}
+    user_profile["len_of_pool"] = len(user_data)
+    return user_profile
+
 # put together previous two funcs, input username, output dict of attrs and user scores
-def user_profile(username):
+def user_profile(username, save_json = 'no'):
     user_data = user_profile_df(username)
-    return user_profile_dict(user_data)
+    u_p = user_profile_json(user_data)
+    if save_json != 'no':
+        with open("{}_user_profile.json".format(username), "w") as outfile: 
+            json.dump(u_p, outfile)
+    return u_p
 
 # below function combines many of above functions such that all you put in is someone's username and it spits out dataframe of favs and projects
 def create_fav_df(username):
@@ -76,13 +93,21 @@ def create_proj_df(username):
 
 user_profile = user_profile_df("katec125")
 
-def user_profile_json(user_data):
-    user_profile = {col:{"profile_num":
-     np.dot(user_data[col],user_data.user_data),
-    "num_of_instances":
-    np.count_nonzero(user_data[col])}
-    for col in list(user_data.columns)[:-1]}
-    user_profile["len_of_pool"] = len(user_data)
-    return user_profile
 
-user_profile_json(user_profile)
+
+u_json = user_profile_json(user_profile)
+
+
+dict(zip(list(u_json), 
+[item['profile_num'] 
+for item in list(u_json.values())[:-1]]))
+
+[item['profile_num'] for item in list(u_json.values())[:-1]]
+
+u_json['yarn_id_DK']
+
+list(u_json.values())[:-1]
+
+
+   with open("{}_user_profile.json".format(username), "w") as outfile: 
+            json.dump(u_p, outfile)

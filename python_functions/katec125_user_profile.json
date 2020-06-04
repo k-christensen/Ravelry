@@ -1,171 +1,679 @@
 {
-    "pa_3-4-sleeve": 1.9415334404982234,
-    "pa_3-dimensional": 0.7862127634730902,
-    "pa_Intarsia": 2.1351044513592896,
-    "pa_Shetland": 0.7282378854318489,
-    "pa_adult": 32.0995093256684,
-    "pa_afterthought-pocket": 0.23570226039551587,
-    "pa_aline": 1.7351376052018874,
-    "pa_amigurumi": 0.3779644730092272,
-    "pa_appliqued": 0.6255432421712244,
-    "pa_asymmetric": 1.5612385803482762,
-    "pa_baby": 0.7588652023420791,
-    "pa_ballet-neck": 1.098657873368571,
-    "pa_beads": 1.3363062095621219,
-    "pa_bias": 0.6976336241065542,
-    "pa_boat-neck": 2.0542766887114667,
-    "pa_bobble-or-popcorn": 0.2672612419124244,
-    "pa_bottom-up": 15.221267003113722,
-    "pa_bracelet-sleeve": 0.8729158626938447,
-    "pa_brioche-tuck": 3.337717184833733,
-    "pa_buttoned": 0.4661424227863119,
-    "pa_buttonholes": 0.22360679774997896,
-    "pa_cables": 3.219698708363498,
-    "pa_cap-sleeve": 1.7896939045459144,
-    "pa_chart": 24.886736962869232,
-    "pa_child": 2.649273912008559,
-    "pa_circle-shaped": 0.5547001962252291,
-    "pa_circular-yoke": 10.557622255271657,
-    "pa_collar": 1.1296518609910604,
-    "pa_contiguous": 0.8491500399212033,
-    "pa_corrugated-ribbing": 0.7282378854318489,
-    "pa_crescent-shape": 4.32729204214586,
-    "pa_crew-neck": 7.059064583292544,
-    "pa_cropped": 3.1028986035220476,
-    "pa_cuffed-sleeve": 1.5799998616074418,
-    "pa_danish": 0.19245008972987526,
-    "pa_dolman-sleeve": 0.7517205708844794,
-    "pa_doubleknit": 0.25,
-    "pa_drop-sleeve": 1.1749956864046742,
-    "pa_dropped-stitches": 1.3111532028407118,
-    "pa_elbow-sleeve": 0.9208502269358976,
-    "pa_embroidery": 0.2672612419124244,
-    "pa_estonian": 0.21320071635561041,
-    "pa_eyelets": 5.5075466915545395,
-    "pa_fairisle": 0.6329236492437734,
-    "pa_female": 21.12517426781306,
-    "pa_fitted": 8.03557882140951,
-    "pa_flutter-sleeve": 0.45431502488534514,
-    "pa_front-fastening": 0.20851441405707477,
-    "pa_funnel-neck": 0.4651179942660776,
-    "pa_gathers": 0.20851441405707477,
-    "pa_gusset": 1.706317759470564,
-    "pa_halfcircle-shape": 1.6358413819655724,
-    "pa_hems": 0.45302253162054074,
-    "pa_hidden-pocket": 0.23570226039551587,
-    "pa_icelandic": 1.9575756318033717,
-    "pa_icord": 2.969815390957396,
-    "pa_icord-edging": 2.043258466572132,
-    "pa_in-the-round": 25.875990375225037,
-    "pa_kitchener": 3.9490863273584162,
-    "pa_lace": 12.214635003073955,
-    "pa_lace-edging": 0.8208868497528694,
-    "pa_long-sleeve": 6.583095384665803,
-    "pa_male": 4.1788016328942055,
-    "pa_mature": 0.3779644730092272,
-    "pa_mesh": 1.5433065850688679,
-    "pa_modified-drop-sleeve": 0.23570226039551587,
-    "pa_modular": 2.485751255586887,
-    "pa_mosaic": 0.24253562503633297,
-    "pa_negative-ease": 4.9547440719410565,
-    "pa_no-ease": 4.077407428669099,
-    "pa_norwegian": 1.3839497676038526,
-    "pa_one-piece": 19.88801031954409,
-    "pa_other-colorwork": 3.6777444841956366,
-    "pa_other-edging": 1.2460475759339162,
-    "pa_oversized": 2.9032501461892037,
-    "pa_pattern-recipe": 0.7183112810058321,
-    "pa_petite": 2.143651313450661,
-    "pa_phototutorial": 3.2816523321333824,
-    "pa_picots": 1.7389271686864514,
-    "pa_placeholder": 0.19611613513818404,
-    "pa_plus": 5.989209892598266,
-    "pa_positive-ease": 10.711156454594967,
-    "pa_provisional": 2.341092010825215,
-    "pa_puffed-sleeve": 0.657417390808201,
-    "pa_racerback": 0.8623724356957946,
-    "pa_raglan-sleeve": 2.7080670783321756,
-    "pa_reversible": 3.843144712722488,
-    "pa_ribbed": 6.414107084711864,
-    "pa_ripple": 0.24253562503633297,
-    "pa_rolled": 0.22941573387056174,
-    "pa_saddle-shoulder": 0.47360679774997894,
-    "pa_schematic": 15.424081439592635,
-    "pa_scoop-neck": 2.0992703589542137,
-    "pa_seamed": 5.189234619699294,
-    "pa_seamless": 29.770633635628993,
-    "pa_selvedge": 0.941534774249231,
-    "pa_set-in-pocket": 0.23570226039551587,
-    "pa_set-in-sleeve": 1.7983148557397126,
-    "pa_short-rows": 10.240379779287144,
-    "pa_short-sleeve": 3.7216448964080726,
-    "pa_sideways": 1.252596146775502,
-    "pa_sleeves": 1.6661410006559016,
-    "pa_slipped-stitches": 2.63622588189187,
-    "pa_smocked": 0.2182178902359924,
-    "pa_square": 0.35355339059327373,
-    "pa_steeks": 0.4588314677411235,
-    "pa_straight": 3.4801912223449616,
-    "pa_stranded": 12.574212452677953,
-    "pa_stripes": 2.8484763295262066,
-    "pa_stripes-colorwork": 9.667418367589214,
-    "pa_surface-crochet": 0.23570226039551587,
-    "pa_tall": 1.2555007237254188,
-    "pa_teen": 11.285148602990311,
-    "pa_textured": 8.317971615438964,
-    "pa_three-needle-bind": 2.8419991097560917,
-    "pa_tied": 0.45851441405707477,
-    "pa_toddler": 0.4255318690087458,
-    "pa_toe-up": 0.3333333333333333,
-    "pa_top-cuff-down": 1.0,
-    "pa_top-down": 21.313282948276417,
-    "pa_triangle-shaped": 4.007959278113605,
-    "pa_turtleneck": 0.20412414523193154,
-    "pa_twisted-stitches": 1.9603539499007199,
-    "pa_unisex": 14.040201986446071,
-    "pa_v-neck": 1.6182670785422983,
-    "pa_video-tutorial": 2.178431875792957,
-    "pa_waist": 3.7404776658096535,
-    "pa_worked-flat": 20.378015467031723,
-    "pa_wrap": 0.45851441405707477,
-    "pa_written-pattern": 40.148866865571875,
-    "pc_accessories": 21.515661152712795,
-    "pc_animal": 0.7862127634730902,
-    "pc_bag": 0.22941573387056174,
-    "pc_beanie-toque": 2.416082204685508,
-    "pc_booties": 0.3333333333333333,
-    "pc_cardigan": 1.0724540213978284,
-    "pc_clothing": 26.915702721398546,
-    "pc_cowl": 1.2439898767936661,
-    "pc_doll": 0.3779644730092272,
-    "pc_feet-legs": 1.3333333333333333,
-    "pc_fingerless": 0.6106834314459479,
-    "pc_hands": 2.6056763255113253,
-    "pc_hat": 2.416082204685508,
-    "pc_home": 0.7315178636025009,
-    "pc_mid-calf": 1.0,
-    "pc_mittens": 1.9949928940653772,
-    "pc_neck-torso": 14.931153555312063,
-    "pc_pillow": 0.7315178636025009,
-    "pc_pullover": 19.428289254331503,
-    "pc_purse": 0.22941573387056174,
-    "pc_scarf": 1.4412189230868466,
-    "pc_shawl-wrap": 12.245944755431552,
-    "pc_sleeveless-top": 2.1992757696429193,
-    "pc_socks": 1.0,
-    "pc_softies": 1.1641772364823173,
-    "pc_sweater": 20.50074327572933,
-    "pc_tee": 4.215683676026297,
-    "pc_tops": 6.414959445669215,
-    "pc_toysandhobbies": 1.1641772364823173,
-    "yarn_id_Aran": 4.492849968211853,
-    "yarn_id_Bulky": 3.0306572562223986,
-    "yarn_id_DK": 10.809121318585031,
-    "yarn_id_Fingering": 20.36466259282289,
-    "yarn_id_Lace": 2.5935250044518128,
-    "yarn_id_Light-Fingering": 2.1989263218343362,
-    "yarn_id_None": 0.3779644730092272,
-    "yarn_id_Sport": 3.407982791892784,
-    "yarn_id_Super-Bulky": 0.35355339059327373,
-    "yarn_id_Worsted": 2.697815856572552
+    "pa_3-4-sleeve": {
+        "profile_num": 2.1339835302280985,
+        "num_of_instances": 8
+    },
+    "pa_3-dimensional": {
+        "profile_num": 0.7862127634730902,
+        "num_of_instances": 2
+    },
+    "pa_Intarsia": {
+        "profile_num": 2.1351044513592896,
+        "num_of_instances": 7
+    },
+    "pa_Shetland": {
+        "profile_num": 0.7282378854318489,
+        "num_of_instances": 3
+    },
+    "pa_adult": {
+        "profile_num": 32.291959415398274,
+        "num_of_instances": 107
+    },
+    "pa_afterthought-pocket": {
+        "profile_num": 0.23570226039551587,
+        "num_of_instances": 1
+    },
+    "pa_aline": {
+        "profile_num": 1.7351376052018874,
+        "num_of_instances": 6
+    },
+    "pa_amigurumi": {
+        "profile_num": 0.3779644730092272,
+        "num_of_instances": 1
+    },
+    "pa_appliqued": {
+        "profile_num": 0.6255432421712244,
+        "num_of_instances": 1
+    },
+    "pa_asymmetric": {
+        "profile_num": 1.5612385803482762,
+        "num_of_instances": 3
+    },
+    "pa_baby": {
+        "profile_num": 0.7588652023420791,
+        "num_of_instances": 3
+    },
+    "pa_ballet-neck": {
+        "profile_num": 1.098657873368571,
+        "num_of_instances": 5
+    },
+    "pa_beads": {
+        "profile_num": 1.3363062095621219,
+        "num_of_instances": 3
+    },
+    "pa_bias": {
+        "profile_num": 0.6976336241065542,
+        "num_of_instances": 3
+    },
+    "pa_boat-neck": {
+        "profile_num": 2.0542766887114667,
+        "num_of_instances": 9
+    },
+    "pa_bobble-or-popcorn": {
+        "profile_num": 0.2672612419124244,
+        "num_of_instances": 1
+    },
+    "pa_bottom-up": {
+        "profile_num": 15.221267003113722,
+        "num_of_instances": 52
+    },
+    "pa_bracelet-sleeve": {
+        "profile_num": 0.8729158626938447,
+        "num_of_instances": 4
+    },
+    "pa_brioche-tuck": {
+        "profile_num": 3.337717184833733,
+        "num_of_instances": 9
+    },
+    "pa_buttoned": {
+        "profile_num": 0.4661424227863119,
+        "num_of_instances": 2
+    },
+    "pa_buttonholes": {
+        "profile_num": 0.22360679774997896,
+        "num_of_instances": 1
+    },
+    "pa_cables": {
+        "profile_num": 3.219698708363498,
+        "num_of_instances": 11
+    },
+    "pa_cap-sleeve": {
+        "profile_num": 1.7896939045459144,
+        "num_of_instances": 6
+    },
+    "pa_chart": {
+        "profile_num": 24.886736962869232,
+        "num_of_instances": 77
+    },
+    "pa_child": {
+        "profile_num": 2.649273912008559,
+        "num_of_instances": 6
+    },
+    "pa_circle-shaped": {
+        "profile_num": 0.5547001962252291,
+        "num_of_instances": 2
+    },
+    "pa_circular-yoke": {
+        "profile_num": 10.75007234500153,
+        "num_of_instances": 40
+    },
+    "pa_collar": {
+        "profile_num": 1.1296518609910604,
+        "num_of_instances": 3
+    },
+    "pa_contiguous": {
+        "profile_num": 0.8491500399212033,
+        "num_of_instances": 2
+    },
+    "pa_corrugated-ribbing": {
+        "profile_num": 0.7282378854318489,
+        "num_of_instances": 3
+    },
+    "pa_crescent-shape": {
+        "profile_num": 4.32729204214586,
+        "num_of_instances": 11
+    },
+    "pa_crew-neck": {
+        "profile_num": 7.2515146730224185,
+        "num_of_instances": 26
+    },
+    "pa_cropped": {
+        "profile_num": 3.1028986035220476,
+        "num_of_instances": 14
+    },
+    "pa_cuffed-sleeve": {
+        "profile_num": 1.7724499513373169,
+        "num_of_instances": 6
+    },
+    "pa_danish": {
+        "profile_num": 0.19245008972987526,
+        "num_of_instances": 1
+    },
+    "pa_dolman-sleeve": {
+        "profile_num": 0.7517205708844794,
+        "num_of_instances": 3
+    },
+    "pa_doubleknit": {
+        "profile_num": 0.25,
+        "num_of_instances": 1
+    },
+    "pa_drop-sleeve": {
+        "profile_num": 1.1749956864046742,
+        "num_of_instances": 5
+    },
+    "pa_dropped-stitches": {
+        "profile_num": 1.3111532028407118,
+        "num_of_instances": 4
+    },
+    "pa_elbow-sleeve": {
+        "profile_num": 0.9208502269358976,
+        "num_of_instances": 4
+    },
+    "pa_embroidery": {
+        "profile_num": 0.2672612419124244,
+        "num_of_instances": 1
+    },
+    "pa_estonian": {
+        "profile_num": 0.21320071635561041,
+        "num_of_instances": 1
+    },
+    "pa_eyelets": {
+        "profile_num": 5.5075466915545395,
+        "num_of_instances": 17
+    },
+    "pa_fairisle": {
+        "profile_num": 0.6329236492437734,
+        "num_of_instances": 3
+    },
+    "pa_female": {
+        "profile_num": 21.12517426781306,
+        "num_of_instances": 71
+    },
+    "pa_fitted": {
+        "profile_num": 8.03557882140951,
+        "num_of_instances": 29
+    },
+    "pa_flutter-sleeve": {
+        "profile_num": 0.45431502488534514,
+        "num_of_instances": 2
+    },
+    "pa_front-fastening": {
+        "profile_num": 0.20851441405707477,
+        "num_of_instances": 1
+    },
+    "pa_funnel-neck": {
+        "profile_num": 0.4651179942660776,
+        "num_of_instances": 2
+    },
+    "pa_gathers": {
+        "profile_num": 0.20851441405707477,
+        "num_of_instances": 1
+    },
+    "pa_gusset": {
+        "profile_num": 1.706317759470564,
+        "num_of_instances": 2
+    },
+    "pa_halfcircle-shape": {
+        "profile_num": 1.6358413819655724,
+        "num_of_instances": 3
+    },
+    "pa_hems": {
+        "profile_num": 0.45302253162054074,
+        "num_of_instances": 2
+    },
+    "pa_hidden-pocket": {
+        "profile_num": 0.23570226039551587,
+        "num_of_instances": 1
+    },
+    "pa_icelandic": {
+        "profile_num": 1.9575756318033717,
+        "num_of_instances": 8
+    },
+    "pa_icord": {
+        "profile_num": 2.969815390957396,
+        "num_of_instances": 9
+    },
+    "pa_icord-edging": {
+        "profile_num": 2.043258466572132,
+        "num_of_instances": 5
+    },
+    "pa_in-the-round": {
+        "profile_num": 26.06844046495491,
+        "num_of_instances": 85
+    },
+    "pa_kitchener": {
+        "profile_num": 3.9490863273584162,
+        "num_of_instances": 14
+    },
+    "pa_lace": {
+        "profile_num": 12.214635003073955,
+        "num_of_instances": 32
+    },
+    "pa_lace-edging": {
+        "profile_num": 0.8208868497528694,
+        "num_of_instances": 2
+    },
+    "pa_long-sleeve": {
+        "profile_num": 6.7755454743956784,
+        "num_of_instances": 25
+    },
+    "pa_male": {
+        "profile_num": 4.1788016328942055,
+        "num_of_instances": 13
+    },
+    "pa_mature": {
+        "profile_num": 0.3779644730092272,
+        "num_of_instances": 1
+    },
+    "pa_mesh": {
+        "profile_num": 1.5433065850688679,
+        "num_of_instances": 5
+    },
+    "pa_modified-drop-sleeve": {
+        "profile_num": 0.23570226039551587,
+        "num_of_instances": 1
+    },
+    "pa_modular": {
+        "profile_num": 2.485751255586887,
+        "num_of_instances": 8
+    },
+    "pa_mosaic": {
+        "profile_num": 0.24253562503633297,
+        "num_of_instances": 1
+    },
+    "pa_negative-ease": {
+        "profile_num": 4.9547440719410565,
+        "num_of_instances": 15
+    },
+    "pa_no-ease": {
+        "profile_num": 4.077407428669099,
+        "num_of_instances": 12
+    },
+    "pa_norwegian": {
+        "profile_num": 1.3839497676038526,
+        "num_of_instances": 3
+    },
+    "pa_one-piece": {
+        "profile_num": 20.080460409273968,
+        "num_of_instances": 68
+    },
+    "pa_other-colorwork": {
+        "profile_num": 3.6777444841956366,
+        "num_of_instances": 13
+    },
+    "pa_other-edging": {
+        "profile_num": 1.2460475759339162,
+        "num_of_instances": 3
+    },
+    "pa_oversized": {
+        "profile_num": 2.9032501461892037,
+        "num_of_instances": 13
+    },
+    "pa_pattern-recipe": {
+        "profile_num": 0.7183112810058321,
+        "num_of_instances": 3
+    },
+    "pa_petite": {
+        "profile_num": 2.3361014031805363,
+        "num_of_instances": 11
+    },
+    "pa_phototutorial": {
+        "profile_num": 3.2816523321333824,
+        "num_of_instances": 12
+    },
+    "pa_picots": {
+        "profile_num": 1.7389271686864514,
+        "num_of_instances": 5
+    },
+    "pa_placeholder": {
+        "profile_num": 0.19611613513818404,
+        "num_of_instances": 1
+    },
+    "pa_plus": {
+        "profile_num": 6.181659982328142,
+        "num_of_instances": 26
+    },
+    "pa_positive-ease": {
+        "profile_num": 10.903606544324841,
+        "num_of_instances": 45
+    },
+    "pa_provisional": {
+        "profile_num": 2.341092010825215,
+        "num_of_instances": 9
+    },
+    "pa_puffed-sleeve": {
+        "profile_num": 0.657417390808201,
+        "num_of_instances": 3
+    },
+    "pa_racerback": {
+        "profile_num": 0.8623724356957946,
+        "num_of_instances": 2
+    },
+    "pa_raglan-sleeve": {
+        "profile_num": 2.7080670783321756,
+        "num_of_instances": 10
+    },
+    "pa_reversible": {
+        "profile_num": 3.843144712722488,
+        "num_of_instances": 11
+    },
+    "pa_ribbed": {
+        "profile_num": 6.60655717444174,
+        "num_of_instances": 26
+    },
+    "pa_ripple": {
+        "profile_num": 0.24253562503633297,
+        "num_of_instances": 1
+    },
+    "pa_rolled": {
+        "profile_num": 0.22941573387056174,
+        "num_of_instances": 1
+    },
+    "pa_saddle-shoulder": {
+        "profile_num": 0.47360679774997894,
+        "num_of_instances": 2
+    },
+    "pa_schematic": {
+        "profile_num": 15.616531529322511,
+        "num_of_instances": 62
+    },
+    "pa_scoop-neck": {
+        "profile_num": 2.291720448684089,
+        "num_of_instances": 8
+    },
+    "pa_seamed": {
+        "profile_num": 5.189234619699294,
+        "num_of_instances": 19
+    },
+    "pa_seamless": {
+        "profile_num": 29.963083725358867,
+        "num_of_instances": 96
+    },
+    "pa_selvedge": {
+        "profile_num": 0.941534774249231,
+        "num_of_instances": 4
+    },
+    "pa_set-in-pocket": {
+        "profile_num": 0.23570226039551587,
+        "num_of_instances": 1
+    },
+    "pa_set-in-sleeve": {
+        "profile_num": 1.7983148557397126,
+        "num_of_instances": 6
+    },
+    "pa_short-rows": {
+        "profile_num": 10.240379779287144,
+        "num_of_instances": 35
+    },
+    "pa_short-sleeve": {
+        "profile_num": 3.9140949861379477,
+        "num_of_instances": 16
+    },
+    "pa_sideways": {
+        "profile_num": 1.252596146775502,
+        "num_of_instances": 5
+    },
+    "pa_sleeves": {
+        "profile_num": 1.8585910903857767,
+        "num_of_instances": 9
+    },
+    "pa_slipped-stitches": {
+        "profile_num": 2.63622588189187,
+        "num_of_instances": 11
+    },
+    "pa_smocked": {
+        "profile_num": 0.2182178902359924,
+        "num_of_instances": 1
+    },
+    "pa_square": {
+        "profile_num": 0.35355339059327373,
+        "num_of_instances": 1
+    },
+    "pa_steeks": {
+        "profile_num": 0.4588314677411235,
+        "num_of_instances": 2
+    },
+    "pa_straight": {
+        "profile_num": 3.4801912223449616,
+        "num_of_instances": 16
+    },
+    "pa_stranded": {
+        "profile_num": 12.574212452677953,
+        "num_of_instances": 44
+    },
+    "pa_stripes": {
+        "profile_num": 2.8484763295262066,
+        "num_of_instances": 10
+    },
+    "pa_stripes-colorwork": {
+        "profile_num": 9.859868457319088,
+        "num_of_instances": 38
+    },
+    "pa_surface-crochet": {
+        "profile_num": 0.23570226039551587,
+        "num_of_instances": 1
+    },
+    "pa_tall": {
+        "profile_num": 1.447950813455294,
+        "num_of_instances": 7
+    },
+    "pa_teen": {
+        "profile_num": 11.477598692720187,
+        "num_of_instances": 39
+    },
+    "pa_textured": {
+        "profile_num": 8.317971615438964,
+        "num_of_instances": 29
+    },
+    "pa_three-needle-bind": {
+        "profile_num": 2.8419991097560917,
+        "num_of_instances": 12
+    },
+    "pa_tied": {
+        "profile_num": 0.45851441405707477,
+        "num_of_instances": 2
+    },
+    "pa_toddler": {
+        "profile_num": 0.4255318690087458,
+        "num_of_instances": 2
+    },
+    "pa_toe-up": {
+        "profile_num": 0.3333333333333333,
+        "num_of_instances": 1
+    },
+    "pa_top-cuff-down": {
+        "profile_num": 1.0,
+        "num_of_instances": 1
+    },
+    "pa_top-down": {
+        "profile_num": 21.50573303800629,
+        "num_of_instances": 72
+    },
+    "pa_triangle-shaped": {
+        "profile_num": 4.007959278113605,
+        "num_of_instances": 12
+    },
+    "pa_turtleneck": {
+        "profile_num": 0.20412414523193154,
+        "num_of_instances": 1
+    },
+    "pa_twisted-stitches": {
+        "profile_num": 1.9603539499007199,
+        "num_of_instances": 7
+    },
+    "pa_unisex": {
+        "profile_num": 14.232652076175947,
+        "num_of_instances": 38
+    },
+    "pa_v-neck": {
+        "profile_num": 1.6182670785422983,
+        "num_of_instances": 7
+    },
+    "pa_video-tutorial": {
+        "profile_num": 2.178431875792957,
+        "num_of_instances": 8
+    },
+    "pa_waist": {
+        "profile_num": 3.7404776658096535,
+        "num_of_instances": 12
+    },
+    "pa_worked-flat": {
+        "profile_num": 20.378015467031723,
+        "num_of_instances": 60
+    },
+    "pa_wrap": {
+        "profile_num": 0.45851441405707477,
+        "num_of_instances": 2
+    },
+    "pa_written-pattern": {
+        "profile_num": 40.34131695530175,
+        "num_of_instances": 128
+    },
+    "pc_accessories": {
+        "profile_num": 21.515661152712795,
+        "num_of_instances": 49
+    },
+    "pc_animal": {
+        "profile_num": 0.7862127634730902,
+        "num_of_instances": 2
+    },
+    "pc_bag": {
+        "profile_num": 0.22941573387056174,
+        "num_of_instances": 1
+    },
+    "pc_beanie-toque": {
+        "profile_num": 2.416082204685508,
+        "num_of_instances": 5
+    },
+    "pc_booties": {
+        "profile_num": 0.3333333333333333,
+        "num_of_instances": 1
+    },
+    "pc_cardigan": {
+        "profile_num": 1.0724540213978284,
+        "num_of_instances": 5
+    },
+    "pc_clothing": {
+        "profile_num": 27.10815281112842,
+        "num_of_instances": 101
+    },
+    "pc_cowl": {
+        "profile_num": 1.2439898767936661,
+        "num_of_instances": 2
+    },
+    "pc_doll": {
+        "profile_num": 0.3779644730092272,
+        "num_of_instances": 1
+    },
+    "pc_feet-legs": {
+        "profile_num": 1.3333333333333333,
+        "num_of_instances": 2
+    },
+    "pc_fingerless": {
+        "profile_num": 0.6106834314459479,
+        "num_of_instances": 2
+    },
+    "pc_hands": {
+        "profile_num": 2.6056763255113253,
+        "num_of_instances": 5
+    },
+    "pc_hat": {
+        "profile_num": 2.416082204685508,
+        "num_of_instances": 5
+    },
+    "pc_home": {
+        "profile_num": 0.7315178636025009,
+        "num_of_instances": 2
+    },
+    "pc_mid-calf": {
+        "profile_num": 1.0,
+        "num_of_instances": 1
+    },
+    "pc_mittens": {
+        "profile_num": 1.9949928940653772,
+        "num_of_instances": 3
+    },
+    "pc_neck-torso": {
+        "profile_num": 14.931153555312063,
+        "num_of_instances": 36
+    },
+    "pc_pillow": {
+        "profile_num": 0.7315178636025009,
+        "num_of_instances": 2
+    },
+    "pc_pullover": {
+        "profile_num": 19.428289254331503,
+        "num_of_instances": 72
+    },
+    "pc_purse": {
+        "profile_num": 0.22941573387056174,
+        "num_of_instances": 1
+    },
+    "pc_scarf": {
+        "profile_num": 1.4412189230868466,
+        "num_of_instances": 3
+    },
+    "pc_shawl-wrap": {
+        "profile_num": 12.245944755431552,
+        "num_of_instances": 31
+    },
+    "pc_sleeveless-top": {
+        "profile_num": 2.1992757696429193,
+        "num_of_instances": 7
+    },
+    "pc_socks": {
+        "profile_num": 1.0,
+        "num_of_instances": 1
+    },
+    "pc_softies": {
+        "profile_num": 1.1641772364823173,
+        "num_of_instances": 3
+    },
+    "pc_sweater": {
+        "profile_num": 20.50074327572933,
+        "num_of_instances": 77
+    },
+    "pc_tee": {
+        "profile_num": 4.408133765756171,
+        "num_of_instances": 17
+    },
+    "pc_tops": {
+        "profile_num": 6.607409535399091,
+        "num_of_instances": 24
+    },
+    "pc_toysandhobbies": {
+        "profile_num": 1.1641772364823173,
+        "num_of_instances": 3
+    },
+    "yarn_id_Aran": {
+        "profile_num": 4.492849968211853,
+        "num_of_instances": 12
+    },
+    "yarn_id_Bulky": {
+        "profile_num": 3.0306572562223986,
+        "num_of_instances": 10
+    },
+    "yarn_id_DK": {
+        "profile_num": 11.001571408314906,
+        "num_of_instances": 37
+    },
+    "yarn_id_Fingering": {
+        "profile_num": 20.36466259282289,
+        "num_of_instances": 57
+    },
+    "yarn_id_Lace": {
+        "profile_num": 2.5935250044518128,
+        "num_of_instances": 7
+    },
+    "yarn_id_Light-Fingering": {
+        "profile_num": 2.1989263218343362,
+        "num_of_instances": 8
+    },
+    "yarn_id_None": {
+        "profile_num": 0.3779644730092272,
+        "num_of_instances": 1
+    },
+    "yarn_id_Sport": {
+        "profile_num": 3.407982791892784,
+        "num_of_instances": 12
+    },
+    "yarn_id_Super-Bulky": {
+        "profile_num": 0.35355339059327373,
+        "num_of_instances": 1
+    },
+    "yarn_id_Worsted": {
+        "profile_num": 2.697815856572552,
+        "num_of_instances": 10
+    },
+    "len_of_pool": 155
 }
