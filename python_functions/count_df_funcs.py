@@ -74,27 +74,15 @@ def create_proj_df(username):
 
 # work~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# user_profile = user_profile_df("katec125")
-# list(user_profile.columns)
-# user_profile.user_data
-# user_profile.pc_sweater
-# np.dot(user_profile.user_data, user_profile.pc_sweater)
+user_profile = user_profile_df("katec125")
 
-# user_profile.iloc[0]
+def user_profile_json(user_data):
+    user_profile = {col:{"profile_num":
+     np.dot(user_data[col],user_data.user_data),
+    "num_of_instances":
+    np.count_nonzero(user_data[col])}
+    for col in list(user_data.columns)[:-1]}
+    user_profile["len_of_pool"] = len(user_data)
+    return user_profile
 
-# example_dict = dict(zip(list(user_profile.columns), user_profile.loc['36436']))
-
-# [key for key in example_dict if example_dict[key] != 0]
-
-# user_profile.loc['36436']
-
-# single_pattern_request('36436')['yarn_weight']['name']
-
-
-# ' ' in 'asdfas dfas'
-
-# '-'.join(string.split(' '))
-
-# {col:np.dot(user_profile[col],user_profile.user_data) for col in list(user_profile.columns)[:-1]}
-
-
+user_profile_json(user_profile)
