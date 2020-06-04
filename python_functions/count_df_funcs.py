@@ -91,23 +91,3 @@ def create_proj_df(username):
 
 # work~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-user_profile = user_profile_df("katec125")
-
-
-
-u_json = user_profile_json(user_profile)
-
-
-dict(zip(list(u_json), 
-[item['profile_num'] 
-for item in list(u_json.values())[:-1]]))
-
-[item['profile_num'] for item in list(u_json.values())[:-1]]
-
-u_json['yarn_id_DK']
-
-list(u_json.values())[:-1]
-
-
-   with open("{}_user_profile.json".format(username), "w") as outfile: 
-            json.dump(u_p, outfile)
