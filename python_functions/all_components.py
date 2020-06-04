@@ -23,38 +23,52 @@ def pattern_pool_df(username, search):
     return pattern_list_to_df(search_minus_knowns)
 
 def user_profile_edits(profile, pattern_pool):
+    len_of_pool = profile['len_of_pool']
     for item in list(pattern_pool.columns):
         if item not in profile.keys():
-            profile[item] = 0
+            profile[item] = {'profile_num': 0, 'num_of_instances': 0}
 
-    for key in list(profile):
+    for key in list(profile)[:-1]:
         if key not in list(pattern_pool.columns):
             profile.pop(key)
+    profile['len_of_pool'] = len_of_pool
     return profile
 
-def pref_scores(username, search = 'default_search', user_prof = 'None', save_user_profile = 'no'):
+def user_json_and_profile(username, search = 'default_search', user_prof = 'None', save_user_profile = 'no'):
     pattern_pool = pattern_pool_df(username, search)
     
-    if save_user_profile == 'yes':
-        u_p = user_profile(username)
-        with open("{}_user_profile.json".format(username), "w") as outfile: 
-            json.dump(u_p, outfile)
-    elif user_prof == 'None':
-        u_p = user_profile(username)
+    if user_prof == 'None':
+        u_json = user_profile(username, save_user_profile)
     else:
-        u_p = user_prof
-    
+        u_json = user_prof
     # edits pattern pool so that it deletes user profile attrs not in pattern pool 
     # and adds attrs that are in the pattern pool
-    user_profile_edited = user_profile_edits(u_p, pattern_pool)
+    user_profile_edited = user_profile_edits(u_json, pattern_pool)
+    u_p = dict(zip(list(user_profile_edited),[item['profile_num'] 
+    for item in list(user_profile_edited.values())[:-1]]))
+    return [user_profile_edited,u_p]
 
-    pool_idf = [math.log(len(pattern_pool)/np.count_nonzero(pattern_pool[col])) for col in pattern_pool.columns]
+def pref_scores(username, search = 'default_search', user_prof = 'None', save_user_profile = 'no'):
+    user_list = user_json_and_profile(username, search, user_prof, save_user_profile)
+    u_json = user_list[0]
+    u_p = user_list[1]
+
+    pattern_pool = pattern_pool_df(username, search)
+
+    idf_numerator = u_json['len_of_pool']+len(pattern_pool)
+
+    pattern_pool_instance_list = [np.count_nonzero(pattern_pool[col]) for col in pattern_pool.columns]
+    user_instance_list = [item['num_of_instances'] for item in list(u_json.values())[:-1]]
+
+    idf_denominator = [x+y for x,y in zip(pattern_pool_instance_list, user_instance_list)]
+  
+    pool_idf = [math.log(idf_numerator/denom) for denom in idf_denominator]
     
     # combines idf and profile into one so they can be combined with the pattern pool
     # essentially, since you can't do a dot product of three matricies all at once
     # this part is done first, 
     # then the predicted user prefs are done in the next step 
-    idf_and_profile = np.array(pool_idf)*np.array(list(user_profile_edited.values()))
+    idf_and_profile = np.array(pool_idf)*np.array(list(u_p.values()))
 
     # dictionary object: key = pattern id, value is percent match 
     predicted_user_prefs = {i:np.dot(idf_and_profile,pattern_pool.loc[i]) for i in pattern_pool.index}
@@ -111,11 +125,18 @@ def link_and_score_json(username, output_json, save = 'no'):
             json.dump(link_and_score_dict, outfile)
     return link_and_score_dict
 
-def serach_to_link_and_score(username, search = 'default_search', 
+def search_to_link_and_score(username, search = 'default_search', 
                             user_prof = 'None', save_user_profile = 'no', 
                             trim_number = 20, save = 'no'):
     output_json = search_to_json(username, search, user_prof, save_user_profile, trim_number)
     return link_and_score_json(username, output_json, save)
  
-serach_to_link_and_score(username = 'katec125', user_prof=json.load(open('katec125_user_profile.json')), save = 'yes')
+# search_to_link_and_score(username = 'katec125', user_prof=json.load(open('katec125_user_profile.json')), save = 'yes')
 
+# user_profile('katec125')
+
+
+a = [1,2,3,4]
+b = [2,3,4,5]
+
+[x+y for x,y in zip(a,b)]
