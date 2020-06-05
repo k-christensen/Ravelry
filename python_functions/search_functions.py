@@ -116,7 +116,7 @@ def create_pattern_id_list(pattern_json):
 def pattern_pool_json(item):
     search_json = None
     if item.startswith('https://www.ravelry.com/patterns/library'):
-        search_json = search_using_url(item)
+        search_json = similar_patterns(item)
     elif item == 'default_search':
         search_json = default_search()
     return search_json
@@ -125,3 +125,10 @@ def pattern_pool_list(item):
     pattern_json = pattern_pool_json(item)
     if pattern_json is not None:
         return create_pattern_id_list(pattern_json)
+
+
+pattern_pool_json('https://www.ravelry.com/patterns/library/murron')
+
+search_using_url('https://www.ravelry.com/patterns/library/murron')
+
+similar_patterns('https://www.ravelry.com/patterns/library/murron')
