@@ -16,13 +16,13 @@ def proj_json(username):
                         auth = (personal_keys.username(),personal_keys.password()))
     return projects.json()
 
+
 # output: list of pattern ids for user's projects
 def project_list(p_json):
     proj_list = []
     proj_list.extend([p_json['projects'][item]['pattern_id'] 
                     for item in range(0,len(p_json['projects']))])
     return [item for item in proj_list if item is not None]
-
 
 # puts together first two functions
 def get_project_list_from_username(username):
@@ -36,6 +36,9 @@ def get_project_list_from_username(username):
 def project_rating(username):
 
     p_j = proj_json(username)
+# limits project quantity to top 100 if user has over 100 projects
+    if len(p_j['projects'])>100:
+        p_j['projects'] = p_j['projects'][:100]
 
     code_list = project_list(p_j)
 
