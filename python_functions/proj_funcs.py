@@ -46,8 +46,6 @@ def project_rating(username):
     rating_list = [3 if x == None else x for x in initial_list]
     return dict(zip(code_list, rating_list))
 
-
-
 # creates dictionary where the keys are 
 # all user's favorites and projects
 # all favorites get a 1 assigned

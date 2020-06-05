@@ -34,9 +34,7 @@ def user_profile_edits(profile, pattern_pool):
     profile['len_of_pool'] = len_of_pool
     return profile
 
-def user_json_and_profile(username, search = 'default_search', user_prof = 'None', save_user_profile = 'no'):
-    pattern_pool = pattern_pool_df(username, search)
-    
+def user_json_and_profile(username, pattern_pool, user_prof = 'None', save_user_profile = 'no'):
     if user_prof == 'None':
         u_json = user_profile(username, save_user_profile)
     else:
@@ -49,11 +47,10 @@ def user_json_and_profile(username, search = 'default_search', user_prof = 'None
     return [user_profile_edited,u_p]
 
 def pref_scores(username, search = 'default_search', user_prof = 'None', save_user_profile = 'no'):
-    user_list = user_json_and_profile(username, search, user_prof, save_user_profile)
+    pattern_pool = pattern_pool_df(username, search)
+    user_list = user_json_and_profile(username, pattern_pool, user_prof, save_user_profile)
     u_json = user_list[0]
     u_p = user_list[1]
-
-    pattern_pool = pattern_pool_df(username, search)
 
     idf_numerator = u_json['len_of_pool']+len(pattern_pool)
 
@@ -62,8 +59,9 @@ def pref_scores(username, search = 'default_search', user_prof = 'None', save_us
 
     idf_denominator = [x+y for x,y in zip(pattern_pool_instance_list, user_instance_list)]
   
-    pool_idf = [math.log(idf_numerator/denom) for denom in idf_denominator]
+    pool_idf = [math.log10(idf_numerator/denom) for denom in idf_denominator]
     
+    print("Numerator:{} \n Denominator:{}\n IDF:{} ".format(idf_numerator, idf_denominator, pool_idf))
     # combines idf and profile into one so they can be combined with the pattern pool
     # essentially, since you can't do a dot product of three matricies all at once
     # this part is done first, 
@@ -131,12 +129,13 @@ def search_to_link_and_score(username, search = 'default_search',
     output_json = search_to_json(username, search, user_prof, save_user_profile, trim_number)
     return link_and_score_json(username, output_json, save)
  
-# search_to_link_and_score(username = 'katec125', user_prof=json.load(open('katec125_user_profile.json')), save = 'yes')
-
-# user_profile('katec125')
+# search_to_link_and_score(username = 'kerfufflesensue')
 
 
-a = [1,2,3,4]
-b = [2,3,4,5]
+p_s = pref_scores('swiftmiss')
+[(code, value) for code, value in p_s.items() if value >98]
 
-[x+y for x,y in zip(a,b)]
+u_list = user_json_and_profile('swiftmiss', pattern_pool = pattern_pool_df('swiftmiss', 'default_search'))
+
+
+math.log(566/21)
