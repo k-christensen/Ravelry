@@ -23,6 +23,7 @@ def project_list(p_json):
                     for item in range(0,len(p_json['projects']))])
     return [item for item in proj_list if item is not None]
 
+
 # puts together first two functions
 def get_project_list_from_username(username):
     p_json = proj_json(username)
@@ -36,7 +37,7 @@ def project_rating(username):
 
     p_j = proj_json(username)
 
-    code_list = project_list(username)
+    code_list = project_list(p_j)
 
     initial_list = [p_j['projects'][i]['rating'] 
     for i in range(0,len(p_j['projects'])) if 
@@ -44,6 +45,8 @@ def project_rating(username):
 
     rating_list = [3 if x == None else x for x in initial_list]
     return dict(zip(code_list, rating_list))
+
+
 
 # creates dictionary where the keys are 
 # all user's favorites and projects
