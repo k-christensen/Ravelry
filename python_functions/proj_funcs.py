@@ -33,12 +33,18 @@ def get_project_list_from_username(username):
 # otherwise it's on a scale from 1-5 (hence the +1)
 
 def project_rating(username):
+
     code_list = get_project_list_from_username(username)
-    rating_list = [3 if proj_json(username)['projects'][i]['rating'] == None 
-                    else proj_json(username)['projects'][i]['rating']+1 
-                    for i in range(0,len(proj_json("katec125")['projects']))]
+
+    initial_list = [proj_json(username)['projects'][i]['rating'] 
+    for i in range(0,len(proj_json(username)['projects'])) if 
+    proj_json(username)['projects'][i]['pattern_id'] != None]
+
+    rating_list = [3 if x == None else x for x in initial_list]
     return dict(zip(code_list, rating_list))
 
+
+len(get_project_list_from_username('kerfufflesensue'))
 # creates dictionary where the keys are 
 # all user's favorites and projects
 # all favorites get a 1 assigned
