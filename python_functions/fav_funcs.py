@@ -36,8 +36,8 @@ def get_favs_list(username):
     fav_list = create_fav_list(favs)
     if favs['paginator']['page_count']>1:
         page_number = 2
-        if favs['paginator']['last_page'] > 5:
-            last_page = 5
+        if favs['paginator']['last_page'] > 2:
+            last_page = 2
         else:
             last_page = favs['paginator']['last_page']
         while page_number <= last_page:
