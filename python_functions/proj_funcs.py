@@ -34,17 +34,17 @@ def get_project_list_from_username(username):
 
 def project_rating(username):
 
-    code_list = get_project_list_from_username(username)
+    p_j = proj_json(username)
 
-    initial_list = [proj_json(username)['projects'][i]['rating'] 
-    for i in range(0,len(proj_json(username)['projects'])) if 
-    proj_json(username)['projects'][i]['pattern_id'] != None]
+    code_list = project_list(username)
+
+    initial_list = [p_j['projects'][i]['rating'] 
+    for i in range(0,len(p_j['projects'])) if 
+    p_j['projects'][i]['pattern_id'] != None]
 
     rating_list = [3 if x == None else x for x in initial_list]
     return dict(zip(code_list, rating_list))
 
-
-len(get_project_list_from_username('kerfufflesensue'))
 # creates dictionary where the keys are 
 # all user's favorites and projects
 # all favorites get a 1 assigned
