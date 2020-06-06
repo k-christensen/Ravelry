@@ -61,8 +61,6 @@ def pref_scores(username, search = 'default_search', user_prof = 'None', save_us
   
     pool_idf = [math.log(idf_numerator/denom) for denom in idf_denominator]
     
-    print("Numerator:{} \n Denominator:{}\n IDF:{} ".format(idf_numerator, idf_denominator, pool_idf))
-
     # dictionary object: key = pattern id, value is percent match 
     predicted_user_prefs = {i:sum([a*b*c for a,b,c in 
     zip(pool_idf, list(u_p.values()),pattern_pool.loc[i])])
@@ -126,6 +124,7 @@ def search_to_link_and_score(username, search = 'default_search',
     output_json = search_to_json(username, search, user_prof, save_user_profile, trim_number)
     return link_and_score_json(username, output_json, save)
  
-search_to_link_and_score(username = 'katec125', user_prof=json.load(open("katec125_user_profile.json")))
+search_to_link_and_score(username = 'katec125')
 
 
+# pref_scores('katec125', user_prof=json.load(open("katec125_user_profile.json")))
