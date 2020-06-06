@@ -62,7 +62,7 @@ def user_profile_dict(user_data):
 # and at the end the len of the profile df
 def user_profile_json(user_data):
     user_profile = {col:{"profile_num":
-     np.dot(user_data[col],user_data.user_data),
+     np.dot(user_data[col],user_data.user_data)/len(user_data),
     "num_of_instances":
     np.count_nonzero(user_data[col])}
     for col in list(user_data.columns)[:-1]}
