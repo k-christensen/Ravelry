@@ -126,9 +126,3 @@ def pattern_pool_list(item):
     if pattern_json is not None:
         return create_pattern_id_list(pattern_json)
 
-
-pattern_pool_json('https://www.ravelry.com/patterns/library/murron')
-
-search_using_url('https://www.ravelry.com/patterns/library/murron')
-
-similar_patterns('https://www.ravelry.com/patterns/library/murron')

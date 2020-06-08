@@ -72,7 +72,16 @@ def pref_scores(username, search = 'default_search', user_prof = 'None', save_us
 def final_json(predicted_user_prefs, trim_number = 20):
     # orders the dictionary so the best matches are the highest
     pref_sort = dict((sorted(predicted_user_prefs.items(),key= lambda x: x[1], reverse=True)))
+
+    # turns raw numbers into percentages 
+    # in my experience, the numbers only went into the high 0.3's, 
+    # therefore I'm multiplying them by 250 (so 0.4 would be 100 percent) 
     
+    pref_sort = {item:round(pref_sort[item]*250, 2) for item in list(pref_sort)}
+    for item in pref_sort:
+        if pref_sort[item] > 99.99:
+            pref_sort[item] == 99.99
+
     # trims down pref_sort to the top matches (number determined by the trim number)
     pref_sort_trim = dict([(k,v) for k,v in pref_sort.items()][:trim_number])
 
@@ -81,7 +90,7 @@ def final_json(predicted_user_prefs, trim_number = 20):
     
     # adds a feature for every pattern entry in the json: percent match
     for key in list(pref_sort_trim):
-        final_json['patterns'][key]['percent_match'] = predicted_user_prefs[key]
+        final_json['patterns'][key]['percent_match'] = pref_sort_trim[key]
     
     # this list is just a list of strings with rank_(insert number ranking here)
     rank_list = ['rank_{}'.format(num) for num in list(range(1,len(list(pref_sort_trim))+1))]
@@ -102,7 +111,7 @@ def final_json(predicted_user_prefs, trim_number = 20):
     # thus they'll be in order
     final_json['patterns'] = dict([(k,v) for k,v in final_json['patterns'].items()][len(pref_sort_trim):])
     
-    return final_json 
+    return final_json
 
 def search_to_json(username, search = 'default_search', user_prof = 'None', save_user_profile = 'no', trim_number = 20):
     predicted_user_prefs = pref_scores(username, search, user_prof, save_user_profile)
@@ -124,7 +133,6 @@ def search_to_link_and_score(username, search = 'default_search',
     output_json = search_to_json(username, search, user_prof, save_user_profile, trim_number)
     return link_and_score_json(username, output_json, save)
  
-search_to_link_and_score(username = 'katec125')
+search_to_link_and_score(username = 'katec125', search='https://www.ravelry.com/patterns/library/anneli-2')
 
 
-# pref_scores('katec125', user_prof=json.load(open("katec125_user_profile.json")))
