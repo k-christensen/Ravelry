@@ -15,6 +15,8 @@ from search_functions import *
 from yarn_weights import create_yarn_list
 from count_df_funcs import *
 
+# this function generates the pattern pool 
+# that will be used to pick recommemdations from
 def pattern_pool_df(username, search):
     known_patterns = known_pattern_list(username)
     search_list = pattern_pool_list(search)
@@ -22,6 +24,14 @@ def pattern_pool_df(username, search):
                             if item not in known_patterns]
     return pattern_list_to_df(search_minus_knowns)
 
+# this function cross checks the user profile 
+# and the pattern pool, in the event there are 
+# attributes in the pattern pool that are not in 
+# the user profile, that attribute is added 
+# to the user profile and is given the value of zero
+# if the opposite is true (in profile but not pool)
+# then that attribute is dropped from the profile 
+# for the purposes of this analysis  
 def user_profile_edits(profile, pattern_pool):
     len_of_pool = profile['len_of_pool']
     for item in list(pattern_pool.columns):
@@ -34,6 +44,10 @@ def user_profile_edits(profile, pattern_pool):
     profile['len_of_pool'] = len_of_pool
     return profile
 
+# this creates a user profile, if none is given, 
+# edits that user profile for the purpose of this analysis
+# and returns a dictionary containing the full user profile json
+# and a dictionary that is just the attributes and their scores
 def user_json_and_profile(username, pattern_pool, user_prof = 'None', save_user_profile = 'no'):
     if user_prof == 'None':
         u_json = user_profile(username, save_user_profile)
@@ -46,6 +60,8 @@ def user_json_and_profile(username, pattern_pool, user_prof = 'None', save_user_
     for item in list(user_profile_edited.values())[:-1]]))
     return [user_profile_edited,u_p]
 
+
+# this function creates the preference scores for all patterns
 def pref_scores(username, search = 'default_search', user_prof = 'None', save_user_profile = 'no'):
     pattern_pool = pattern_pool_df(username, search)
     user_list = user_json_and_profile(username, pattern_pool, user_prof, save_user_profile)
@@ -68,6 +84,9 @@ def pref_scores(username, search = 'default_search', user_prof = 'None', save_us
 
     return predicted_user_prefs
 
+# this function takes the generated scores 
+# and incorportates them into a json 
+# with all the other pattern info
 def final_json(predicted_user_prefs, trim_number = 20):
     # orders the dictionary so the best matches are the highest
     pref_sort = dict((sorted(predicted_user_prefs.items(),key= lambda x: x[1], reverse=True)))
