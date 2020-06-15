@@ -13,7 +13,6 @@ from proj_funcs import *
 from pattern_attr_funcs import *
 from search_functions import *
 
-
 # input: dictionary created in all_attr_dict
 # creates dataframe, index is pattern code, 
 # cols are attrs, categories, and yarn weights
@@ -35,6 +34,7 @@ def known_pattern_list(username):
     return [item for item in full_list if item is not None]
 
 # input is a username, 
+
 # output is a df of all the user's 
 # favs and projects in one dataframe
 # dataframe columns include 
@@ -69,7 +69,8 @@ def user_profile_json(user_data):
     user_profile["len_of_pool"] = len(user_data)
     return user_profile
 
-# put together previous two funcs, input username, output dict of attrs and user scores
+# put together previous two funcs, input username, 
+# output dict of attrs and user scores
 def user_profile(username, save_json = 'no'):
     user_data = user_profile_df(username)
     u_p = user_profile_json(user_data)
@@ -78,7 +79,10 @@ def user_profile(username, save_json = 'no'):
             json.dump(u_p, outfile)
     return u_p
 
-# below function combines many of above functions such that all you put in is someone's username and it spits out dataframe of favs and projects
+# below function combines many of above functions 
+# such that all you put in is someone's username 
+# and it spits out dataframe of favs and projects
+
 def create_fav_df(username):
     fav_list = get_favs_list(username)
     fav_df = pattern_list_to_df(fav_list)
