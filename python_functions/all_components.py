@@ -113,10 +113,17 @@ def final_json(predicted_user_prefs, trim_number = 20):
     
     return final_json
 
+
+# this search to json is what would be 
+# used to generated the actual json that
+# would be displayed 
 def search_to_json(username, search = 'default_search', user_prof = 'None', save_user_profile = 'no', trim_number = 20):
     predicted_user_prefs = pref_scores(username, search, user_prof, save_user_profile)
     return final_json(predicted_user_prefs, trim_number)
 
+# this function and the one below it 
+# are for the purposes of easily viewing 
+# actual scores and the patterns being scored
 def link_and_score_json(username, output_json, save = 'no'):
     link_and_score_dict = {"https://www.ravelry.com/patterns/library/{}".format(
         output_json['patterns'][rank]['permalink']):
