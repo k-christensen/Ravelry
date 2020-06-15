@@ -68,7 +68,6 @@ def pref_scores(username, search = 'default_search', user_prof = 'None', save_us
 
     return predicted_user_prefs
 
-
 def final_json(predicted_user_prefs, trim_number = 20):
     # orders the dictionary so the best matches are the highest
     pref_sort = dict((sorted(predicted_user_prefs.items(),key= lambda x: x[1], reverse=True)))
@@ -92,7 +91,8 @@ def final_json(predicted_user_prefs, trim_number = 20):
     for key in list(pref_sort_trim):
         final_json['patterns'][key]['percent_match'] = pref_sort_trim[key]
     
-    # this list is just a list of strings with rank_(insert number ranking here)
+    # this list is just a list of strings with 
+    # rank_(insert number ranking here)
     rank_list = ['rank_{}'.format(num) for num in list(range(1,len(list(pref_sort_trim))+1))]
 
     # dict key is the pattern's rank by percent match and the value is pattern id
