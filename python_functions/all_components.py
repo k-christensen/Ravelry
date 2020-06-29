@@ -159,6 +159,9 @@ def search_to_link_and_score(username, search = 'default_search',
     output_json = search_to_json(username, search, user_prof, save_user_profile, trim_number)
     return link_and_score_json(username, output_json, save)
  
-search_to_link_and_score(username = 'katec125', search='https://www.ravelry.com/patterns/library/anneli-2')
+search_to_link_and_score(username = 'katec125', 
+search='https://www.ravelry.com/patterns/library/anneli-2',
+user_prof= json.load(open("katec125_user_profile.json")),
+save = 'yes')
 
 
